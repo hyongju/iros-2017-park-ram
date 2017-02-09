@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.2.6)  8 FEB 2017 14:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.2.6)  9 FEB 2017 10:30
 entering extended mode
 **./park_ram_iros17_0208b.tex
 (park_ram_iros17_0208b.tex
@@ -988,7 +988,7 @@ re/order2_step_0110-eps-converted-to.pdf> <./figure/ordern_step_0110-eps-conver
 ted-to.pdf>] [8 <./figure/kl_div_2-eps-converted-to.pdf> <./figure/kl_div_1-eps
 -converted-to.pdf> <./figure/fault_order_1-eps-converted-to.pdf> <./figure/faul
 t_order_2-eps-converted-to.pdf> <./figure/fault_order_n-eps-converted-to.pdf> <
-./figure/fault_kl2-eps-converted-to.pdf>] <figure/wind_wiper_data.pdf, id=384, 
+./figure/fault_kl2-eps-converted-to.pdf>] <figure/wind_wiper_data.pdf, id=385, 
 1589.94pt x 693.792pt>
 File: figure/wind_wiper_data.pdf Graphic file (type pdf)
 
@@ -1024,13 +1024,13 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1087.
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 11621 strings out of 493333
- 181874 string characters out of 3139189
+ 11622 strings out of 493333
+ 181885 string characters out of 3139189
  415346 words of memory out of 3000000
  14809 multiletter control sequences out of 15000+200000
  53535 words of font info for 120 fonts, out of 3000000 for 9000
  1144 hyphenation exceptions out of 8191
- 42i,21n,39p,1002b,3321s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 42i,21n,39p,1188b,3321s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Fi
 les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Program Files/MiKTe
@@ -1064,9 +1064,9 @@ pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program F
 iles/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Program Files/MiKTeX 2.9/
 fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/t
 imes/utmri8a.pfb>
-Output written on park_ram_iros17_0208b.pdf (10 pages, 980988 bytes).
+Output written on park_ram_iros17_0208b.pdf (10 pages, 981998 bytes).
 PDF statistics:
- 557 PDF objects out of 1000 (max. 8388607)
- 93 named destinations out of 1000 (max. 500000)
+ 559 PDF objects out of 1000 (max. 8388607)
+ 94 named destinations out of 1000 (max. 500000)
  197 words of extra memory for PDF output out of 10000 (max. 10000000)
 
