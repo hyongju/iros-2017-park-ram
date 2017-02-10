@@ -1,0 +1,53 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: park_ram_iros17_0209.aux
+The style file: IEEEtran.bst
+Database file #1: reference_park_17.bib
+I was expecting a `,' or a `}'---line 340 of file reference_park_17.bib
+ :  author={Kolmogorov, Andre{\u\i}} 
+ :                                   Nikolaevich and Fomin, Serge{\u\i}} Vasilʹevich},
+I'm skipping whatever remains of this entry
+Repeated entry---line 498 of file reference_park_17.bib
+ : @book{choset2005principles
+ :                           ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1989 of file reference_park_17.bib
+ : @article{schwager2009decentralized
+ :                                   ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2264 of file reference_park_17.bib
+ : @article{cortes_coverage_2004
+ :                              ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2275 of file reference_park_17.bib
+ : @inproceedings{howard2002mobile
+ :                                ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2453 of file reference_park_17.bib
+ : @inproceedings{hutchinson_robust_2012
+ :                                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2923 of file reference_park_17.bib
+ : @article{schwager2009decentralized
+ :                                   ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4282 of file reference_park_17.bib
+ : @article{cortes_coverage_2004
+ :                              ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4293 of file reference_park_17.bib
+ : @inproceedings{howard2002mobile
+ :                                ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4468 of file reference_park_17.bib
+ : @inproceedings{hutchinson_robust_2012
+ :                                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4938 of file reference_park_17.bib
+ : @article{schwager2009decentralized
+ :                                   ,
+I'm skipping whatever remains of this entry
+-- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+
+Done.
+(There were 11 error messages)

@@ -1,0 +1,17 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Method for Probabilistic Mapping}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Notations and Our System Definition}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Problem Definition}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{Recursive Bayesian Filter}{section.2}% 5
+\BOOKMARK [1][-]{section.3}{Probabilistic range sensor model}{}% 6
+\BOOKMARK [1][-]{section.4}{Partition-based approach}{}% 7
+\BOOKMARK [2][-]{subsection.4.1}{The Optimal Partition}{section.4}% 8
+\BOOKMARK [2][-]{subsection.4.2}{Partitioned Range-limited Sensor Model}{section.4}% 9
+\BOOKMARK [1][-]{section.5}{Deployment strategy}{}% 10
+\BOOKMARK [1][-]{section.6}{Belief Approximation by Particle Filtering}{}% 11
+\BOOKMARK [2][-]{subsection.6.1}{Low discrepancy sampling}{section.6}% 12
+\BOOKMARK [2][-]{subsection.6.2}{SIR Particle Filter}{section.6}% 13
+\BOOKMARK [1][-]{section.7}{Numerical simulations}{}% 14
+\BOOKMARK [1][-]{section.8}{An example: Precipitation Mapping using Windshield Wiper Data}{}% 15
+\BOOKMARK [1][-]{section.9}{Conclusions and Future Work}{}% 16
+\BOOKMARK [1][-]{section*.10}{References}{}% 17
