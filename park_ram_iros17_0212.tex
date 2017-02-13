@@ -273,7 +273,7 @@ This paper considers a group of homogeneous mobile robots equipped with range se
 \textit{Related works:} The Bayesian inference has been used as a general technique for recursively estimating states of the dynamical systems, which provides powerful statistical tool to manage the measurement uncertainties.
 For the reason, the method has been used extensively in robotics \cite{thrun2005probabilistic} and computer vision \cite{ponce2011computer} in the past decades. In particular, the two variants of Bayesian filters, namely, Kalman Filter and Particle Filter, find plethora of use for Simultaneous Localization And Mapping (SLAM) which has been an extremely popular method for single to multi-robot self-navigation.
 Also, for the mobile robot search and exploration, the Bayesian method has paved way to a number of key research directions including
-localization of missing targets \cite{bourgault2003coordinated}, single to multiple target tracking \cite{stone2013bayesian}, and 
+localization of missing targets \cite{bourgault2003coordinated}, single to multiple target tracking \cite{stone2013bayesian}, POMDP planning \cite{candido2010exploiting}, and 
 search for source localization \cite{ristic2010information,valin2007robust} (e.g., aerosol, gas, sound, chemical plume, radiation source). 
 Especially, \cite{ristic2010information} studies the information-driven autonomous search for a diffusive source
 where their search algorithm maximizes the information gain (i.e., entropy reduction).
@@ -953,7 +953,7 @@ As shown in Fig. \ref{fig:fig1} (right), at time $0$, $10$ mobile robots are dep
 A number of particles used for the SIR filter is $N= N_1\times N_2 = 1000 \times 100$. The value of the equipped noisy sensor's covariance matrix is fixed at $\Sigma_I = 0.5\mathbf{I}$, and the binary sensor's covariance will be varied.
 \begin{figure}
 	\centering
-	\includegraphics[width=3.4in]{figure/init_10_deploy}
+	\includegraphics[width=3.4in]{figure/init_10_deploy_pdf}
 	\caption{Left: the expected target intensity (the ground truth), right: initial configuration of 10 robots where background color (gray) shows spatial density for every target is uniform. Squares in the left are the peaks of the mixture of Gaussians, and stars on the right are the robots' locations} 
 	\label{fig:fig1}
 \end{figure}
@@ -979,17 +979,17 @@ A number of particles used for the SIR filter is $N= N_1\times N_2 = 1000 \times
 	\centering
 	 \begin{subfigure}[b]{0.169\textwidth}
 	 	\centering
-		\includegraphics[width=1.132in]{figure/order1_step_0110}
+		\includegraphics[width=1.093in]{figure/order1_step_0110_pdf}
 		\caption{$k=1$}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.15\textwidth}
 		\centering
-		\includegraphics[width=1in]{figure/order2_step_0110}
+		\includegraphics[width=1in]{figure/order2_step_0110_pdf}
 		\caption{$k=2$}
 	\end{subfigure}
 	 \begin{subfigure}[b]{0.15\textwidth}
 	\centering
-	\includegraphics[width=1in]{figure/ordern_step_0110}
+	\includegraphics[width=1in]{figure/ordern_step_0110_pdf}
 	\caption{$k=10$}
 \end{subfigure}
 	\caption{Belief propagation using various methods with moderate detection range where $\Sigma_B = 0.04\mathbf{I}$ ((a) $k=1$, (b) $k=2$, (c) $k=10$, the 1st row: step 1, the 2nd row: step 10, stars: positions of robots at $10^{\text{th}}$ step)}
@@ -1025,17 +1025,17 @@ The occurrence of sudden jumps (between the time step 0 and 1) in the K-L diverg
 	\centering
 	\begin{subfigure}[b]{0.15\textwidth}
 		\centering
-		\includegraphics[width=1in]{figure/fault_order_1}
+		\includegraphics[width=1in]{figure/fault_order_1_pdf}
 		\caption{$k=1$}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.15\textwidth}
 		\centering
-		\includegraphics[width=1in]{figure/fault_order_2}
+		\includegraphics[width=1in]{figure/fault_order_2_pdf}
 		\caption{$k=2$}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.15\textwidth}
 	\centering
-	\includegraphics[width=1in]{figure/fault_order_n}
+	\includegraphics[width=1in]{figure/fault_order_n_pdf}
 	\caption{$k=10$}
 \end{subfigure}
 	\caption{Comparison of robots' configuration and beliefs at the final step with two approaches, $k=1, \,2,\,10$ when two of the sensors fails (circled) and $\Sigma_B = 0.04\mathbf{I}$ for both cases }
@@ -1062,7 +1062,7 @@ The vehicle wiper dataset---obtained from the University
 of Michigan Transportation Research Institute
 (UMTRI)---contains vehicle locations along with their wiper
 intensity data (four normalized intensity modes: $0,0.33,0.66,1$) which is generated at every 2ms. The windshield wiper data is collected from up to 69 vehicles. 
- We consider a rainfall event occurred at the city of Ann Arbor between 21:47 and 22:26 on August 11th in 2014 (in UTC time). As shown in Fig \ref{fig:fig8}, the rectangular area, $[-83.8,-83.66] \times [42.22,42.34]$ (longitude, latitude in GPS coordinates, respectively) contains the boundary of Ann Arbor, which is drawn by lines. We assume that driver in each vehicle turns on the windshield wiper when detecting rain, and turns it off, otherwise, immediately in both cases. In addition, each driver is assumed to be capable of detecting rain from up to $2$ mile away from the source of rain (i.e., $r_{\textup{eff}} = 2$). We consider a product of two Gaussians---one with covariance matrices $2\mathbf{I}$ (unit: mile) for detection, and the other with $0.5\mathbf{I}$ (unit: normalized wiper intensity) for the intensity measurement, respectively---as the windshield wiper sensor model. Since, we did not have control over the vehicles at the time, the map is updated merely using the passively gathered windshield wiper measurements without utilizing our deployment algorithm, namely, Algorithm \ref{alg1}. For our algorithm, the initial expected wind wiper intensity is uniformly set to $0.3$ out of $1$ over the whole region. 
+ We consider a rainfall event occurred at the city of Ann Arbor between 21:47 and 22:26 on August 11th in 2014 (in UTC time). As shown in Fig \ref{fig:fig8}, the rectangular area, $[-83.8,-83.66] \times [42.22,42.34]$ (longitude, latitude in GPS coordinates, respectively) contains the boundary of Ann Arbor, which is drawn by lines. We assume that driver in each vehicle turns on the windshield wiper when detecting rain, and turns it off, otherwise, immediately in both cases. In addition, each driver is assumed to be capable of detecting rain from up to $1$ mile away from the source of rain (i.e., $r_{\textup{eff}} = 1$). We consider a product of two Gaussians---one with covariance matrices $\mathbf{I}$ (unit: mile) for detection, and the other with $0.5\mathbf{I}$ (unit: normalized wiper intensity) for the intensity measurement, respectively---as the windshield wiper sensor model. Since, we did not have control over the vehicles at the time, the map is updated merely using the passively gathered windshield wiper measurements without utilizing our deployment algorithm, namely, Algorithm \ref{alg1}. For our algorithm, the initial expected wind wiper intensity is uniformly set to $0.3$ out of $1$ over the whole region. 
 Fig \ref{fig:fig8} shows two time series of precipitation maps generated by the two different methods where we the wiper data is sampled at every 1 second, and the radar is sampled at every 5 minute.
 The 1st row of Fig. \ref{fig:fig8} shows incremental mapping by our method (non-coordinated strategy, $k=1$). The color intensity shows the relative windshield wiper intensity where brighter area implies relatively more precipitation, and the black area means no precipitation\footnote{We have experimentally validated that there are very strong correlation between windshield wiper intensity and the actual precipitation rate by comparing the windshield wiper data and visual data from the in-vehicle mounted camera.}
 The figures shown in the 2nd row of Fig. \ref{fig:fig8} illustrates the instantaneous precipitation rate measured by the 
@@ -1078,7 +1078,7 @@ Lastly, our assumption on the effective sensor range for drivers could have been
 
 \begin{figure}
 	\centering
-	\includegraphics[width=3.5in]{figure/wind_wiper_data2}
+	\includegraphics[width=3.5in]{figure/wind_wiper_data3}
 	\caption{A time series of precipitation map build by windshield wiper data collected from up to 4 vehicles using our Bayesian estimator (top row) vs a time series of map built by instantaneous precipitation rate measurements from NEXRAD-III (bottom row). Both maps are generated over the city of Ann Arbor, MI, USA (lines: boundary of the city, stars: vehicles' locations, color intensity: relative precipitation rate where the maximum precipitation rate by the radar is 2in/hr)}
 	\label{fig:fig8}
 \end{figure}
