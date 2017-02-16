@@ -758,7 +758,8 @@ contained in our previous paper \cite{park2014robust}, and is thus omitted.
 
 \section{Belief Approximation by Particle Filtering}
 \label{sec:sec6}
-We consider an approximation methods in order to reduce the complexity of the target map evolution. 
+We consider the Particle Filtering approach to reduce the complexity of the target map evolution. 
+
 \subsection{Low discrepancy sampling} 
 For our numerical simulations, we consider one of the low discrepancy sampling methods (e.g., Halton-Hammersley sequence \cite{beardwood1959shortest}) to sample continuously distributed targets in $z \in \mathcal{Z} = \mathcal{Q} \times {I}$. This approach has been used for sampling-based algorithms for robot motion planning \cite{lavalle2006planning}.
 \subsection{SIR Particle Filter}
@@ -816,6 +817,11 @@ w_t^{k} \delta(z_t - z_t^{k})
 \]
 which is a form of discrete random measure where the $w_t^1,\dots,w_t^N$ are resampled, normalized weight such that $\sum_{k=1}^{N} w^{k} = 1$, and $\delta(z_t - z_t^{k})$ is Direc-delta function evaluate at $z_t^{k}$. We note that resampling is only taken on the target information state, namely, $\bm{I}_t$.
 The whole filtering process is depicted in Algorithm \ref{costalgorithm}.
+
+\textit{Remark:} as discussed in the previous studies (see, e.g., \cite{crisan2002survey}), our particle filter uses standard re-sampling scheme such that the convergence of the mean square error toward zero is ensured, and the convergence rate is $1/N_2$ for all $q \in \mathcal{Q}$. 
+
+
+
 {\tiny{
 \begin{algorithm}
 	\DontPrintSemicolon
