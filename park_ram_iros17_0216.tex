@@ -452,7 +452,7 @@ q,b_0(z),
 \end{equation}
 denotes the marginal probability, which is known as the \emph{normalization constant}.
 This usually cannot be directly computed, but can be obtained by utilizing the total law of probability:
-\[
+\begin{equation}
 \eta_{t} =
 \left(\int_{\mathcal{I}}
 f_{\bm{y}_{t} \mid
@@ -461,9 +461,9 @@ y_{t} \mid
 z,{x}_{t}\right)
 b_{t-1}(I \mid \bm{q} = q)
 \,dI\right)^{-1}
-\]
+\end{equation}
 By joining the \eqref{eq0} and \eqref{eq1}, one can obtain a simplified form of the filtering equation:
-\begin{align*}
+\begin{align}
 b_t(z) &=
 \eta_t\,
 f_{\bm{y}_{t} \mid
@@ -478,21 +478,34 @@ f_{\bm{y}_{i} \mid
 y_{i} \mid
 z,{x}_{i}\right) \right)
 b_0(z).
-\end{align*}
+\end{align}
 We assume that $m$ robots share their beliefs \Ram{so you are assuming full information sharing?}. 
 
-\section{Probabilistic range sensor model}
+\section{Probabilistic Range Sensor Model}
 \label{sec:sec3}
-Each mobile robot is equipped with a \emph{range sensor} which can measure quantitative information from a distance, and a \emph{radio} to communicate with other nodes to share its belief. 
+Each mobile robot is equipped with a \emph{range sensor} that can measure quantitative information from afar and a \emph{radio} to communicate with other nodes to share its belief. 
 %% MOTIVATION....
-Each range sensor measurement is corrupted by noise, and the measurement is valid only if the target is detected. This combined range sensor model joins the generic noisy sensor model with the binary sensor model \cite{djuric2008target}.
-The probabilistic range sensor model is, in fact, not new. 
-Anguelov et al., \cite{anguelov2004detecting} apply the Expectation Maximization (EM) algorithm to cluster different types of objects from sequences of range data, where they adopted their such combined range sensor model. Their framework was validated experimentally on real-world datasets by showing the acquisition of accurate object maps and reliable detection. Although the sensor model was shown to follow the actual behavior of the laser scanner well \cite{anguelov2004detecting}, we postulate that the framework is general enough to model other range sensors as well; as long as the sensor is capable of distinguishing the target from the environment, and has uniform sensing range. A few candidates having such characteristics include: 360-degree camera, wireless antenna. Gaussmeter or Megnetometer, heat sensor, olfactory receptor (to find more sensors with the characteristics, refer to \cite{akyildiz2002survey} and the reference therein).
+Each range sensor measurement is corrupted by noise, and the measurement is valid only if the target is detected. 
+This combined range sensor model joins the generic noisy sensor model with the binary sensor model \cite{djuric2008target}.
+% The probabilistic range sensor model is, in fact, not new. 
+%Anguelov et al., \cite{anguelov2004detecting} apply the Expectation Maximization (EM) algorithm to cluster different types of objects from sequences of range data, where they adopted their such combined range sensor model. 
+In fact, this combined range sensor model has been experimentally validated during an object mapping and detection task using a laser scanner~\cite{anguelov2004detecting}.
+%Their framework was validated experimentally on real-world datasets by showing the acquisition of accurate object maps and reliable detection.
+%Although the sensor model was shown to follow the actual behavior of the laser scanner well \cite{anguelov2004detecting}, 
+We postulate that this model is general enough to model other range sensors as well; as long as the sensor is capable of distinguishing the target from the environment, and has uniform sensing range. 
+A few example sensors satisfying these characteristics are 360-degree camera, wireless antenna, Gaussmeter, heat sensor, olfactory receptor, etc.
+%to find more sensors with the characteristics, refer to \cite{akyildiz2002survey} and the reference therein).
 
-When detecting target, we assume that binary information (i.e., detection, no detection) is available. The binary detection model is used to capture one of the main characteristic of the atypical range sensors, that is, the chance of successful detection decreases monotonically by the distance between the sensor and the target.
- The method can be also generalized if multi-level detection is possible.  As noted, each robot return $\lbrace 0,1 \rbrace$ which returns $0$ if target is detected and $1$ otherwise. The detectability for each $i^{\textup{th}}$ robot is a random variable $\bm{y}_B^i$ with some distribution that depends on the relative distance between of the target and robot. In other words, $\bm{y}_{B}^i=1$ is the event that the target is detected by the $i^{\textup{th}}$ sensor and $\bm{y}_{B}^i=0$ is the event that the target is not detected by the $i^{\textup{th}}$ sensor. This binary detection model, however, does not account for false positive or negatives.
+%When detecting target, we assume that binary information (i.e., detection, no detection) is available. 
+%During target detection, we assume that the sensor generates binary information corresponding to a detection.
+%The binary detection model is used to capture one of the main characteristic of the atypical range sensors, that is, the chance of successful detection decreases monotonically by the distance between the sensor and the target \Ram{this sentence makes no sense}.
+%The method can be also generalized if multi-level detection is possible.  
+During target detection, we assume each sensor returns a $0$ if a target is detected or $1$ otherwise. 
+The ability to detect a target for each $i^{\textup{th}}$ robot is a random variable $\bm{y}_B^i$ with a distribution that depends on the relative distance between the target and robot. 
+%In other words, $\bm{y}_{B}^i=1$ is the event that the target is detected by the $i^{\textup{th}}$ sensor and $\bm{y}_{B}^i=0$ is the event that the target is not detected by the $i^{\textup{th}}$ sensor. 
+This binary detection model, however, does not account for false positive or negatives.
 The probability of the event that all $m$ sensors with configuration $x_t$ fail to detect the target located at $q \in \mathcal{Q}$;
-\begin{align*}
+\begin{align}
 &p_{\bm{y}_{B,t} \mid
 	{x}_{t},\bm{z}}\left(
 \bm{y}_{B,t} = \bm{0} \mid {x}_{t},
@@ -506,28 +519,24 @@ p_{\bm{y}_{B,t}^i \mid
 	{x}_{t},\bm{q}}\left(
 \bm{y}_{B,t}^i = 0 \mid
 {x}_{t},\bm{q}=q\right)
-\end{align*}
+\end{align}
 where $\bm{0}= (\underbrace{0,\dots,0}_{m})$.
  
-As we mentioned before, for measuring the quantity of interest from a given spatial distribution, we consider a generic, noisy sensor model, where each sensor reports  quantitative information regarding the environment, such as intensity data, as a \emph{vector of reals}. Let $\bm{y}_I= (\bm{y}_I^1,\dots,\bm{y}_I^n)$ be a $n$-random tuple for the measurements where $n$ is the dimension of the sensor input. 
+For measuring a quantity of interest from a given spatial distribution, we consider a generic, noisy sensor model, where each sensor reports  information regarding the environment, such as intensity data, as a \emph{vector of reals}. 
+Let $\bm{y}_I= (\bm{y}_I^1,\dots,\bm{y}_I^n)$ be a $n$-random tuple for the measurements where $n$ is the dimension of the sensor input. 
 Without loss of generality, we assume that each random variable $\bm{y}_I^i$ has \emph{range} $[I_{\min}^i,I_{\max}^i]$ where, $I_{\min}^i,\,I_{\max}^i \in \mathbb{R}$ for all $i \in \lbrace 1,\dots,n \rbrace$.
 
-
-
-We define another random variable $\bm{y}_t=(\bm{y}_t^1,\dots,\bm{y}_t^m)$ 
-which denotes the \emph{total observation}, the collection of all observations reported by $m$ sensors at time $t$, where each $\bm{y}_t^i$ is the Cartesian product of the two previously defined random vectors
-\[
-\bm{y}_t^i = \bm{y}_{B,t}^i \times \bm{y}_{I,t}^i.
-\]
-Note that two random vectors $\bm{y}_B^i$ and $\bm{y}_I^i$ are \emph{independent}\footnote{This assessment is based on the underlying assumption that the detection event and sensor measurement event are independent to each other.} if conditioned on $x_t,\bm{z}$ such that joint PDF is simply
-computed as
-\[
+Let the random variable $\bm{y}_t=(\bm{y}_t^1,\dots,\bm{y}_t^m)$ denote the \emph{total observation} which is the collection of all observations reported by $m$ sensors at time $t$, where each $\bm{y}_t^i$ is the Cartesian product of the two previously defined random vectors.
+% \begin{equation}
+% \bm{y}_t^i = \bm{y}_{B,t}^i \times \bm{y}_{I,t}^i.
+% \end{equation}
+Note that two random vectors $\bm{y}_B^i$ and $\bm{y}_I^i$ are \emph{independent}\footnote{This assessment is based on the underlying assumption that the detection event and sensor measurement event are independent to each other \Ram{is this a valid assumption?}.} when conditioned on $x_t,\bm{z}$ so that joint PDF can be computed as:
+\begin{equation}
 f_{\bm{y}^i \mid \bm{z},x}(y^i \mid z,x) = p_{\bm{y}_B^i \mid \bm{z},x}(\bm{y}_B^i=y_B^i \mid z,x)f_{\bm{y}_I^i \mid \bm{z},x}(y_I^i \mid z,x)
-\]
+\end{equation}
 where $y_B^i \in \lbrace 0,1 \rbrace$.
-
-Since the set of observations $\bm{y}^1,\dots,\bm{y}^m$ are made independently by $m$ sensors, the joint probability distribution by $m$ sensors, given a target at $z$ becomes
-\begin{align*}
+Since the set of observations $\bm{y}^1,\dots,\bm{y}^m$ are made independently by $m$ sensors, the joint probability distribution by $m$ sensors, given a target at $z$ becomes:
+\begin{align}
 &f_{\bm{y}_t\mid x_t,\bm{z}}
 \left(
 y_t
@@ -540,26 +549,26 @@ y_t^i \mid x_t,\bm{z}=z \right) \\
 &= \prod_{i=1}^m p_{\bm{y}_{B,t}^i\mid x_t,\bm{z}}
 \left(
 \bm{y}_{B,t}^i=y_{B,t}^i\mid x_t,\bm{z}=z \right) 
-\times \\
+\times \nonumber \\
 &\,\,\,\,\,\,\,\prod_{i=1}^m 
 f_{\bm{y}_{I,t}^i\mid x_t,\bm{z}}
 \left(
 y_{I,t}^i
 \mid x_t,\bm{z}=z
 \right) 
-\end{align*}
-\begin{align*}
+\end{align}
+\begin{align}
 &= p_{\bm{y}_{B,t}\mid x_t,\bm{z}}
 \left(
 \bm{y}_{B,t}=y_{B,t}
 \mid x_t,\bm{z}=z
-\right) \times \\
+\right) \times \nonumber \\
 &\,\,\,\,\,\,\,f_{\bm{y}_{I,t}\mid x_t,\bm{z}}
 \left(
 y_{I,t}
 \mid x_t,\bm{z}=z
 \right).
-\end{align*}
+\end{align}
 %where $\bm{y}_t = (\bm{y}_t^1,\dots,\bm{y}_t^m)$.
 
 
