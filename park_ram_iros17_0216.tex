@@ -574,35 +574,39 @@ y_{I,t}
 
 
 
-
-
-\section{Partition-based approach}
+\section{Partition-Based Deployment Approach}
 \label{sec:sec4}
-Due to the limitation of the effective sensing range found on physical range sensors, we consider a partitioned-based strategy where the workspace is partitioned into $m$ disjoint regions, and each region is assigned to robots which will only attempt to detect targets in their regions, and will simply ignore target in other regions. This so called partitioned-based strategy has been previously reported in the literature on multi-robot coverage \cite{cortes_coverage_2004,hutchinson_robust_2012,schwager2009decentralized,park2014robust}. The most popular one is based on the Voronoi tessellations (see e.g., \cite{cortes_coverage_2004}, which we call \emph{non-coordinated strategy}.
-There are, in fact more general method, which partition the workspace into $p$ regions and assign $k \in [2,\,m]$ robots each region (note that if $k=m$, the method becomes \emph{centralized}) \cite{hutchinson_robust_2012}. By doing so, one can ensure that each target has chance to be detected by exactly $k$ sensors, such that the chance that target is missed detected by $m$ sensors decreases as we increase the value $k$. This approach, which we will call \emph{coordinated strategy}, can provide relative robustness by varying the value of $k$ from $1$ to $m$, which requires additional sensing power. Thus, if each sensor has an effective sensing range long enough to cover the whole workspace, utilizing all $m$ sensors to detect every target in the workspace becomes the most desirable strategy.
 
-
+Due to the limitation of the effective sensing range found on physical range sensors, we consider a partitioned-based strategy where the workspace is partitioned into $m$ disjoint regions, and each robot is assigned to a region where it confines its detections \Ram{just to be clear we are only going to consider the fully partitioned strategy in this paper?}.
+%region is assigned to robots which will only attempt to detect targets in their regions, and will simply ignore target in other regions. 
+This so called partitioned-based strategy is common to multi-robot coverage problems \cite{cortes_coverage_2004,hutchinson_robust_2012,schwager2009decentralized,park2014robust}. 
+The most popular one is based on the Voronoi tessellations (see e.g., \cite{cortes_coverage_2004}, which we call a \emph{non-coordinated strategy}).
+There are, in fact more general methods, which partition the workspace into $p$ regions and assign $k \in [2,\,m]$ robots each region (note that if $k=m$, the method becomes \emph{centralized}) \cite{hutchinson_robust_2012}. 
+By doing so, one can ensure that each target has a chance to be detected by at least one of the $k$ sensors.
+% such that the chance that target is missed detected by $m$ sensors decreases as we increase the value $k$. 
+This approach, which we call the \emph{coordinated strategy}, can provide relative robustness by varying the value of $k$ from $1$ to $m$.
+Thus, if each sensor has an effective sensing range long enough to cover the whole workspace, utilizing all $m$ sensors to detect every target in the workspace becomes the most desirable strategy.
 
 \subsection{The Optimal Partition}
 
-
-
-Consider $m$ sensors and a workspace partition of $\mathcal{Q}$ into $l$ disjoint regions, $W$ such that
-$W = (W_1,\dots,W_l)$, where $\cup_i W_i = \mathcal{Q}$, and $W_i \cap W_j = \emptyset$ for all $i,j$ pairs with $i \neq j$. And target location is a random variable $\bm{z}$ with PDF $\phi:\mathcal{Q} \rightarrow \mathbb{R}_{\geq 0}$.
-For a given target $z \in \mathcal{Q}$, we define the probability that a sensor located at $x$ fails to detect target, using a real-valued function $h(\left\|z - x_i\right\|)$ as a probability measure\footnote{For the numerical simulations purpose, we will further assume that $h(\cdot)$ is continuously differentiable function non-increasing on its domain, and the image of $h$ must be in $[0,1]$ for it to be a probability measure.}, under the assumption that it decreases monotonically by the distance between the target and the $i^{\textup{th}}$ sensor, i.e., $\left\| z- x_i\right\|$. 
-Consider a bijection ${}^kG$ which maps a region to a set of $k$-points where the pre-superscript $k$ explicitly state that the region is mapped to exactly $k$ number of points.
+Consider $m$ sensors and a workspace partition of $\mathcal{Q}$ into $l$ disjoint regions, $W$ such that $W = (W_1,\dots,W_l)$, where $\cup_i W_i = \mathcal{Q}$, and $W_i \cap W_j = \emptyset$ for all $i,j$ pairs with $i \neq j$. 
+Suppose the target location is a random variable $\bm{z}$ with PDF $\phi:\mathcal{Q} \rightarrow \mathbb{R}_{\geq 0}$.
+For a given target $z \in \mathcal{Q}$, we define the probability that a sensor located at $x$ fails to detect target, using a real-valued function $h(\left\|z - x_i\right\|)$ as a probability measure \Ram{$h$ is a function $h(\left\|z-x_i\right\|)$ is a number; moreover do you mean that $h$ is the pdf?}\footnote{For the numerical simulations purpose, we further assume that $h(\cdot)$ is continuously differentiable function non-increasing on its domain, and the image of $h$ must be in $[0,1]$ for it to be a probability measure.}, which is assumed to decrease monotonically as a function of the distance between the target and the $i^{\textup{th}}$ sensor. 
+Consider a bijection ${}^kG$ that maps a region to a set of $k$-points where the pre-superscript $k$ explicitly states that the region is mapped to exactly $k$ points.
 %This association is used to decentralize the detection method.
-We need the a few more definitions:
-\begin{definition}[An order$-k$ Voronoi partition \cite{shamos1975closest}]
-	Let $x$ be a set of $m$ distinct points in $\mathcal{Q}\subseteq \mathbb{R}^d$. The order-$k$ Voronoi partition of $\mathcal{Q}$ based on $x$ is the collection of regions that partitions $\mathcal{Q}$ where each region is associated with $k$ nearest points in $x$.
+Additionally we make the following definitions:
+\begin{definition}[An Order$-k$ Voronoi Partition \cite{shamos1975closest}]
+	Let $x$ be a set of $m$ distinct points in $\mathcal{Q}\subseteq \mathbb{R}^d$. 
+	The \emph{order-$k$ Voronoi partition of $\mathcal{Q}$ based on $x$} is the collection of regions that partitions $\mathcal{Q}$ where each region is associated with the $k$ nearest points in $x$.
 	\label{orderk}
 \end{definition}
-We also define another bijection ${}^kG^{\star}$ which maps a region to a set of $k$ \emph{nearest} points. The total probability that all $m$ sensors will fail to detect target drawn by a distribution $\phi$ from $\mathcal{Q}$ is given by
-\[
+We also define another bijection ${}^kG^{\star}$ that maps a region to a set of $k$ \emph{nearest} points \Ram{what set of points?}. 
+The total probability that all $m$ sensors fail to detect a target drawn by a distribution $\phi$ from $\mathcal{Q}$ is:
+\begin{equation}
 \int_{\mathcal{Q}} p_{\bm{y}_{B} \mid x,\bm{q}
 }\left(\bm{y} = \mathbf{0} \mid x,\bm{q}=q
 \right)\phi(q)\,{dq}.
-\]
+\end{equation}
 By substituting $\mathcal{Q}$ with the workspace partition $W$, and $p_{\bm{y}_{B} \mid x,\bm{q}
 }\left(\bm{y} = \mathbf{0} \mid x,\bm{q}=q
 \right)$ with likelihood function $h$, we have
@@ -613,21 +617,20 @@ q - x_i \right\|  \right) \right) \right)\phi(q)\,dq
 \label{cost2}
 \end{align}
 where we note again that the joint missed-detection events are conditionally independent, if conditioned on $x$.
-It has been shown in \cite{park2014robust} that the order-$k$ diagram is the optimal workspace partition which minimizes $H$ for each choice of $x$ and $k$.
-\begin{theorem}
-	For a given $x$ and $k$
+In fact, the order-$k$ diagram \Ram{what is a diagram?} is the optimal workspace partition which minimizes $H$ for each choice of $x$ and $k$:
+\begin{theorem}[\cite{park2014robust}]
+	For a given $x$ and $k$,
 	$
 	H(x,{}^{k}V,{}^kG^{\star}) \leq H(x,W,{}^{k}G)
 	$
 	for all $W$, ${}^{k}G$.
 \end{theorem}
-
-\noindent where we note that the order-$k$ Voronoi partition $V_k$, along with the map $G_k^{\star}$ is uniquely determined for a given $x$, $\phi$, and $\mathcal{Q}$. 
+\noindent Note that the order-$k$ Voronoi partition $V_k$, along with the map $G_k^{\star}$ are uniquely determined given $x$, $\phi$, and $\mathcal{Q}$. 
 
 \subsection{Partitioned Range-limited Sensor Model}
-This section will present a practical sensor model better suited to distributed target detection based on the order-$k$ Voronoi partition, which was previously shown to be optimal.
-The modified sensor model is a combination of deterministic workspace partitioning method, and the probabilistic sensor model presented in the Section \ref{sec:sec3}. In addition, we introduce another constraint for the model, namely, \emph{effective sensing range},  $r_{\text{eff}} >0$ in order to take into account the fact that each noisy measurement taken by each sensor does not depend on its distance to the target, if the target is sufficiently close to the sensor\footnote{Recall that in our proposed sensor model, we assumed two tasks, detection and measurement, to be completely decoupled, nevertheless our generic noisy sensor model---which which treats all measurements taken within its maximum sensor range equally---can also be generalized to other popular forms; e.g., Gaussian, radially non-uniform, anisotropic, etc.}. 
-
+This section presents a practical sensor model that is better suited to distributed target detection based on the order-$k$ Voronoi partition.
+The modified sensor model is a combination of deterministic workspace partitioning method and the probabilistic sensor model presented in Section \ref{sec:sec3}. 
+In addition, we introduce another constraint for the model, namely the \emph{effective sensing range}, $r_{\text{eff}} >0$, to take into account the fact that the noisy measurement taken by each sensor does not depend on its distance to the target, if the target is sufficiently close to the sensor\footnote{Recall that in our proposed sensor model, we assumed two tasks, detection and measurement, to be completely decoupled, nevertheless our generic noisy sensor model---which which treats all measurements taken within its maximum sensor range equally---can also be generalized to other popular forms (e.g., Gaussian, radially non-uniform, anisotropic, etc.)}. 
 For a given $k$, and $z = (q,I)$, we assume that the following is true for our new sensor model:
 %{\small{
 \begin{align}
