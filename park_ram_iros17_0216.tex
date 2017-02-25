@@ -658,11 +658,15 @@ f_{\bm{y}_{I,t}^i \mid x_t,\bm{z}}(y_{I,t}^i \mid x_t,z), \\
 \end{align}
 %}}
 where $\mathcal{B}(x,r)$ is an open ball with radius $r$ centered at $x$.
+
+
 \section{Deployment strategy}
 \label{sec:sec5}
-As discussed in Section \ref{sec:sec3}, a measurement for a target is valid only if the target is detected. Thus, we consider a deployment strategy where robots move to locations maximizing the marginal likelihood of \emph{positive} detections over the previous belief on the target state. Note that the marginal likelihood of positive detection can obtained by taking integrals on the positive likelihood estimate over the prior target distribution.
+As discussed in Section \ref{sec:sec3}, a measurement for a target is valid only if the target is detected. 
+Thus, we consider a deployment strategy where robots move to locations maximizing their marginal likelihood of \emph{positive} detections over the previous belief on the target state. 
+Note that the marginal likelihood of positive detection is obtained by taking integrals on the positive likelihood estimate over the prior target distribution.
 
-Consider the two marginal likelihood functions. For $t \geq 2$, $l_t^{+}$ is the positive likelihood that targets are detected by at least one sensor, if sensors located at $x_t$ 
+For $t \geq 2$ and sensors located at $x_t$, let $l_t^{+}$ be the positive likelihood that targets are detected by at least one sensor, then:
 \begin{align}
 &l_t^{+}(x_t)\coloneqq \int_{\mathcal{Z}}
 p_{\bm{y}_{B,t-1}\mid x_t,\bm{z}}
@@ -677,57 +681,58 @@ y_{I,t-1}
 \right) b_{t-2}(z) dz.
 \label{plike}  
 \end{align}
-Similarly $l_t^{-}$ is the negative likelihood that target are missed detected by $m$ sensors, for sensor configurations at $x_t$.
-\begin{align*}
+Similarly, let $l_t^{-}$ be the negative likelihood that target are missed detected by $m$ sensors which is:
+\begin{align}
 &l_t^{-}(x_t)\coloneqq \int_{\mathcal{Z}}
 p_{\bm{y}_{B,t-1}\mid x_t,\bm{z}}
 \left(
 \bm{y}_{B,t-1}= \bm{0}\mid x_t,z
 \right)
- \times \\
+ \times \nonumber \\
 &\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,f_{\bm{y}_{I,t-1}\mid x_t,\bm{z}}
 \left(
 y_{I,t-1}
 \mid x_t,z
 \right) b_{t-2}(z)dz. 
-\end{align*}
-We are interested in the maximizing the positive observation likelihood. The integral term has a combinatorial number of terms,
-so it is not practical to compute (\ref{plike}) for large $m$. We use alternative approach instead. First, note that the following is true.
+\end{align}
+We are interested in maximizing the likelihood of positive observation. 
+Unfortunately, the integral term has a combinatorial number of terms, so it is impractical to compute \eqref{plike} for large $m$. 
+Instead we employ an alternative approach. 
+First note the following:
 \begin{lemma}
-If $x_t^{+} = \argmin l_t^+(x_t)$ and $x_t^{-} = \argmin l_t^-(x_t)$, then $x_t^+$ and $x_t^-$ are equivalent.
+$\argmin l_t^+(x_t) = \argmin l_t^-(x_t)$
 \label{lem1}
 \end{lemma}
 %\begin{proof}
-The proof of this lemma utilizes the law of total probability. It is trivial and will be omitted.
+The proof of this lemma follows from the law of total probability and is omitted.
 %\end{proof}
-According to Lemma \ref{lem1}, maximizing the likelihood that at least one sensor detect every target in the workspace given previous target belief, is identical to minimizing the likelihood that all $m$ sensors fail to detect target in $\mathcal{Q}$.
-Let ${x}^{\star}_t \coloneqq x_t^+ = x_t^-$, then the final expression is given by
-\begin{align*}
+According to Lemma \ref{lem1}, maximizing the likelihood that at least one sensor detects every target in the workspace, given the previous target belief, is identical to minimizing the likelihood that all $m$ sensors fail to detect a target in $\mathcal{Q}$.
+
+Let ${x}^{\star}_t := \argmin l_t^+(x_t) = \argmin l_t^-(x_t)$, then:
+\begin{align}
 {x}_t^{\star} &= \argmin \left\{
 \int_\mathcal{Z} 
-p_{\bm{y}_{B,t-1}\mid x_t,\bm{q}}(\bm{y}_{B,t-1}=\mathbf{0} \mid x_t,z) \times \right.\\
-&\,\,\,\,\,\,\,\,p_{\bm{y}_{I,t-1}}(y_{I,t-1} \mid z)b_{t-2}(z)
-dz 
-\end{align*}
-\begin{align*}
-&=  \int_{\mathcal{Q}}
-p_{\bm{y}_{B,t-1}\mid x_t,\bm{q}}(\bm{y}_{B,t-1}=\mathbf{0} \mid x_t,q) \times \\
+p_{\bm{y}_{B,t-1}\mid x_t,\bm{q}}(\bm{y}_{B,t-1}=\mathbf{0} \mid x_t,z) \times \right. \nonumber\\
+&\,\,\,\,\,\,\,\,\left.p_{\bm{y}_{I,t-1}}(y_{I,t-1} \mid z)b_{t-2}(z) \right\}
+dz \\
+&= \argmin \left\{ \int_{\mathcal{Q}}
+p_{\bm{y}_{B,t-1}\mid x_t,\bm{q}}(\bm{y}_{B,t-1}=\mathbf{0} \mid x_t,q) \times \right. \nonumber \\
 &\,\,\,\,\,\,\left.\int_{\mathcal{I}} 
 p_{\bm{y}_{I,t-1}\mid \bm{z}}(y_{I,t-1} \mid z)b_{t-2}(z)
 \,dI\,dq \right\}
-\end{align*}
+\end{align}
 where the detection likelihood is conditionally independent on $\bm{I}$ if conditioned on $x$ and $\bm{q}$.
 We note that the maximum of the positive observation likelihood depends not only on the distance between targets and the robots, but also on the likelihood of the noisy sensor measurements.
-Thus, given the prior belief and the observations robots will find and move to new locations, and the posterior belief will be updated at the new locations given the information collected so far.
-We define a new belief which joins the previous belief with the current measurement likelihood by
-\begin{align*}
+Thus, given the prior belief and the observations, robots find and move to new locations, and the posterior belief is updated at the new locations given the collected information.
+We define a new belief that joins the previous belief with the current measurement likelihood as:
+\begin{align}
 \widetilde{b}_{t-1}(q)
 &\coloneqq \int_{\mathcal{I}} 
 p_{\bm{y}_{I,t-1}\mid \bm{z}}(y_{I,t-1} \mid z)b_{t-2}(z)\,
-dI \\
+dI  \nonumber \\
 &=
 \underbrace{f_{\bm{q}}(q)}_{\textup{PDF of}\,\bm{q}}\underbrace{\int_{\mathcal{I}} p_{\bm{y}_{I,t} \mid \bm{z}}(y_{I,t}\mid \bm{z} = (q,I))b_{t-2}(I \mid q)\,dI,}_{\textup{marginal likelihood of}\,\bm{y}_{I,t}\,\textup{conditioned on }q}
-\end{align*} 
+\end{align} 
 and a cost function 
 \begin{align}
 &L(x_t,y_{t-1},\widetilde{b}_{t-1})\coloneqq \nonumber \\
@@ -740,22 +745,21 @@ p_{\bm{y}_{B,t-1} \mid
 \,dq
 \label{cost1}
 \end{align}
-which shows explicit dependence on the previous belief $\tilde{b}_{t-1}$ and previous observations $y_{t-1}$. 
+which illustrates the explicit dependence on the previous belief $\tilde{b}_{t-1}$ and previous observations $y_{t-1}$. 
 Then, our problem becomes 
 \begin{equation}
 {x}_t^{\star} = \argmin_{x_t} L(x_t,y_{t-1},\widetilde{b}_{t-1}).
 \label{mmle}
 \end{equation}
-We note that for a given $k$, by substituting $\widetilde{b}_{t-1}$, $x_t$, $y_{t-1}$ with $\phi$, $x$, $y$ respectively, and plugging observation likelihood functions from (\ref{sensorf}), (\ref{cost1}) becomes identical to $H(x,W,G^k)$ which was previously defined in (\ref{cost2}).
+We note that for a given $k$, by substituting $\widetilde{b}_{t-1}$, $x_t$, $y_{t-1}$ with $\phi$, $x$, $y$ respectively, and plugging observation likelihood functions from \eqref{sensorf} and \eqref{cost1} becomes identical to $H(x,W,G^k)$ which was previously defined in \eqref{cost2}.
 %The problem is NP-Hard for $k=1$ and so on.
-If the perception model is differentiable, our deployment strategy can use gradient
+If the perception model is differentiable, our deployment strategy can use the gradient: 
 $
 \nabla_{x_t} L(x_t,y_{t-1},\widetilde{b}_{t-1})
 $
-for searching the desirable locations of robots for maximizing the observation likelihood.  We will exploit the fact that the gradient can be computed quickly even on embedded systems. 
-To be used in the sequel, we will use $\hat{x}_t$ to denote the suboptimal solution obtained by the gradient algorithm for time $t$.
-
-
+to find the desirable locations of the robots to maximize the observation likelihood as described in Algorithm \ref{alg1}.  
+% We exploit the fact that the gradient can be computed quickly even on embedded systems. 
+We use $\hat{x}_t$ to denote the suboptimal solution obtained by the gradient algorithm at time $t$.
 
 {\tiny{
 		\begin{algorithm}
