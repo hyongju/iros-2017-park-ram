@@ -320,60 +320,62 @@ Finally, Section \ref{sec:sec9} concludes the paper and proposes a number of fut
 %\section{Preliminaries}
 \section{Method for Probabilistic Mapping}
 \label{sec:sec2}
+
+This section presents the notation used throughout the paper, the problem of interest, and the recursive Bayesian filter.
+
 %\subsection{Our system}
 \subsection{Notations and Our System Definition}
-Throughout the text, we use the italic bold font to highlight random quantities, a subscript $t$ to indicate that the value is measured at time step $t$, and $\mathbb{Z}^{+}$ to denote nonnegative integers. Given a continuous random variable $\bm{x}$, if it is distributed according to a Probability Density Function (PDF), we denote it as $f_{\bm{x}}(x)$. Given a discrete random variable $\bm{y}$, if it is distributed according to a Probability Mass Function (PMF), we denote it as $p_{\bm{y}}(y)$.
-Consider a group of $m$ mobile robots deployed in a workspace, i.e., ambient space, $\mathcal{Q} \subseteq \mathbb{R}^d$. We assume $d=1,2,3$ in this paper though the presented framework generalizes. Let $\mathbb{S} =  \lbrace (x,y)\in \mathbb{R}^2\mid x^2+y^2=1 \rbrace$ be a \emph{circle}, then the state of $m$ robots is the set of locations and orientations at time $t$, and it is represented as an $m$-tuple $x_t = (x_t^1,\dots,x_t^m)$, where $x_t^i \in \mathcal{Q} \times \mathbb{S}$. We denote by the set  ${x}_{0:t}\coloneqq \lbrace {x}_0,\dots,{x}_t \rbrace$ the robot states up to time $t$. 
-Given each pair of robot states $(x_t,x_{t+1})$, robots follow the way-point-based, continuous-time, deterministic motion model with dynamic constraints
+Throughout the text, the italic bold font is used to describe random quantities, a subscript $t$ indicates that the value is measured at time step $t$, and $\mathbb{Z}^{+}$ denotes nonnegative integers. 
+Given a continuous random variable $\bm{x}$, if it is distributed according to a Probability Density Function (PDF), we denote it by $f_{\bm{x}}$.
+Given a discrete random variable $\bm{y}$, if it is distributed according to a Probability Mass Function (PMF), we denote it by $p_{\bm{y}}$.
+Consider a group of $m$ mobile robots deployed in a workspace, i.e., ambient space, $\mathcal{Q} \subseteq \mathbb{R}^d$. 
+This paper assumes $d=1,2,3$ though the presented framework generalizes. 
+Let $\mathbb{S} = \lbrace (x,y)\in \mathbb{R}^2\mid x^2+y^2=1 \rbrace$ be a \emph{circle}, then the state of $m$ robots is the set of locations and orientations at time $t$, and it is represented as an $m$-tuple $x_t = (x_t^1,\dots,x_t^m)$, where $x_t^i \in \mathcal{Q} \times \mathbb{S}$. We denote by the set ${x}_{0:t}\coloneqq \lbrace {x}_0,\dots,{x}_t \rbrace$ the robot states up to time $t$. 
+Given a pair of states $(x_t,x_{t+1})$, robots follow a way-point-based, continuous-time, deterministic motion model with dynamic constraints:
 \begin{equation}
 \dot{x}(t) = \textup{f}(x(t),\,u(t))
 \label{eq:constraint}
 \end{equation}
-with boundary conditions $x(t_0) = x_t$ and $x(t_f) = x_{t+1}$ where $u$ is the control, $t_0$ is the initial time, and $t_f$ is the final time which is free. Let $\pi_t$ be the \emph{optimal control policy}\footnote{An example of such optimal control is an LQR (Linear-Quadratic Regulator) under linear dynamics.} which drives robots' state from $x_t$ to $x_{t+1}$ in minimum time under the dynamic (or kinematic) constraints.
+with boundary conditions $x(t_0) = x_t$ and $x(t_f) = x_{t+1}$ where $u$ is a control, $t_0$ is the \emph{initial time}, and $t_f$ is the \emph{final time} which is free. 
+
+Let $\pi_t$ be the \emph{optimal control policy}\footnote{An example of such an optimal control could be the Linear-Quadratic Regulator if the dynamics were linear.} which drives robots' state from $x_t$ to $x_{t+1}$ in minimum time under the dynamic (or kinematic) constraints.
 We define a \emph{target} to be a physical object or some measurable quantity spatially distributed over a bounded domain.
-Let $\bm{z}$ be the \emph{target state} which is a random vector. The target state consists of location and information states (quantitative information about the target) $\bm{q} \in \mathcal{Q}$, $\bm{I} \in \mathcal{I}$, respectively, where $\mathcal{Q} \subseteq \mathbb{R}^d$ and $\mathcal{I} \subseteq \mathbb{R}^n$. We define the Cartesian product $\mathcal{Z} = \mathcal{Q} \times \mathcal{I}$ to be the target state space.
-We denote by $m$-tuple $\bm{y}_t=(\bm{y}_t^1,\dots,\bm{y}_t^m)$ the observations recorded by $m$ robots at time step $t$ where $\bm{y}_t^i$ denotes the observation made by the $i^{\textup{th}}$ sensor, and by the set $\bm{y}_{1:t}\coloneqq \lbrace \bm{y}_1,\dots,\bm{y}_t \rbrace$ observations made by $m$ robots up to time $t$. Note that if target location is unknown, observations made by different sensors are conditionally independent given the target location.
+Let $\bm{z}$ be the \emph{target state} which is a random vector. 
+The target state consists of location, $\bm{q} \in \mathcal{Q}$, and information states (quantitative information about the target), $\bm{I} \in \mathcal{I} \subseteq \mathbb{R}^n$. 
+The Cartesian product $\mathcal{Z} = \mathcal{Q} \times \mathcal{I}$ is the \emph{target state space}.
+Let the $m$-tuple $\bm{y}_t=(\bm{y}_t^1,\dots,\bm{y}_t^m)$ be the observations recorded by $m$ robots at time step $t$ where $\bm{y}_t^i$ denotes the observation made by the $i^{\textup{th}}$ sensor, and let the set $\bm{y}_{1:t}\coloneqq \lbrace \bm{y}_1,\dots,\bm{y}_t \rbrace$ denote observations made by $m$ robots up to time $t$. \Ram{it may make sense for the subsequent development for you to mention that $y$ is a function of $z$ and $x$.}
+Note that if target location is unknown, observations made by different sensors are conditionally independent given the target location \Ram{this is missing a citation}.
+\Ram{it may also make sense for you to consider a simple example here just to formalize the notation for the reader}
 
  
 %\subsection{Notations and terminologies}
 
 
 \subsection{Problem Definition}
-We now formally define our problem.
-Let $b_t$ represent a \emph{belief}, the posterior
-probability distribution over the target state space at time $t \in \mathbb{Z}^{+}$. Each belief depends on initial belief, $b_0$, the set of robot configurations, $\bm{x}_{0:t}$, and observations up to this point, $\bm{y}_{1:t-1}$.
-The state of robots are completely \emph{known}.
-
+Let $b_t$ represent a \emph{belief}, the posterior probability distribution over the target state space at time $t \in \mathbb{Z}^{+}$ \Ram{Is $b_t = p(z \mid x_{0:t},y_{0:t}, b_0)$}. 
+Each belief depends on initial belief, $b_0$, the set of robot configurations, $\bm{x}_{0:t}$, and observations up to this point, $\bm{y}_{1:t-1}$.
+The state of robots are assumed completely \emph{known}.
 Let $b^{\star}$ be the \emph{true posterior belief}\footnote{We assume for now that the true posterior target distribution can be obtained, e.g., via exhaustive search and measurements made by a MSN.} on the target state. 
 Then for each $t \in \mathbb{N}$, given the initial belief, $b_0$, our objective is obtain the sequence of optimal control policies $(\pi_1,\pi_2,\dots)$, each solves
-\[
+\begin{equation}
 \pi_{t} = \argmax b_t,\,\,\,\,\,\,\,\,\,t = 1,2,\dots,
-\]
+\end{equation}
 where each optimal policy between two time steps $[t,\,t+1)$, namely, $\pi_t$ is subject to the dynamic constraints given in (\ref{eq:constraint}). 
-To this end, we will quantify the difference between two the true posterior belief, $b^{\star}$ and the approximation by our method using the Kullback-Leibler (K-L) divergence\footnote{K-L divergence is often used to measure the difference between two probability distributions; given $f_{\bm{x}},f_{\bm{y}}$,
-		$D_{\text{KL}} \left( \bm{x} \middle\| \bm{y} \right) = \int_{-\infty}^{\infty} f_{\bm{x}}(x)\log\left(\frac{f_{\bm{x}}(x)}{f_{\bm{y}}(y)}\right) $.
-	}.
-We will demonstrate via our numerical simulation in Section \ref{sec:sec7} that for a given $\epsilon>0$, 
-there is a dynamically varied stopping time $T >0$ such that 
-by the sequence of optimal policies, $(\pi_1,\dots,\pi_T)$, $t > T$ implies 
-$D_{\text{KL}}\left(b_{t} \middle\| b^{\star}\right) < \epsilon$.
-
-
-
-
+To this end, we quantify the difference between the true posterior belief, $b^{\star}$ and an approximation using our method via the Kullback-Leibler (K-L) divergence.
+%\footnote{K-L divergence is often used to measure the difference between two probability distributions; given $f_{\bm{x}},f_{\bm{y}}$,		$D_{\text{KL}} \left( \bm{x} \middle\| \bm{y} \right) = \int_{-\infty}^{\infty} f_{\bm{x}}(x)\log\left(\frac{f_{\bm{x}}(x)}{f_{\bm{y}}(y)}\right) $.}.
+We demonstrate via our numerical simulation in Section \ref{sec:sec7} that for a given $\epsilon>0$, there is a dynamically varied stopping time $T >0$ such that  by the sequence of optimal policies, $(\pi_1,\dots,\pi_T)$, $t > T$ implies  $D_{\text{KL}}\left(b_{t} \middle\| b^{\star}\right) < \epsilon$.
+\Ram{How do you in practice solve this problem since we do not know $b_t^*$?}
 
 \subsection{Recursive Bayesian Filter}
-We presents an overview of the Bayesian filter, and the derivation of the filtering equations for our primary goal: spatial distribution mapping by $m$ robots. We denote the belief about a given target state $z$ at time $t \in \mathbb{N}$ is $b_t(z)$, and the belief of target information state $\bm{I}$ given the target located at $q$ is given by a PDF:
+
+We present an overview of the Bayesian filter, and the derivation of the filtering equations for our primary goal: spatial distribution mapping by $m$ robots. 
+We denote the belief about a given target state $z$ at time $t \in \mathbb{N}$ as $b_t(z)$, and the belief of target information state $\bm{I}$ given the target located at $q$ is given by:
 \begin{align}
-b_t(I \mid \bm{q} = q)= f_{\bm{I}\mid b_0(\bm{z}),{x}_{0:t},\bm{y}_{1:t},\bm{q}}
-\left(
-I \mid b_0(z),
-{x}_{0:t},y_{1:t},q
-\right)
+b_t(I \mid \bm{q} = q)= f_{\bm{I}\mid b_0,{x}_{0:t},\bm{y}_{1:t},\bm{q}}\left(I \mid b_0,{x}_{0:t},y_{1:t},q\right)
 \label{eqb}
 \end{align}
-where we denote the initial belief on target state by $b_0(z)$.
-If the probability distribution about the target location, namely $f_{\bm{q}}(q)$ is known \emph{a priori}, the belief on the complete target state $\bm{z}$ becomes:
+where we denote the initial belief on target state by $b_0$.
+If the probability distribution about the target location, namely $f_{\bm{q}}$ is known \emph{a priori}, the belief on the complete target state $\bm{z}$ is:
 \begin{align}
 b_t(z)&=
 f_{\bm{z} \mid b_0(\bm{z}),{x}_{0:t},\bm{y}_{1:t}}
@@ -385,8 +387,9 @@ z \mid b_0(z),
 b_t(I\mid \bm{q}=q)f_{\bm{q}}(q). 
 \label{eq0}
 \end{align}
-If there is no prior knowledge of the target information $\bm{I}$ at initial time, we
-choose the prior distribution as the \emph{uniform} density. Recall that the generic Bayes' Theorem states,
+\Ram{I don't understand the marginal in the first line of the previous equation. Are you saying that we know $b_0$ or $b_0(z)$? Those are two distinct objects.}
+If there is no prior knowledge of the target information at the initial time, one can choose the prior distribution as the \emph{uniform} density. 
+Recall that the generic Bayes' Theorem states,
 $
 P(B\mid A) = \frac{P(A \mid B)P(B)}{P(A)}
 $
@@ -417,8 +420,9 @@ f_{\bm{y}_{t} \mid
 	{x}_{0:t},y_{1:t-1}
 	\right)
 }
-\end{align*}}}where $t \in \mathbb{N}$.
-Due to our sensor model (this is discussed in the next section), the observation $\bm{y}_{t}$ is conditionally independent of $b_0(z)$, $\bm{y}_{1:t-1}$, $x_{0:t-1}$ when it is  conditioned on $\bm{z}$ and $x_t$. Reflecting this statement by simplifying the likelihood function in the target information map yields
+\end{align*}}}where $t \in \mathbb{N}$ \Ram{I still do not understand this previous equation. Here are my questions: 1) is it $b_0(z)$ or $b_0$ 2) is it $x_{0:t}$ or $x_{0:t-1}$? }.
+Due to our sensor model (this is discussed in the next section), the observation $\bm{y}_{t}$ is conditionally independent of $b_0(z)$, $\bm{y}_{1:t-1}$, and $x_{0:t-1}$ when it is conditioned on $\bm{z}$ and $x_t$ \Ram{again is this supposed to be $b_0(z)$ or $b_0$?}. 
+One can simplify the likelihood function in the target information map by using this observation, which yields:
 \begin{equation}
 b_{t}(I \mid \bm{q} = q)=
 \eta_t\,
@@ -446,7 +450,8 @@ q,b_0(z),
 %\label{eq2}
 \nonumber
 \end{equation}
-denotes the marginal probability, which is known as the \emph{normalization constant}. In most cases, this cannot be directly computed, but can be obtained by utilizing the total law of probability, i.e.,
+denotes the marginal probability, which is known as the \emph{normalization constant}.
+This usually cannot be directly computed, but can be obtained by utilizing the total law of probability:
 \[
 \eta_{t} =
 \left(\int_{\mathcal{I}}
@@ -457,7 +462,7 @@ z,{x}_{t}\right)
 b_{t-1}(I \mid \bm{q} = q)
 \,dI\right)^{-1}
 \]
-By joining the (\ref{eq0}) and (\ref{eq1}), one can obtain a simplified form of the filtering equation
+By joining the \eqref{eq0} and \eqref{eq1}, one can obtain a simplified form of the filtering equation:
 \begin{align*}
 b_t(z) &=
 \eta_t\,
@@ -474,7 +479,7 @@ y_{i} \mid
 z,{x}_{i}\right) \right)
 b_0(z).
 \end{align*}
-We assume that $m$ robots share their beliefs. 
+We assume that $m$ robots share their beliefs \Ram{so you are assuming full information sharing?}. 
 
 \section{Probabilistic range sensor model}
 \label{sec:sec3}
