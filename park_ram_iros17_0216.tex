@@ -1,4 +1,4 @@
-\documentclass[journal]{IEEEtran}
+\documentclass[conference]{IEEEtran}
 
 
 
@@ -128,6 +128,8 @@
 \newcommand{\nfmax}{\widetilde{n}_{f_i}}
 \newcommand{\nfi}{{n}_{f_i}}
 \newcommand{\gcup}{\widetilde{\mathcal{G}}}
+\newcommand{\Ram}[1]{{\normalsize{\textbf{({\color{green}Ram:\ }#1)}}}}
+%\renewcommand{\Ram}[1]{} %uncomment this line to remove all \Ram{} tags.
 
 % correct bad hyphenation here
 \hyphenation{op-tical net-works semi-conduc-tor}
@@ -222,15 +224,19 @@
 % As a general rule, do not put math, special symbols or citations
 % in the abstract or keywords.
 \begin{abstract}
-The Fukushima Daiichi Nuclear Power Plant (NPP) incident resulted in a heavy radiation which has hampered recovery operations for years. Real-time mapping of the spatial distribution of radioactivity near and around reactors will assist safe and cost effective restoration and prevent further contamination, which aligns with the IAEA's continuous technical support on radiation monitoring. Such environmental mapping tasks can be done efficiently via dispatching a group of unmanned vehicles equipped with radiation sensors. This paper presents a Bayesian approach to estimating spatially distributed target maps by deploying a group of mobile robots, as motivated by the example.
+%The Fukushima Daiichi Nuclear Power Plant (NPP) incident resulted in a heavy radiation which has hampered recovery operations for years. 
+%Real-time mapping of the spatial distribution of radioactivity near and around reactors will assist safe and cost effective restoration and prevent further contamination, which aligns with the IAEA's continuous technical support on radiation monitoring. 
+\Ram{need just one sentence that describes what environmental mapping is and why its important.}
+Though such environmental mapping tasks can be done efficiently via dispatching a group of autonomous agents, it is typically undertaken by humans due to the lack of formal methods that are able to guarantee \Ram{need details here about what is the missing piece for existing methods}.
+This paper presents a Bayesian approach to estimating spatially distributed target maps by deploying a group of mobile robots, as motivated by the example.
 The topological (locations) and spatial properties (e.g., radiation level, magnetic field strength, temperature levels, etc) which constitute the target state are unknown and are characterized by prior probability distribution over bounded domain.
-This paper considers a continuous target domain, and robots that are equipped with noisy range sensors whose ability to detect the target varies probabilistically as a function of the distance between the robot and target.
-We propose a deterministic motion model where robots move to maximize the observation likelihood based on the sensor measurements and prior beliefs on target state. In addition, we present a decentralized counterpart, suitable for short range sensors, where the workspace is partitioned into multiple disjoint regions, and each robot detects target only in its associated region.
-Belief on target state is evolved by a variant of a classical Recursive Bayesian Filter. 
-Computing the belief propagation is generally intractable for an arbitrary target distribution due 
-to its non-modal characteristics. An approximation scheme are developed that exploits a standardized particle filtering method.
-Both simulation results and real-world validation are presented to
-demonstrate the effectiveness of the proposed methods.
+%This paper considers a continuous target domain, and robots that are equipped with noisy range sensors whose ability to detect the target varies probabilistically as a function of the distance between the robot and target.
+This paper proposes a deterministic motion model wherein robots move to maximize the observation likelihood based on their noisy sensor measurements and prior beliefs on target state. 
+In addition, a decentralized counterpart, suitable for short range sensors, is presented wherein the workspace is partitioned into multiple disjoint regions, and each robot detects target only in its associated region.
+%Belief on target state is evolved by a variant of a classical Recursive Bayesian Filter. 
+%Computing the belief propagation is generally intractable for an arbitrary target distribution due to its non-modal characteristics. 
+%An approximation scheme are developed that exploits a standardized particle filtering method.
+Both simulation results and real-world validation are presented to demonstrate the effectiveness of the proposed methods.
 \end{abstract}
 
 % Note that keywords are not normally used for peerreview papers.
@@ -255,49 +261,57 @@ demonstrate the effectiveness of the proposed methods.
 
 \section{Introduction}
 \label{sec:sec1}
-A large number of mobile robots equipped with ad-hoc communication and sensing devices, so called, Mobile Sensor Networks (MSNs) have a wide range of applications, including, exploration, surveillance, search and rescue missions, environmental
-monitoring for pollution detection and estimation, target tracking, cooperative detection of hazardous materials in contaminated environments, forest fire monitoring, oceanographic modeling, etc \cite{dhillon2003sensor,howard2002mobile,cortes_coverage_2004,yu2005real}. In the past decade, estimating the unknown, spatially distributed target of interest (e.g., gas, odor, temperature, radiation, fume, etc) have received much attention from not only environmental scientists \cite{chuvieco1996mapping} but also from roboticists \cite{cortez2008smart,choi2010continuous,ristic2010information}. This finds numerous applications, including environmental monitoring, pollution detection, data collection tasks, etc.
-MSNs have been shown to be ideal for such missions in that each sensors can move together and take measurements in-between or along their motions.
-This paper aims to develop a class of sensing and motion model for MSNs to collectively obtain an accurate representation of an arbitrary spatial target map under the Bayesian framework.
+A team of mobile robots equipped with ad-hoc communication and sensing devices, a \emph{Mobile Sensor Network} (MSN), has a wide range of potential applications, including, exploration, surveillance, search and rescue missions, environmental monitoring for pollution detection and estimation, target tracking, cooperative detection of hazardous materials in contaminated environments, forest fire monitoring, oceanographic modeling, etc. \cite{dhillon2003sensor,howard2002mobile,cortes_coverage_2004,yu2005real}. 
+Each such application can in fact be cast as a problem of trying to estimate some unknown, spatially distributed target of interest given some \textit{a priori} measurement. 
+Despite these numerous applications and the potential of MSNs to resolve environmental mapping, the lack of \Ram{explain what is missing specifically now} has meant that such environmental mapping has relied predominantly on human-controlled efforts. 
+%In the past decade, estimating the unknown, spatially distributed target of interest (e.g., gas, odor, temperature, radiation, fume, etc) has received much attention from not only environmental scientists \cite{chuvieco1996mapping} but also from roboticists \cite{cortez2008smart,choi2010continuous,ristic2010information}. 
+%This finds numerous applications, including environmental monitoring, pollution detection, data collection tasks, etc.
+%MSNs have been shown to be ideal for such missions in that each sensors can move together and take measurements in-between or along their motions.
+This paper aims to develop a class of sensing and motion model for MSNs to autonomously and collectively obtain an accurate representation of an arbitrary spatial target map under the Bayesian framework.
 
-As a motivating example, consider the following scenarios: a team of unmanned vehicles is deployed to monitor the radiation levels over a region of interest. Each vehicle is equipped with a close-range noisy radiation sensor, to inspect the radiation level over the region of interest. It is important that vehicles must approach the radiation sources close enough to ensure accurate measurement due to the correlations between radiation level and spatial coordinates of the radiation sources. The objective is to rebuild the radiation map over the region.
-To perform the required mission, the group of vehicles need to solve two problems: (i) \emph{deployment}: it is of the uttermost importance to ensure that robots can build the spatial distribution of the radiation levels over the region of interest. To perform this task efficiently, robots should move to locations which 
-maximize the likelihood that the collective measurements are close to the true values, as well as the likelihood that every region is being monitored by at least one robot, (ii) \emph{map rebuilding}: robots should update the posterior radiation map using the prior belief on the map, and the new observations retrieved at the current configurations. 
+As a motivating example, consider the following scenario: a team of unmanned vehicles is deployed to monitor the radiation levels over a region of interest. 
+Each vehicle is equipped with a close-range noisy radiation sensor, to inspect the radiation level over the region of interest. 
+The vehicles must approach the radiation sources close enough to ensure accurate measurement while collectively building a radiation map over the entire region.
+To perform the required mission, the group of vehicles must solve two problems: (i) \emph{deployment}: the vehicles must be able to distribute themselves to maximize the likelihood that their collective measurements can be effectively combined to estimate the true target distribution; and (ii) \emph{map reconstruction}: robots must be able to effectively update their posterior map using the prior believe on the map and new observations retrieved at the current configuration. 
+%  it is of the uttermost importance to ensure that robots can build the spatial distribution of the radiation levels over the region of interest. To perform this task efficiently, robots should move to locations which 
+% maximize the likelihood that the collective measurements are close to the true values, as well as the likelihood that every region is being monitored by at least one robot, (ii) \emph{map rebuilding}: robots should update the posterior radiation map using the prior belief on the map, and the new observations retrieved at the current configurations. 
+% \textit{Problem statement:}
+\emph{The objective of this paper is to design an effective, cooperative deployment and map reconstruction strategy for the robotic network}.
+This focuses on a group of homogeneous mobile robots equipped with range sensors tasked with building a spatial distribution map of a bounded domain where the data and the spatial coordinates of the data are correlated (e.g., precipitation map, heat distribution, radiation map, etc).
+\Ram{describe in a single sentence how its done in this paper}
 
-\textit{Problem statement:}
-This paper considers a group of homogeneous mobile robots equipped with range sensors tasked with building a spatial distribution map of a bounded domain where the data and the spatial coordinates of the data are correlated (e.g., precipitation map, heat distribution, radiation map, etc). \emph{The problem is to design an effective, cooperative deployment and map creating strategy for the robotic networks}.
+% \textit{Related works:}
+Bayesian inference has guided the development of a variety of tools to recursively estimate the state of a dynamical system and has as a result provided a powerful statistical tool to manage the measurement of uncertainties.
+%For the reason, the method has been used extensively in robotics \cite{thrun2005probabilistic} and computer vision \cite{ponce2011computer} in the past decades. 
+%In particular, the two variants of Bayesian Filters, the Kalman Filter and Particle Filter, find a plethora of uses during Simultaneous Localization And Mapping (SLAM) which has been an extremely popular method for single to multi-robot self-navigation.
+In particular, during mobile robot search and exploration, the Bayesian method has enabled the construction of tools for the localization of targets \cite{bourgault2003coordinated}, target tracking \cite{stone2013bayesian}, POMDP planning \cite{candido2010exploiting}, and source localization \cite{ristic2010information,valin2007robust} (e.g., aerosol, gas, sound, chemical plume, radiation sources). 
+In this latter instance for example,  the Bayesian approach led to the development of an autonomous search algorithm that maximized information gain to find a diffusive source\cite{ristic2010information} \Ram{why is this paper in particular relevant and what is the missing gap here between what they are proposing and what you are proposing in this paper??}.
+%Especially,  studies the information-driven autonomous search for a diffusive source where their search algorithm maximizes the information gain (i.e., entropy reduction).
 
-
-
-
-\textit{Related works:} The Bayesian inference has been used as a general technique for recursively estimating states of the dynamical systems, which provides powerful statistical tool to manage the measurement uncertainties.
-For the reason, the method has been used extensively in robotics \cite{thrun2005probabilistic} and computer vision \cite{ponce2011computer} in the past decades. In particular, the two variants of Bayesian filters, namely, Kalman Filter and Particle Filter, find plethora of use for Simultaneous Localization And Mapping (SLAM) which has been an extremely popular method for single to multi-robot self-navigation.
-Also, for the mobile robot search and exploration, the Bayesian method has paved way to a number of key research directions including
-localization of missing targets \cite{bourgault2003coordinated}, single to multiple target tracking \cite{stone2013bayesian}, POMDP planning \cite{candido2010exploiting}, and 
-search for source localization \cite{ristic2010information,valin2007robust} (e.g., aerosol, gas, sound, chemical plume, radiation source). 
-Especially, \cite{ristic2010information} studies the information-driven autonomous search for a diffusive source
-where their search algorithm maximizes the information gain (i.e., entropy reduction).
-
-While they used a non-Bayesian method, \cite{lilienthal2009statistical} is the most related work that deals with target distribution mapping---in their work, constructing concentration map---by a mobile robot where the mission is of both detection and identification of gas continuously distributed over a space. In \cite{lilienthal2009statistical}, Lilienthal and Duckett observed that measurement from diffusive sensor provides information about a relatively smaller area compared to the measurement extracted from sonar, or laser range scans. To overcome the limitation, they proposed a novel grid-mapped technique which use Gaussian weighing kernel to model the decreasing likelihood that a particular reading represents the true concentration with respect to the distance from the point of measurement.
+\Ram{this next paragraph needs to more clearly explain why their method (specifically the one in \cite{lilienthal2009statistical} is deficient. At the moment it seems like a nice method to solve the problem you are proposing.}
+While they used a non-Bayesian method, \cite{lilienthal2009statistical} is the most related work that deals with target distribution mapping---in their work, constructing concentration map---by a mobile robot where the mission is of both detection and identification of gas continuously distributed over a space. 
+In \cite{lilienthal2009statistical}, Lilienthal and Duckett observed that measurement from diffusive sensor provides information about a relatively smaller area compared to the measurement extracted from sonar, or laser range scans. 
+To overcome the limitation, they proposed a novel grid-mapped technique which use Gaussian weighing kernel to model the decreasing likelihood that a particular reading represents the true concentration with respect to the distance from the point of measurement.
 Our study is motivated by the their work \cite{lilienthal2009statistical}, multi-robot probabilistic search for diffusive source \cite{ristic2010information}, and the studies on popular multi-robot deployment problems \cite{cortes_coverage_2004}. 
 %Again, given a limited number of robots, our main interest is optimal deployment and simultaneous mapping of spatial distribution by concurrent measurement of the quantitative information acquired from target. 
 While those studies \cite{cortes_coverage_2004} uses static, prior topological target distribution, and their goal is to find deployment policy maximizing the collective quantity of interest, e.g., Quality of Service (QoS), Signal-to-Noise Ratio (SNR)  given the target distribution known \emph{a priori}, our paper presents a general framework for incremental reconstruction of spatially distributed target information map over a bounded region using new measurements made from MSN, where sensors are dynamically reconfigured to maximize the most recent belief on the target distribution.
 
-
-\textit{Contributions:}
-Our main contribution is threefold.
-We propose a probabilistic sensor model to incorporate joint target detection and spatial distribution estimation by the group of mobile sensors. The model captures both the noisy measurements, and one of the main characteristics of the target detection task---for each sensor, the chance of seeing the target, monotonically decreases as a function of distance between the sensor and the target which is atypical of range sensors. 
-Second, based on the model, we propose a class of deployment strategy ranging from decentralized to fully coordinated ones where each control law is designed to maximize the observation likelihood marginalized over the previous belief on the target distribution, which is halted when robots' shared belief converges such that the belief no longer changes over time. 
-Finally, we propose a variation of the Sequential Importance Resampling (SIR) Particle Filter 
-which uses the joint observations and the updated configuration of the robots to update the posterior belief on the target by approximation.
+% \textit{Contributions:}
+This paper's primary contributions are threefold:
+first, a probabilistic sensor model that incorporates joint target detection and spatial distribution estimation by a group of mobile sensors while capturing a key characteristic of the target detection task--the probability of seeing a target, monotonically decreases as a function of the distance between the sensor and the target, which is atypical of range sensors \Ram{I don't understand what you mean by: atypical of range sensors.}. 
+Second, a class of deployment strategies ranging from decentralized to fully coordinated ones where each control law is designed to maximize the observation likelihood marginalized over the previous belief of the target distribution.
+%which is halted when robots' shared belief converges such that the belief no longer changes over time. 
+Finally, a variation of the Sequential Importance Resampling (SIR) Particle Filter which uses the joint observations and the updated configuration of the robots to update the posterior belief on the target by approximation.
 
 \textit{Organizations:}
 The rest of the paper is organized as follows. 
-In Section \ref{sec:sec2}, we present notations for our systems, formally defines our problem, and review a recursive Bayesian filter tailored to our problem.
-Section \ref{sec:sec3} presents our probabilistic sensor model.
-In Section \ref{sec:sec3}, we study the partitioned based approach, and the modified version of the sensor model we discussed in Section \ref{sec:sec4}. Our deployment strategy is presented in Section \ref{sec:sec5}. In Section \ref{sec:sec6}, we discuss the approximate belief update method via particle filter.
-The effectiveness of our approach is evaluated by simulation and experimental results reported in Section \ref{sec:sec7} and \ref{sec:sec8}, respectively.
-Finally, in Section \ref{sec:sec9}, we give our conclusions and propose a number of future directions.
+Section \ref{sec:sec2} presents notation used in the remainder of the paper, formally defines the problem of interest, and reviews a recursive Bayesian filter tailored to the problem.
+Section \ref{sec:sec3} presents a probabilistic sensor model.
+Section \ref{sec:sec3} studies the partitioned based approach to deployment, and the modified version of the sensor model discussed in Section \ref{sec:sec4}. 
+The deployment strategy is formally presented in Section \ref{sec:sec5}. 
+Section \ref{sec:sec6} discusses an approximate belief update method via particle filters.
+The effectiveness of this deployment and belief update approach is evaluated via simulation and real-world experimentation in Sections \ref{sec:sec7} and \ref{sec:sec8}, respectively.
+Finally, Section \ref{sec:sec9} concludes the paper and proposes a number of future directions.
 
 
 
