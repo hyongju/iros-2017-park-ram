@@ -231,11 +231,11 @@
 %The Fukushima Daiichi Nuclear Power Plant (NPP) incident resulted in a heavy radiation which has hampered recovery operations for years. 
 %Real-time mapping of the spatial distribution of radioactivity near and around reactors will assist safe and cost effective restoration and prevent further contamination, which aligns with the IAEA's continuous technical support on radiation monitoring. 
 %\Ram{need just one sentence that describes what environmental mapping is and why its important.}
-\HJ{Environment mapping is a task to build a map of spatially distributed quantity over a 2D or 3D environment, which establishes trends in environmental parameters, which can be used to prevent risks of harmful outcomes (e.g., hazardous chemical leakage, forest fire spreading, radiation contamination, flash-flooding, etc).}
-Though such environmental mapping tasks can be done efficiently via dispatching a group of autonomous agents, it is typically undertaken by humans due to the lack of formal methods that are able to 
-guarantee \HJ{reasonably fast convergence to a true distribution.}
-This paper presents a Bayesian approach to estimating spatially distributed target maps by deploying a group of mobile robots, as motivated by the example.
-The topological (locations) and spatial properties (e.g., radiation level, magnetic field strength, temperature levels, etc) which constitute the target state are unknown and are characterized by prior probability distribution over bounded domain.
+%\HJ{Environment mapping is a task to build a map of spatially distributed quantity over a 2D or 3D environment, which establishes trends in environmental parameters, which can be used to prevent risks of harmful outcomes (e.g., hazardous chemical leakage, forest fire spreading, radiation contamination, flash-flooding, etc).}
+Constructing a spatially distributed map of environmental parameters such as hazardous chemical leakage, forest fires, or rain is a critical first step to effectively deploying intervention.
+Though such environmental mapping tasks could potentially be done efficiently via dispatching a group of autonomous agents, it is typically undertaken by humans due to the lack of formal methods that are able to guarantee satisfactory convergence to the true distribution.
+This paper presents a Bayesian approach to estimating spatially distributed target maps by deploying a group of mobile robots.
+The topological (locations) and spatial properties (e.g., radiation level, magnetic field strength, temperature levels, etc), which constitute the target state are unknown and are characterized by prior probability distribution over bounded domain.
 %This paper considers a continuous target domain, and robots that are equipped with noisy range sensors whose ability to detect the target varies probabilistically as a function of the distance between the robot and target.
 This paper proposes a deterministic motion model wherein robots move to maximize the observation likelihood based on their noisy sensor measurements and prior beliefs on target state. 
 In addition, a decentralized counterpart, suitable for short range sensors, is presented wherein the workspace is partitioned into multiple disjoint regions, and each robot detects target only in its associated region.
@@ -269,7 +269,7 @@ A suite of simulation results is presented to demonstrate the effectiveness of t
 \label{sec:sec1}
 A team of mobile robots equipped with ad-hoc communication and sensing devices, a \emph{Mobile Sensor Network} (MSN), has a wide range of potential applications, including, exploration, surveillance, search and rescue missions, environmental monitoring for pollution detection and estimation, target tracking, cooperative detection of hazardous materials in contaminated environments, forest fire monitoring, oceanographic modeling, etc. \cite{dhillon2003sensor,howard2002mobile,cortes_coverage_2004,yu2005real}. 
 Each such application can in fact be cast as a problem of trying to estimate some unknown, spatially distributed target of interest given some \textit{a priori} measurement. 
-Despite these numerous applications and the potential of MSNs to resolve environmental mapping, the lack of \HJ{formal methods} has meant that such environmental mapping has relied predominantly on human-controlled efforts. 
+Despite these numerous applications and the potential of MSNs to resolve environmental mapping, the lack of methods that are able to provide formal guarantees has meant that such environmental mapping has relied predominantly on human-controlled efforts. 
 %In the past decade, estimating the unknown, spatially distributed target of interest (e.g., gas, odor, temperature, radiation, fume, etc) has received much attention from not only environmental scientists \cite{chuvieco1996mapping} but also from roboticists \cite{cortez2008smart,choi2010continuous,ristic2010information}. 
 %This finds numerous applications, including environmental monitoring, pollution detection, data collection tasks, etc.
 %MSNs have been shown to be ideal for such missions in that each sensors can move together and take measurements in-between or along their motions.
@@ -284,7 +284,7 @@ To perform the required mission, the group of vehicles must solve two problems: 
 % \textit{Problem statement:}
 \emph{The objective of this paper is to design an effective, cooperative deployment and map reconstruction strategy for the robotic network}.
 This focuses on a group of homogeneous mobile robots equipped with range sensors tasked with building a spatial distribution map of a bounded domain where the data and the spatial coordinates of the data are correlated (e.g., precipitation map, heat distribution, radiation map, etc).
-\HJ{This paper presents a novel sensor model along with a class of optimal multi-robot deployment strategies under Bayesian framework, and an approximate method via Particle Filtering for efficient environmental map reconstruction.}
+This paper presents a novel sensor model along with a class of optimal multi-robot deployment strategies under Bayesian framework, and an approximate method via Particle Filtering for efficient environmental map reconstruction.
 
 
 %\Ram{describe in a single sentence how its done in this paper}
@@ -294,28 +294,34 @@ Bayesian inference has guided the development of a variety of tools to recursive
 %For the reason, the method has been used extensively in robotics \cite{thrun2005probabilistic} and computer vision \cite{ponce2011computer} in the past decades. 
 %In particular, the two variants of Bayesian Filters, the Kalman Filter and Particle Filter, find a plethora of uses during Simultaneous Localization And Mapping (SLAM) which has been an extremely popular method for single to multi-robot self-navigation.
 In particular, during mobile robot search and exploration, the Bayesian method has enabled the construction of tools for the localization of targets \cite{bourgault2003coordinated}, target tracking \cite{stone2013bayesian}, POMDP planning \cite{candido2010exploiting}, and source localization \cite{ristic2010information,valin2007robust} (e.g., aerosol, gas, sound, chemical plume, radiation sources). 
-In this latter instance for example,  the Bayesian approach led to the development of an autonomous search algorithm that maximized information gain to find a diffusive source\cite{ristic2010information} 
+In this latter instance for example,  the Bayesian approach led to the development of an autonomous search algorithm that maximized information gain to find a diffusive source\cite{ristic2010information}.
 %\Ram{why is this paper in particular relevant and what is the missing gap here between what they are proposing and what you are proposing in this paper??}. 
 \HJ{We found that their search algorithm can be adapted to solve the multi-agent environmental mapping problem.}
-
+\Ram{Does your last sentence mean, that we are using their search algorithm but extending it the multi-agent case? If so, then please say that clearly.}
 
 %Especially,  studies the information-driven autonomous search for a diffusive source where their search algorithm maximizes the information gain (i.e., entropy reduction).
 
 %\Ram{this next paragraph needs to more clearly explain why their method (specifically the one in \cite{lilienthal2009statistical} is deficient. At the moment it seems like a nice method to solve the problem you are proposing.}
-While they used a non-Bayesian method, \cite{lilienthal2009statistical} is the most related work that deals with target distribution mapping---in their work, constructing concentration map---by a mobile robot where the mission is of both detection and identification of gas continuously distributed over a space. 
-In \cite{lilienthal2009statistical}, Lilienthal and Duckett observed that measurement from diffusive sensor provides information about a relatively smaller area compared to the measurement extracted from sonar, or laser range scans. 
-To overcome the limitation, they proposed a novel grid-mapped technique which use Gaussian weighing kernel to model the decreasing likelihood that a particular reading represents the true concentration with respect to the distance from the point of measurement. 
-\HJ{Despite the promising results, their method does not scale well with larger environment since 
-they merely considers a single-robot navigation using heuristic Mowing patterns.}
+Others have employed a non-Bayesian method to perform target distribution mapping using a single mobile robot \cite{lilienthal2009statistical}.
+This approach focused on trying to detect and identify gas concentration that was continuously distributed over a space.
+In this instance, the diffusive sensor, which is typically used in environmental mapping, was only able to provide information about a relatively small area compared to their sonar or laser range scan counterparts.
+To overcome the limitation, the authors proposed a novel grid-mapped technique which used a Gaussian kernel to model the decreasing likelihood that a particular reading represents the true concentration with respect to the distance from the point of measurement. 
+Despite the promising results, their method did not scale well in larger environment since it relied upon a single-robot that was deployed using a pre-specified Mowing pattern.
 
-Our study is motivated by the their work \cite{lilienthal2009statistical}, multi-robot probabilistic search for diffusive source \cite{ristic2010information}, and the studies on popular multi-robot deployment problems \cite{cortes_coverage_2004}. 
+%While they used a non-Bayesian method, \cite{lilienthal2009statistical} is the most related work that deals with target distribution mapping---in their work, constructing concentration map---by a mobile robot where the mission is of both detection and identification of gas continuously distributed over a space. 
+%In \cite{lilienthal2009statistical}, Lilienthal and Duckett observed that measurement from diffusive sensor provides information about a relatively smaller area compared to the measurement extracted from sonar, or laser range scans. 
+%To overcome the limitation, they proposed a novel grid-mapped technique which use Gaussian weighing kernel to model the decreasing likelihood that a particular reading represents the true concentration with respect to the distance from the point of measurement. 
+%\HJ{Despite the promising results, their method does not scale well with larger environment since  they merely considers a single-robot navigation using heuristic Mowing patterns.}
+
+This paper is motivated by a similar environmental mapping objective; however our approach focuses on multi-robot probabilistic search for diffusive source using multi-robot deployment strategies \cite{cortes_coverage_2004}. 
 %Again, given a limited number of robots, our main interest is optimal deployment and simultaneous mapping of spatial distribution by concurrent measurement of the quantitative information acquired from target. 
-While those studies \cite{cortes_coverage_2004} uses static, prior topological target distribution, and their goal is to find deployment policy maximizing the collective quantity of interest, e.g., Quality of Service (QoS), Signal-to-Noise Ratio (SNR)  given the target distribution known \emph{a priori}, our paper presents a general framework for incremental reconstruction of spatially distributed target information map over a bounded region using new measurements made from MSN, where sensors are dynamically reconfigured to maximize the most recent belief on the target distribution.
+While those studies of deployment assume a static, known prior topological target distribution, their goal is to find deployment policies that maximize the collective quantity of interest, e.g., Quality of Service (QoS), Signal-to-Noise Ratio (SNR).
+On the other hand, this presents a general framework for incremental reconstruction of spatially distributed target information map over a bounded region using new measurements made from a MSN, where sensors are dynamically reconfigured to maximize the most recent belief on the target distribution.
 
 % \textit{Contributions:}
 This paper's primary contributions are threefold:
 first, a probabilistic sensor model that incorporates joint target detection and spatial distribution estimation by a group of mobile sensors while capturing a key characteristic of the target detection task--the probability of seeing a target, monotonically decreases as a function of the distance between the sensor and the target, which is atypical \HJ{property} of range sensors 
-%\Ram{I don't understand what you mean by: atypical of range sensors.}. 
+\Ram{I still don't understand what you mean by: atypical property of range sensors. Are you trying to say that people don't typically assume that property for range sensors but it is a property of range sensors?}. 
 Second, a class of deployment strategies ranging from decentralized to fully coordinated ones where each control law is designed to maximize the observation likelihood marginalized over the previous belief of the target distribution.
 %which is halted when robots' shared belief converges such that the belief no longer changes over time. 
 Finally, a variation of the Sequential Importance Resampling (SIR) Particle Filter which uses the joint observations and the updated configuration of the robots to update the posterior belief on the target by approximation.
