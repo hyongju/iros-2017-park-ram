@@ -1,39 +1,18 @@
-\documentclass[conference]{IEEEtran}
+\documentclass[letterpaper, 10 pt, conference]{ieeeconf}
 
 
 
+\IEEEoverridecommandlockouts                              % This command is only needed if 
+% you want to use the \thanks command
 
-
-
-% *** GRAPHICS RELATED PACKAGES ***
-%
-\ifCLASSINFOpdf
-  % \usepackage[pdftex]{graphicx}
-  % declare the path(s) where your graphic files are
-  % \graphicspath{{../pdf/}{../jpeg/}}
-  % and their extensions so you won't have to specify these with
-  % every instance of \includegraphics
-  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
-\else
-  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
-  % will default to the driver specified in the system graphics.cfg if no
-  % driver is specified.
-  % \usepackage[dvips]{graphicx}
-  % declare the path(s) where your graphic files are
-  % \graphicspath{{../eps/}}
-  % and their extensions so you won't have to specify these with
-  % every instance of \includegraphics
-  % \DeclareGraphicsExtensions{.eps}
-\fi
-
-
+\overrideIEEEmargins  
 
 \usepackage{setspace}
 \usepackage{epsfig}  % for figures
 \usepackage{epstopdf}
 \usepackage{hyperref}
 
-\usepackage{amssymb,amsmath,amsthm, mathtools}
+\usepackage{amssymb,amsmath, mathtools}
 \usepackage{mathrsfs} 
 
 \let\labelindent\relax
@@ -131,7 +110,9 @@
 \newcommand{\Ram}[1]{{\normalsize{\textbf{({\color{green}Ram:\ }#1)}}}}
 
 
-\newcommand{\HJ}[1]{{\color{red}{#1}}}
+\newcommand{\HJ}[1]{{\color{black}{#1}}}
+%\renewcommand{\HJ}[1]{}
+
 
 %\renewcommand{\Ram}[1]{} %uncomment this line to remove all \Ram{} tags.
 
@@ -150,8 +131,8 @@
 % not capitalized unless they are the first or last word of the title.
 % Linebreaks \\ can be used within to get better formatting as desired.
 % Do not put math or special symbols in the title.
-\title{
-	 Spatial Distribution Mapping by Mobile Sensor Networks: A Bayesian Method
+\title{\LARGE \bf
+	 Environmental Mapping by Mobile Sensor Networks: A Bayesian Method
 }
 %
 %
@@ -164,11 +145,16 @@
 % was not built to handle multiple paragraphs
 %
 
-\author{Hyongju~Park, Matthew~Johnson-Roberson and Ram~Vasudevan
-        }% <-this % stops a space
-%\thanks{Hyongju Park is with the Department
-%		of Mechanical Science and Engineering, University of Illinois at Urbana-Champaign, Urbana,
-%		IL, 61801 USA {\tt\small park334@illinois.edu}.}% <-this % stops a space
+\author{Hyongju~Park${}^1$, Matthew~Johnson-Roberson${}^2$ and Ram~Vasudevan${}^1$
+\thanks{${}^1$Hyongju Park and Ram Vasudevan is with the Department
+	of Mechanical Engineering, University of Michigan, Ann Arbor,
+	MI, 48109 USA {\tt\small hjcpark,ramv@umich.edu}.}% <-this % stops a space
+\thanks{${}^2$Matthew Johnson-Roberson is with the Department of Naval Architecture and Marine Engineering, University of Michigan, Ann Arbor,
+	MI, 48109 USA {\tt\small mattjr@umich.edu}.}% <-this % stops a space        
+}% <-this % stops a space
+
+
+	
 %\thanks{Seth A. Hutchinson is with the Department
 %of Electrical and Computer Engineering, University of Illinois at Urbana-Champaign, Urbana,
 %IL, 61801 USA {\tt\small seth@illinois.edu}.}% <-this % stops a space
