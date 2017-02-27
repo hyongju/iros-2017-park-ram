@@ -1027,7 +1027,7 @@ As shown in Fig. \ref{fig:fig1} (right), at time $0$, $10$ mobile robots are dep
 A number of particles used for the SIR filter is $N= N_1\times N_2 = 1000 \times 100$. The value of the equipped noisy sensor's covariance matrix is fixed at $\Sigma_I = 0.5\mathbf{I}$, and the binary sensor's covariance will be varied.
 \begin{figure}
 	\centering
-	\includegraphics[width=3.4in]{figure/init_10_deploy_pdf}
+	\includegraphics[width=3.4in]{figure/init_10_deploy_c}
 	\caption{Left: the expected target intensity (the ground truth), right: initial configuration of 10 robots where background color (gray) shows spatial density for every target is uniform. Squares in the left are the peaks of the mixture of Gaussians, and stars on the right are the robots' locations} 
 	\label{fig:fig1}
 \end{figure}
@@ -1051,19 +1051,19 @@ A number of particles used for the SIR filter is $N= N_1\times N_2 = 1000 \times
 \end{figure}
 \begin{figure}
 	\centering
-	 \begin{subfigure}[b]{0.169\textwidth}
+	 \begin{subfigure}[b]{0.165\textwidth}
 	 	\centering
-		\includegraphics[width=1.093in]{figure/order1_step_0110_pdf}
+		\includegraphics[width=1.093in]{figure/order1_step_0110_c}
 		\caption{$k=1$}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.15\textwidth}
 		\centering
-		\includegraphics[width=1in]{figure/order2_step_0110_pdf}
+		\includegraphics[width=1in]{figure/order2_step_0110_c}
 		\caption{$k=2$}
 	\end{subfigure}
 	 \begin{subfigure}[b]{0.15\textwidth}
 	\centering
-	\includegraphics[width=1in]{figure/ordern_step_0110_pdf}
+	\includegraphics[width=1in]{figure/ordern_step_0110_c}
 	\caption{$k=10$}
 \end{subfigure}
 	\caption{Belief propagation using various methods with moderate detection range where $\Sigma_B = 0.04\mathbf{I}$ ((a) $k=1$, (b) $k=2$, (c) $k=10$, the 1st row: step 1, the 2nd row: step 10, stars: positions of robots at $10^{\text{th}}$ step)}
@@ -1099,17 +1099,17 @@ The occurrence of sudden jumps (between the time step 0 and 1) in the K-L diverg
 	\centering
 	\begin{subfigure}[b]{0.15\textwidth}
 		\centering
-		\includegraphics[width=1in]{figure/fault_order_1_pdf}
+		\includegraphics[width=1in]{figure/fault_order_1_c}
 		\caption{$k=1$}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.15\textwidth}
 		\centering
-		\includegraphics[width=1in]{figure/fault_order_2_pdf}
+		\includegraphics[width=1in]{figure/fault_order_2_c}
 		\caption{$k=2$}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.15\textwidth}
 	\centering
-	\includegraphics[width=1in]{figure/fault_order_n_pdf}
+	\includegraphics[width=1in]{figure/fault_order_n_c}
 	\caption{$k=10$}
 \end{subfigure}
 	\caption{Comparison of robots' configuration and beliefs at the final step with two approaches, $k=1, \,2,\,10$ when two of the sensors fails (circled) and $\Sigma_B = 0.04\mathbf{I}$ for both cases }
