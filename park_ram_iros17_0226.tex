@@ -298,9 +298,10 @@ Bayesian inference has guided the development of a variety of tools to recursive
 In particular, during mobile robot search and exploration, the Bayesian method has enabled the construction of tools for the localization of targets \cite{bourgault2003coordinated}, target tracking \cite{stone2013bayesian}, POMDP planning \cite{candido2010exploiting}, and source localization \cite{ristic2010information,valin2007robust} (e.g., aerosol, gas, sound, chemical plume, radiation sources). 
 In this latter instance for example,  the Bayesian approach led to the development of an autonomous search algorithm that maximized information gain to find a diffusive source\cite{ristic2010information}.
 %\Ram{why is this paper in particular relevant and what is the missing gap here between what they are proposing and what you are proposing in this paper??}. 
-\HJ{We found that the key idea of their search algorithm to maximize over the information gain can be to adopted to solve our problem; the multi-agent environmental mapping.}
-\Ram{Does your last sentence mean, that we are using their search algorithm but extending it the multi-agent case? If so, then please say that clearly.}
-\HJP{The multi-robot search problem of finding missing objects is a very different problem from ours. Our approach merely adopted their approach in that we are also maximizing over an information gain [positive detection likelihood] to determine our deployment policy. I edited the previous sentence to make this clear.} 
+This paper adopts this idea of maximizing information gain to solve the multi-agent environment mapping problem. 
+%\HJ{We found that the key idea of their search algorithm to maximize over the information gain can be to adopted to solve our problem; the multi-agent environmental mapping.}
+%\Ram{Does your last sentence mean, that we are using their search algorithm but extending it the multi-agent case? If so, then please say that clearly.}
+%\HJP{The multi-robot search problem of finding missing objects is a very different problem from ours. Our approach merely adopted their approach in that we are also maximizing over an information gain [positive detection likelihood] to determine our deployment policy. I edited the previous sentence to make this clear.} 
 
 %Especially,  studies the information-driven autonomous search for a diffusive source where their search algorithm maximizes the information gain (i.e., entropy reduction).
 
@@ -316,16 +317,16 @@ Despite the promising results, their method did not scale well in larger environ
 %To overcome the limitation, they proposed a novel grid-mapped technique which use Gaussian weighing kernel to model the decreasing likelihood that a particular reading represents the true concentration with respect to the distance from the point of measurement. 
 %\HJ{Despite the promising results, their method does not scale well with larger environment since  they merely considers a single-robot navigation using heuristic Mowing patterns.}
 
-This paper is motivated by a similar environmental mapping objective; however our approach focuses on multi-robot probabilistic search for diffusive source using multi-robot deployment strategies \cite{cortes_coverage_2004}. 
+This paper is motivated by a similar environmental mapping objective; however the presented approach focuses on multi-robot probabilistic search for diffusive source using multi-robot deployment strategies \cite{cortes_coverage_2004}. 
 %Again, given a limited number of robots, our main interest is optimal deployment and simultaneous mapping of spatial distribution by concurrent measurement of the quantitative information acquired from target. 
 While those studies of deployment assume a static, known prior topological target distribution, their goal is to find deployment policies that maximize the collective quantity of interest, e.g., Quality of Service (QoS), Signal-to-Noise Ratio (SNR).
 On the other hand, this presents a general framework for incremental reconstruction of spatially distributed target information map over a bounded region using new measurements made from a MSN, where sensors are dynamically reconfigured to maximize the most recent belief on the target distribution.
 
 % \textit{Contributions:}
 This paper's primary contributions are threefold:
-first, a probabilistic sensor model that incorporates joint target detection and spatial distribution estimation by a group of mobile sensors while capturing a key characteristic of the target detection task--the probability of seeing a target, monotonically decreases as a function of the distance between the sensor and the target, which is \HJ{the common characteristics of range sensors} 
-\Ram{I still don't understand what you mean by: atypical property of range sensors. Are you trying to say that people don't typically assume that property for range sensors but it is a property of range sensors?}. 
-\HJP{My apologies again for not making this clear. I misunderstood the meaning of the word `atypical'. I replaced the word with different one.}
+first, a probabilistic sensor model that incorporates joint target detection and spatial distribution estimation by a group of mobile sensors while capturing a key characteristic of the target detection task--the probability of seeing a target, monotonically decreases as a function of the distance between the sensor and the target, which is a typical characteristic of range sensors.
+%\Ram{I still don't understand what you mean by: atypical property of range sensors. Are you trying to say that people don't typically assume that property for range sensors but it is a property of range sensors?}. 
+%\HJP{My apologies again for not making this clear. I misunderstood the meaning of the word `atypical'. I replaced the word with different one.}
 Second, a class of deployment strategies ranging from decentralized to fully coordinated ones where each control law is designed to maximize the observation likelihood marginalized over the previous belief of the target distribution.
 %which is halted when robots' shared belief converges such that the belief no longer changes over time. 
 Finally, a variation of the Sequential Importance Resampling (SIR) Particle Filter which uses the joint observations and the updated configuration of the robots to update the posterior belief on the target by approximation.
@@ -388,7 +389,7 @@ The objective of this paper is to design a deployment strategy to maximize the l
 \subsection{Problem Definition}
 Let $b_t$ represent a \emph{belief}, the posterior probability distribution over the target state space at time $t \in \mathbb{Z}^{+}$.
 %\Ram{Is $b_t = p(z \mid x_{0:t},y_{0:t}, b_0)$}. 
-Each belief\HJ{, $b_t$,} depends on initial belief, $b_0$, the set of robot configurations, $\bm{x}_{0:t}$, and observations up to this point, $\bm{y}_{1:t-1}$.
+Each belief, $b_t$, depends on initial belief, $b_0$, the set of robot configurations, $\bm{x}_{0:t}$, and observations up to this point, $\bm{y}_{1:t-1}$.
 The state of robots are assumed completely \emph{known}.
 Let $b^{\star}$ be the \emph{true posterior belief}\footnote{We assume for now that the true posterior target distribution can be obtained, e.g., via exhaustive search and measurements made by a MSN.} on the target state. 
 Then for each $t \in \mathbb{N}$, given the initial belief, $b_0$, our objective is obtain the sequence of optimal control policies $(\pi_1,\pi_2,\dots)$, each solves
@@ -429,7 +430,7 @@ If there is no prior knowledge of the target information at the initial time, on
 %P(B\mid A) = \frac{P(A \mid B)P(B)}{P(A)}
 %$
 %where $A$, $B$ are events, $P(B\mid A)$ is the posterior probability distribution, $P(A \mid B)$ is the likelihood function, $P(B)$ is the prior probability distribution, and $P(A)$ is the marginal probability of the event $A$. Let the event $B$ represent the prior belief on target information state $b_{t-1}(I\mid \bm{q}=q)$, and $A$ represent the sensor measurements at time $t$, $\bm{y}_t$, then 
-Applying \emph{Bayes' theorem}, (\ref{eqb}) becomes
+Applying \emph{Bayes' Theorem}, (\ref{eqb}) becomes:
 {\small{
 \begin{align*}
 &b_{t}(I \mid \bm{q} =q)\\
@@ -456,7 +457,7 @@ f_{\bm{y}_{t} \mid
 	{x}_{0:t},y_{1:t-1}
 	\right)
 }
-\end{align*}}}where $t \in \mathbb{N}$ 
+\end{align*}}}where $t \in \mathbb{N}$.
 %\Ram{I still do not understand this previous equation. Here are my questions: 1) is it $b_0(z)$ or $b_0$ 2) is it $x_{0:t}$ or $x_{0:t-1}$? }.
 Due to our sensor model (this is discussed in the next section), the observation $\bm{y}_{t}$ is conditionally independent of $b_0$, $\bm{y}_{1:t-1}$, and $x_{0:t-1}$ when it is conditioned on $\bm{z}$ and $x_t$ 
 %\Ram{again is this supposed to be $b_0(z)$ or $b_0$?}. 
@@ -972,7 +973,7 @@ w_{B,t}^i\cdot w_{I,t}^{ij}
 
 \section{Numerical Simulations}
 \label{sec:sec7}
-In this section, we present a suite of multi-agent deployment-map updating simulations with different sensor models.
+This section presents a suite of multi-agent deployment-map updating simulations with different sensor models.
 
 
 \textit{Gaussian PDFs for the Observation Likelihood:}
