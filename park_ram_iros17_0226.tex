@@ -40,6 +40,7 @@
 \usepackage{cite}
 \usepackage{thmtools,thm-restate}
 \usepackage{multicol}
+\usepackage{multirow}
 \usepackage{bm}
 %\theoremstyle{definition}
 \newtheorem{definition}{Definition}[section]
@@ -111,7 +112,7 @@
 \newcommand{\Ram}[1]{{\normalsize{\textbf{({\color{green}Ram:\ }#1)}}}}
 
 
-\newcommand{\HJ}[1]{{\color{red}{#1}}}
+\newcommand{\HJ}[1]{{\color{black}{#1}}}
 %\renewcommand{\HJ}[1]{}
 
 
@@ -1015,13 +1016,13 @@ y_{B,t}^i,y_{I,t}^i \mid x_t,\bm{z}=(q,I)
 
 
 \textit{Simulation settings:}
-In the simulation, we consider  $\mathcal{Q}$ be a unit square space $[0,1]\times [0,1]$ in $\mathbb{R}^2$, $\mathcal{I} = [0,\,1]$, and $r_{\text{eff}} =0.2$ (or $\infty$ if it is relaxed). Targets are uniformly distributed over $\mathcal{Q}$, and the initial expected spatial density of the target over $\mathcal{Q}$ is given in Fig. \ref{fig:fig1} (left) as a mixture of Gaussian kernels. The intensity of the expected spatial distribution ranges from $0$ to $1$, which corresponds to black to white colored areas, respectively. The empty square denotes the peak of each kernel.
-As shown in Fig. \ref{fig:fig1} (right), at time $0$, $10$ mobile robots are deployed at the upper-left corner of $\mathcal{Q}$ where the empty star denotes the robots' positions. We assume that there is no prior knowledge of the target information such that color intensity is also uniformly set to $0.5$ out of $1$.
+In the simulation, we consider  $\mathcal{Q}$ be a unit square space $[0,1]\times [0,1]$ in $\mathbb{R}^2$, $\mathcal{I} = [0,\,1]$, and $r_{\text{eff}} =0.2$ (or $\infty$ if it is relaxed). Targets are uniformly distributed over $\mathcal{Q}$, and the initial expected spatial density of the target over $\mathcal{Q}$ is given in Fig. \ref{fig:fig1} as a mixture of Gaussian kernels. The intensity of the expected spatial distribution ranges from $0$ to $1$, blue to red colored areas, respectively.
+$10$ mobile robots---initially deployed at the upper-left corner of $\mathcal{Q}$ (Fig. \ref{fig:fig2}(b))---have no prior knowledge of the target information.
 A number of particles used for the SIR filter is $N= N_1\times N_2 = 1000 \times 100$. The value of the equipped noisy sensor's covariance matrix is fixed at $\Sigma_I = 0.5\mathbf{I}$, and the binary sensor's covariance is fixed at $\Sigma_B = 0.04\mathbf{I}$ where $\mathbf{I} \in \mathbb{R}^{d\times d}$ is an identity matrix.
 \begin{figure}
 	\centering
-	\includegraphics[width=3.4in]{figure/init_10_deploy_c}
-	\caption{Left: the expected target intensity (the ground truth), right: initial configuration of 10 robots where background color (gray) shows spatial density for every target is uniform. Squares in the left are the peaks of the mixture of Gaussians, and stars on the right are the robots' locations} 
+	\includegraphics[width=1.6in]{figure/init_10_deploy_c_mod}
+	\caption{An expected target intensity for an arbitrary distribution (the ground truth)} 
 	\label{fig:fig1}
 \end{figure}
 
@@ -1034,7 +1035,7 @@ A number of particles used for the SIR filter is $N= N_1\times N_2 = 1000 \times
 	\end{subfigure}	
 	 \begin{subfigure}[b]{0.22\textwidth}
 	\centering
-	\includegraphics[width=1.69in]{figure/init_10_deploy_cmd1}
+	\includegraphics[width=1.68in]{figure/init_10_deploy_cmd1}
 	%	\caption{$k=1$}
 	\caption{}
 \end{subfigure}	
@@ -1126,7 +1127,29 @@ Results for configurations and spatial distributions after $10^{\textup{th}}$ st
 As can be seen from Fig \ref{fig:fig6} and Fig. \ref{fig:fig7}, the map retrieved by the coordinated strategies $k=2,\,10$ are more accurate, and more robust to the sensor failure compared to that obtained with the non-coordinated strategy. 
 Due to its fully decentralized nature, it is not surprising to see from this example that the non-coordinated method ($k=1$) works poorly under the sensor failures. 
 
-\textit{Varying Initial configurations and the Spatial distribution}: Due to space limitations, we present the results in the Table (?).
+\textit{Arbitrary spatial distributions with random initial configurations}:
+Our method can be used to estimate arbitrary spatial distribution given randomly chosen initial configuration reasonably well. To show this, we consider five spatial distributions whose expected spatial densities are shown in Fig. \ref{fig:fig8}. 
+For each distribution, we ran our non-coordinated method ($k=1$) with $r_{\textup{eff}} = 0.2$. The mean and standard deviations of K-L divergence at $10^{\textup{th}}$ step for arbitrary distributions with $10$ random configurations are summarized in Table \ref{table1}.
+\begin{figure}
+	\centering
+	\includegraphics[width=3.4in]{figure/fig8}
+	\caption{Expected target intensities for 5 arbitrary spatial distributions} 
+	\label{fig:fig8}
+\end{figure}
+
+\begin{table}[]
+	\centering
+	\caption{Mean and standard deviations (parenthesis) of K-L divergence for  arbitrary distributions (Fig. \ref{fig:fig8}) under 10 random initial configurations}
+	\label{table1}
+			{\scriptsize
+	\resizebox{\linewidth}{!}{%	
+	\begin{tabular}{llllll}
+		\hline
+		Distribution type:           & \#1 & \#2 & \#3 & \#4 & \#5 \\ \hline
+		\multirow{2}{*}{K-L divergence} &  0.0358   &  0.0308   & 0.0495    &  0.0358   &  0.0358   \\ 
+	& (0.0034)    &  (0.0033)   &   (0.0041)  &  (0.0012)   &  	(0.0024)   \\ \cline{1-6}
+	\end{tabular}}}
+\end{table}
 
 %\section{An example: Precipitation Mapping using Windshield Wiper Data}
 %\label{sec:sec8}
