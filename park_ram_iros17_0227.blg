@@ -17,10 +17,6 @@ Repeated entry---line 2284 of file reference_park_17.bib
  : @article{cortes_coverage_2004
  :                              ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 2295 of file reference_park_17.bib
- : @inproceedings{howard2002mobile
- :                                ,
-I'm skipping whatever remains of this entry
 Repeated entry---line 2473 of file reference_park_17.bib
  : @inproceedings{hutchinson_robust_2012
  :                                      ,
@@ -32,10 +28,6 @@ I'm skipping whatever remains of this entry
 Repeated entry---line 4302 of file reference_park_17.bib
  : @article{cortes_coverage_2004
  :                              ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 4313 of file reference_park_17.bib
- : @inproceedings{howard2002mobile
- :                                ,
 I'm skipping whatever remains of this entry
 Repeated entry---line 4488 of file reference_park_17.bib
  : @inproceedings{hutchinson_robust_2012
@@ -50,4 +42,4 @@ I'm skipping whatever remains of this entry
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 
 Done.
-(There were 11 error messages)
+(There were 9 error messages)

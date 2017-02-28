@@ -261,7 +261,7 @@ A suite of simulation results is presented to demonstrate the effectiveness of t
 
 \section{Introduction}
 \label{sec:sec1}
-A team of mobile robots equipped with ad-hoc communication and sensing devices, a \emph{Mobile Sensor Network} (MSN), has a wide range of potential applications, including, exploration, surveillance, search and rescue missions, environmental monitoring for pollution detection and estimation, target tracking, cooperative detection of hazardous materials in contaminated environments, forest fire monitoring, oceanographic modeling, etc. \cite{dhillon2003sensor,howard2002mobile,cortes_coverage_2004,yu2005real}. 
+A team of mobile robots equipped with ad-hoc communication and sensing devices, a \emph{Mobile Sensor Network} (MSN), has a wide range of potential applications, including, exploration, surveillance, search and rescue missions, environmental monitoring for pollution detection and estimation, target tracking, cooperative detection of hazardous materials in contaminated environments, forest fire monitoring, oceanographic modeling, etc. \cite{dhillon2003sensor,cortes_coverage_2004,yu2005real}. 
 Each such application can in fact be cast as a problem of trying to estimate some unknown, spatially distributed target of interest given some \textit{a priori} measurement. 
 Despite these numerous applications and the potential of MSNs to resolve environmental mapping, the lack of methods that are able to provide formal guarantees has meant that such environmental mapping has relied predominantly on human-controlled efforts. 
 %In the past decade, estimating the unknown, spatially distributed target of interest (e.g., gas, odor, temperature, radiation, fume, etc) has received much attention from not only environmental scientists \cite{chuvieco1996mapping} but also from roboticists \cite{cortez2008smart,choi2010continuous,ristic2010information}. 
@@ -967,58 +967,58 @@ w_{B,t}^i\cdot w_{I,t}^{ij}
 \label{sec:sec7}
 This section presents a suite of multi-agent deployment-map updating simulations with different sensor models.
 
-\textit{Gaussian PDFs for the Observation Likelihood:}
-For the simulation, we consider Gaussian kernels for the probability distributions of both the perception model, and the detection model.
-First, consider the conditional probability distribution for detection likelihood, positive and negative functions respectively
-\begin{align*}
-&p_{
-	\bm{y}_{B,t}^i\mid
-	x_t,\bm{q}
-}(\bm{y}_{B,t}^i=1\mid x_t,\bm{q}=q)
-=\eta_{B}\mathcal{N}(q,x_t^i,\,\Sigma_B) \\
-& = \eta_{B}\frac{1}{2\pi\left|\Sigma_B\right|}
-\exp\left(
-\frac{-(q-x_t^i)^{\top}\Sigma_B^{-1}(q-x_t^i)}{2}
-\right),
-\end{align*}
-and 
-\[
-p_{
-	\bm{y}_{B,t}^i\mid
-	x_t,\bm{q}
-}(\bm{y}_{B,t}^i=0\mid x_t,\bm{q}=q)
-=1-\eta_{B}\mathcal{N}(q,x_t^i,\,\Sigma_B)
-\]
-where $\mathcal{N}(q,x_t^i,\Sigma_B)$ is multivariate Gaussian with mean $x_t^i$ and covariance matrix $\Sigma_B$, and $\eta_{B}$ is a constant.
-Assume that the noisy sensor model is also a multi-variate Gaussian with mean $y_{I,t}^i$ and covariance matrix $\Sigma_I$.
-\[
-f_{
-	\bm{y}_{I,t}^i\mid
-	x_t,\bm{I}
-}(y_{I,t}^i\mid x_t,\bm{I}=I)
-=
-\eta_I \mathcal{N}(I,y_{I,t}^i,\Sigma_I)
-\]
-where $\eta_I$ is normalization constant. The total observation likelihood is given by
-\begin{align*}
-&f_{\bm{y}_t^i\mid x_t,\bm{z}}
-\left(
-y_{B,t}^i,y_{I,t}^i \mid x_t,\bm{z}=(q,I)
-\right) \\
-&=\begin{cases}
-\eta_B\eta_I(1-\mathcal{N}(q,x_t^i,\,\Sigma_B))\mathcal{N}(I,y_{I,t}^i,\Sigma_I)
-, &\textup{if }y_{B,t}^i = 0 \\
-\eta_B\eta_I\mathcal{N}(q,x_t^i,\,\Sigma_B)
-\mathcal{N}(I,y_{I,t}^i,\Sigma_I)
-, &\textup{if }y_{B,t}^i = 1
-\end{cases}
-\end{align*}
+%\textit{Gaussian PDFs for the Observation Likelihood:}
+%For the simulation, we consider Gaussian kernels for the probability distributions of both the perception model, and the detection model.
+%First, consider the conditional probability distribution for detection likelihood, positive and negative functions respectively
+%\begin{align*}
+%&p_{
+%	\bm{y}_{B,t}^i\mid
+%	x_t,\bm{q}
+%}(\bm{y}_{B,t}^i=1\mid x_t,\bm{q}=q)
+%=\eta_{B}\mathcal{N}(q,x_t^i,\,\Sigma_B) \\
+%& = \eta_{B}\frac{1}{2\pi\left|\Sigma_B\right|}
+%\exp\left(
+%\frac{-(q-x_t^i)^{\top}\Sigma_B^{-1}(q-x_t^i)}{2}
+%\right),
+%\end{align*}
+%and 
+%\[
+%p_{
+%	\bm{y}_{B,t}^i\mid
+%	x_t,\bm{q}
+%}(\bm{y}_{B,t}^i=0\mid x_t,\bm{q}=q)
+%=1-\eta_{B}\mathcal{N}(q,x_t^i,\,\Sigma_B)
+%\]
+%where $\mathcal{N}(q,x_t^i,\Sigma_B)$ is multivariate Gaussian with mean $x_t^i$ and covariance matrix $\Sigma_B$, and $\eta_{B}$ is a constant.
+%Assume that the noisy sensor model is also a multi-variate Gaussian with mean $y_{I,t}^i$ and covariance matrix $\Sigma_I$.
+%\[
+%f_{
+%	\bm{y}_{I,t}^i\mid
+%	x_t,\bm{I}
+%}(y_{I,t}^i\mid x_t,\bm{I}=I)
+%=
+%\eta_I \mathcal{N}(I,y_{I,t}^i,\Sigma_I)
+%\]
+%where $\eta_I$ is normalization constant. The total observation likelihood is given by
+%\begin{align*}
+%&f_{\bm{y}_t^i\mid x_t,\bm{z}}
+%\left(
+%y_{B,t}^i,y_{I,t}^i \mid x_t,\bm{z}=(q,I)
+%\right) \\
+%&=\begin{cases}
+%\eta_B\eta_I(1-\mathcal{N}(q,x_t^i,\,\Sigma_B))\mathcal{N}(I,y_{I,t}^i,\Sigma_I)
+%, &\textup{if }y_{B,t}^i = 0 \\
+%\eta_B\eta_I\mathcal{N}(q,x_t^i,\,\Sigma_B)
+%\mathcal{N}(I,y_{I,t}^i,\Sigma_I)
+%, &\textup{if }y_{B,t}^i = 1
+%\end{cases}
+%\end{align*}
 
 
 \textit{Simulation settings:}
 In the simulation, we consider  $\mathcal{Q}$ be a unit square space $[0,1]\times [0,1]$ in $\mathbb{R}^2$, $\mathcal{I} = [0,\,1]$, and $r_{\text{eff}} =0.2$ (or $\infty$ if it is relaxed). Targets are uniformly distributed over $\mathcal{Q}$, and the initial expected spatial density of the target over $\mathcal{Q}$ is given in Fig. \ref{fig:fig1} as a mixture of Gaussian kernels. The intensity of the expected spatial distribution ranges from $0$ to $1$, blue to red colored areas, respectively.
 $10$ mobile robots---initially deployed at the upper-left corner of $\mathcal{Q}$ (Fig. \ref{fig:fig2}(b))---have no prior knowledge of the target information.
-A number of particles used for the SIR filter is $N= N_1\times N_2 = 1000 \times 100$. The value of the equipped noisy sensor's covariance matrix is fixed at $\Sigma_I = 0.5\mathbf{I}$, and the binary sensor's covariance is fixed at $\Sigma_B = 0.04\mathbf{I}$ where $\mathbf{I} \in \mathbb{R}^{d\times d}$ is an identity matrix.
+A number of particles used for the SIR filter is $N= N_1\times N_2 = 1000 \times 100$. We consider Gaussian kernels for the probability distributions of both the perception model, and the detection model. The value of the equipped noisy sensor's covariance matrix is fixed at $\Sigma_I = 0.5\mathbf{I}$, and the binary sensor's covariance is fixed at $\Sigma_B = 0.04\mathbf{I}$ where $\mathbf{I} \in \mathbb{R}^{d\times d}$ is an identity matrix.
 \begin{figure}
 	\centering
 	\includegraphics[width=1.6in]{figure/init_10_deploy_c_mod}
