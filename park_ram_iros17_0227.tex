@@ -762,12 +762,11 @@ We note that the maximum of the positive observation likelihood depends not only
 Thus, given the prior belief and the observations, robots find and move to new locations, and the posterior belief is updated at the new locations given the collected information.
 We define a new belief that joins the previous belief with the current measurement likelihood as:
 \begin{align}
-\widetilde{b}_{t-1}(q)
-&\coloneqq \int_{\mathcal{I}} 
+&\widetilde{b}_{t-1}(q)
+\coloneqq \int_{\mathcal{I}} 
 p_{\bm{y}_{I,t-1}\mid \bm{z}}(y_{I,t-1} \mid z)b_{t-2}(z)\,
 dI  \nonumber \\
-&=
-\underbrace{f_{\bm{q}}(q)}_{\textup{PDF of}\,\bm{q}}\underbrace{\int_{\mathcal{I}} p_{\bm{y}_{I,t} \mid \bm{z}}(y_{I,t}\mid \bm{z} = (q,I))b_{t-2}(I \mid q)\,dI,}_{\textup{marginal likelihood of}\,\bm{y}_{I,t}\,\textup{conditioned on }q}
+&=\underbrace{f_{\bm{q}}(q)}_{\textup{PDF of}\,\bm{q}}\underbrace{\int_{\mathcal{I}} p_{\bm{y}_{I,t-1} \mid \bm{z}}(y_{I,t-1}\mid z = (q,I))b_{t-2}(I \mid q)\,dI,}_{\textup{marginal likelihood of}\,\bm{y}_{I,t-1}\,\textup{conditioned on }q}
 \nonumber
 \end{align} 
 and a cost function 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.2.6)  28 FEB 2017 11:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.2.6)  28 FEB 2017 13:24
 entering extended mode
 **./park_ram_iros17_0227.tex
 (park_ram_iros17_0227.tex
@@ -758,7 +758,7 @@ File: figure/init_10_deploy_c_mod.pdf Graphic file (type pdf)
 
 <use figure/init_10_deploy_c_mod.pdf>
 Package pdftex.def Info: figure/init_10_deploy_c_mod.pdf used on input line 102
-3.
+2.
 (pdftex.def)             Requested size: 115.63243pt x 104.06596pt.
 Package epstopdf Info: Source file: <figure/init_10_deploy_cmd2.eps>
 (epstopdf)                    date: 2017-02-10 10:34:51
@@ -769,7 +769,7 @@ o.pdf>
 (epstopdf)                    size: 19858 bytes
 (epstopdf)             Command: <epstopdf --outfile=figure/init_10_deploy_cmd2-
 eps-converted-to.pdf figure/init_10_deploy_cmd2.eps>
-(epstopdf)             \includegraphics on input line 1032.
+(epstopdf)             \includegraphics on input line 1031.
 Package epstopdf Info: Output file is already uptodate.
 
 <figure/init_10_deploy_cmd2-eps-converted-to.pdf, id=185, 413.545pt x 426.59375
@@ -777,7 +777,7 @@ pt>
 File: figure/init_10_deploy_cmd2-eps-converted-to.pdf Graphic file (type pdf)
  <use figure/init_10_deploy_cmd2-eps-converted-to.pdf>
 Package pdftex.def Info: figure/init_10_deploy_cmd2-eps-converted-to.pdf used o
-n input line 1032.
+n input line 1031.
 (pdftex.def)             Requested size: 93.95122pt x 96.91678pt.
 Package epstopdf Info: Source file: <figure/init_10_deploy_cmd1.eps>
 (epstopdf)                    date: 2017-02-10 10:34:51
@@ -788,7 +788,7 @@ o.pdf>
 (epstopdf)                    size: 24850 bytes
 (epstopdf)             Command: <epstopdf --outfile=figure/init_10_deploy_cmd1-
 eps-converted-to.pdf figure/init_10_deploy_cmd1.eps>
-(epstopdf)             \includegraphics on input line 1037.
+(epstopdf)             \includegraphics on input line 1036.
 Package epstopdf Info: Output file is already uptodate.
 
 <figure/init_10_deploy_cmd1-eps-converted-to.pdf, id=186, 291.0875pt x 293.095p
@@ -796,14 +796,14 @@ t>
 File: figure/init_10_deploy_cmd1-eps-converted-to.pdf Graphic file (type pdf)
  <use figure/init_10_deploy_cmd1-eps-converted-to.pdf>
 Package pdftex.def Info: figure/init_10_deploy_cmd1-eps-converted-to.pdf used o
-n input line 1037.
+n input line 1036.
 (pdftex.def)             Requested size: 108.405pt x 109.15005pt.
 
 <figure/order1_step_0110_c.pdf, id=187, 289.08pt x 542.025pt>
 File: figure/order1_step_0110_c.pdf Graphic file (type pdf)
 
 <use figure/order1_step_0110_c.pdf>
-Package pdftex.def Info: figure/order1_step_0110_c.pdf used on input line 1049.
+Package pdftex.def Info: figure/order1_step_0110_c.pdf used on input line 1048.
 
 (pdftex.def)             Requested size: 78.99127pt x 148.10207pt.
 
@@ -811,7 +811,7 @@ Package pdftex.def Info: figure/order1_step_0110_c.pdf used on input line 1049.
 File: figure/order2_step_0110_c.pdf Graphic file (type pdf)
 
 <use figure/order2_step_0110_c.pdf>
-Package pdftex.def Info: figure/order2_step_0110_c.pdf used on input line 1054.
+Package pdftex.def Info: figure/order2_step_0110_c.pdf used on input line 1053.
 
 (pdftex.def)             Requested size: 72.26999pt x 148.0938pt.
 
@@ -819,7 +819,7 @@ Package pdftex.def Info: figure/order2_step_0110_c.pdf used on input line 1054.
 File: figure/ordern_step_0110_c.pdf Graphic file (type pdf)
 
 <use figure/ordern_step_0110_c.pdf>
-Package pdftex.def Info: figure/ordern_step_0110_c.pdf used on input line 1059.
+Package pdftex.def Info: figure/ordern_step_0110_c.pdf used on input line 1058.
 
 (pdftex.def)             Requested size: 72.26999pt x 148.0938pt.
  [6 <./figure/init_10_deploy_c_mod.pdf>]
@@ -827,24 +827,19 @@ Package epstopdf Info: Source file: <figure/kl_div_2_n.eps>
 (epstopdf)                    date: 2017-02-28 11:41:15
 (epstopdf)                    size: 73166 bytes
 (epstopdf)             Output file: <figure/kl_div_2_n-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-02-27 23:28:35
-(epstopdf)                    size: 24167 bytes
+(epstopdf)                    date: 2017-02-28 11:41:19
+(epstopdf)                    size: 24162 bytes
 (epstopdf)             Command: <epstopdf --outfile=figure/kl_div_2_n-eps-conve
 rted-to.pdf figure/kl_div_2_n.eps>
-(epstopdf)             \includegraphics on input line 1083.
-runsystem(epstopdf --outfile=figure/kl_div_2_n-eps-converted-to.pdf figure/kl_d
-iv_2_n.eps)...executed (allowed).
-
-Package epstopdf Info: Result file: <figure/kl_div_2_n-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-02-28 11:41:19
-(epstopdf)                    size: 24162 bytes.
+(epstopdf)             \includegraphics on input line 1082.
+Package epstopdf Info: Output file is already uptodate.
 
 <figure/kl_div_2_n-eps-converted-to.pdf, id=221, 413.545pt x 425.59pt>
 File: figure/kl_div_2_n-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figure/kl_div_2_n-eps-converted-to.pdf>
 Package pdftex.def Info: figure/kl_div_2_n-eps-converted-to.pdf used on input l
-ine 1083.
+ine 1082.
 (pdftex.def)             Requested size: 115.63243pt x 118.99553pt.
 Package epstopdf Info: Source file: <figure/kl_div_1_n.eps>
 (epstopdf)                    date: 2017-02-27 14:05:52
@@ -854,7 +849,7 @@ Package epstopdf Info: Source file: <figure/kl_div_1_n.eps>
 (epstopdf)                    size: 23337 bytes
 (epstopdf)             Command: <epstopdf --outfile=figure/kl_div_1_n-eps-conve
 rted-to.pdf figure/kl_div_1_n.eps>
-(epstopdf)             \includegraphics on input line 1088.
+(epstopdf)             \includegraphics on input line 1087.
 Package epstopdf Info: Output file is already uptodate.
 
 <figure/kl_div_1_n-eps-converted-to.pdf, id=222, 413.545pt x 425.59pt>
@@ -862,28 +857,28 @@ File: figure/kl_div_1_n-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figure/kl_div_1_n-eps-converted-to.pdf>
 Package pdftex.def Info: figure/kl_div_1_n-eps-converted-to.pdf used on input l
-ine 1088.
+ine 1087.
 (pdftex.def)             Requested size: 115.63243pt x 118.99553pt.
 
 <figure/fault_order_1_c.pdf, id=223, 325.215pt x 325.215pt>
 File: figure/fault_order_1_c.pdf Graphic file (type pdf)
 
 <use figure/fault_order_1_c.pdf>
-Package pdftex.def Info: figure/fault_order_1_c.pdf used on input line 1098.
+Package pdftex.def Info: figure/fault_order_1_c.pdf used on input line 1097.
 (pdftex.def)             Requested size: 72.26999pt x 72.26706pt.
 
 <figure/fault_order_2_c.pdf, id=224, 325.215pt x 325.215pt>
 File: figure/fault_order_2_c.pdf Graphic file (type pdf)
 
 <use figure/fault_order_2_c.pdf>
-Package pdftex.def Info: figure/fault_order_2_c.pdf used on input line 1103.
+Package pdftex.def Info: figure/fault_order_2_c.pdf used on input line 1102.
 (pdftex.def)             Requested size: 72.26999pt x 72.26706pt.
 
 <figure/fault_order_n_c.pdf, id=225, 325.215pt x 325.215pt>
 File: figure/fault_order_n_c.pdf Graphic file (type pdf)
 
 <use figure/fault_order_n_c.pdf>
-Package pdftex.def Info: figure/fault_order_n_c.pdf used on input line 1108.
+Package pdftex.def Info: figure/fault_order_n_c.pdf used on input line 1107.
 (pdftex.def)             Requested size: 72.26999pt x 72.26706pt.
 Package epstopdf Info: Source file: <figure/fault_kl2.eps>
 (epstopdf)                    date: 2017-02-27 14:05:52
@@ -893,7 +888,7 @@ Package epstopdf Info: Source file: <figure/fault_kl2.eps>
 (epstopdf)                    size: 23526 bytes
 (epstopdf)             Command: <epstopdf --outfile=figure/fault_kl2-eps-conver
 ted-to.pdf figure/fault_kl2.eps>
-(epstopdf)             \includegraphics on input line 1116.
+(epstopdf)             \includegraphics on input line 1115.
 Package epstopdf Info: Output file is already uptodate.
 
 <figure/fault_kl2-eps-converted-to.pdf, id=226, 413.545pt x 425.59pt>
@@ -901,7 +896,7 @@ File: figure/fault_kl2-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figure/fault_kl2-eps-converted-to.pdf>
 Package pdftex.def Info: figure/fault_kl2-eps-converted-to.pdf used on input li
-ne 1116.
+ne 1115.
 (pdftex.def)             Requested size: 115.63243pt x 118.99553pt.
  [7 <./figure/init_10_deploy_cmd2-eps-converted-to.pdf> <./figure/init_10_deplo
 y_cmd1-eps-converted-to.pdf> <./figure/order1_step_0110_c.pdf> <./figure/order2
@@ -930,12 +925,12 @@ pdfTeX warning: pdflatex.exe (file ./figure/fault_order_n_c.pdf): PDF inclusion
 <figure/fig8.pdf, id=304, 946.73701pt x 209.58301pt>
 File: figure/fig8.pdf Graphic file (type pdf)
  <use figure/fig8.pdf>
-Package pdftex.def Info: figure/fig8.pdf used on input line 1134.
+Package pdftex.def Info: figure/fig8.pdf used on input line 1133.
 (pdftex.def)             Requested size: 245.71754pt x 54.39435pt.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 1139.
+               Default added (so using `tbp') on input line 1138.
 
 (park_ram_iros17_0227.bbl
 Missing character: There is no â in font ptmr7t!
@@ -956,16 +951,16 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the US letter (8.5in X 11in) paper size.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1196.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1195.
 [8 <./figure/fig8.pdf>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1196.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1195.
  (park_ram_iros17_0227.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1196.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1196.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1195.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1195.
 
 Package rerunfilecheck Info: File `park_ram_iros17_0227.out' has not changed.
 (rerunfilecheck)             Checksum: 1F110225775E541BE6DDD5824AB330B8;1093.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1196.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1195.
  )
 (\end occurred inside a group at level 1)
 
@@ -1010,7 +1005,7 @@ C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/
 MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts
 /type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/
 utmri8a.pfb>
-Output written on park_ram_iros17_0227.pdf (8 pages, 721694 bytes).
+Output written on park_ram_iros17_0227.pdf (8 pages, 721712 bytes).
 PDF statistics:
  471 PDF objects out of 1000 (max. 8388607)
  97 named destinations out of 1000 (max. 500000)
