@@ -542,16 +542,16 @@ The probability of the event that all $m$ sensors with configuration $x_t$ fail 
 &p_{\bm{y}_{B,t} \mid
 	{x}_{t},\bm{z}}\left(
 \bm{y}_{B,t} = \bm{0} \mid {x}_{t},
-\bm{z}=(q,I)\right) \\
+\bm{z}=(q,I)\right) \nonumber \\
 &=p_{\bm{y}_{B,t} \mid
 	{x}_{t},\bm{q}}\left(
 \bm{y}_{B,t} = \bm{0} \mid {x}_{t},
-\bm{q}=q\right) \\
+\bm{q}=q\right) \nonumber \\
 &= \prod_{i=1}^m
 p_{\bm{y}_{B,t}^i \mid
 	{x}_{t},\bm{q}}\left(
 \bm{y}_{B,t}^i = 0 \mid
-{x}_{t},\bm{q}=q\right)
+{x}_{t},\bm{q}=q\right) \nonumber
 \end{align}
 where $\bm{0}= (\underbrace{0,\dots,0}_{m})$.
  
@@ -563,9 +563,10 @@ Let the random variable $\bm{y}_t=(\bm{y}_t^1,\dots,\bm{y}_t^m)$ denote the \emp
 % \begin{equation}
 % \bm{y}_t^i = \bm{y}_{B,t}^i \times \bm{y}_{I,t}^i.
 % \end{equation}
-Note that two random vectors $\bm{y}_B^i$ and $\bm{y}_I^i$ are \emph{independent}\footnote{This assessment is based on the underlying assumption that the detection event and sensor measurement event are independent to each other.} when conditioned on $x_t,\bm{z}$ so that joint PDF can be computed as:
+Note that two random vectors $\bm{y}_B^i$ and $\bm{y}_I^i$ are \emph{independent}\footnote{This assessment is based on the underlying assumption that the detection event and sensor measurement event are independent to each other.} when conditioned on $x_t,\bm{z}$, so that the joint PDF can be computed as:
 \begin{equation}
 f_{\bm{y}^i \mid \bm{z},x}(y^i \mid z,x) = p_{\bm{y}_B^i \mid \bm{z},x}(\bm{y}_B^i=y_B^i \mid z,x)f_{\bm{y}_I^i \mid \bm{z},x}(y_I^i \mid z,x)
+\nonumber
 \end{equation}
 where $y_B^i \in \lbrace 0,1 \rbrace$.
 Since the set of observations $\bm{y}^1,\dots,\bm{y}^m$ are made independently by $m$ sensors, the joint probability distribution by $m$ sensors, given a target at $z$ becomes:
@@ -578,7 +579,7 @@ y_t
 = \prod_{i=1}^m
 f_{\bm{y}_t^i\mid x_t,\bm{z}}
 \left(
-y_t^i \mid x_t,\bm{z}=z \right) \\
+y_t^i \mid x_t,\bm{z}=z \right) \nonumber \\
 &= \prod_{i=1}^m p_{\bm{y}_{B,t}^i\mid x_t,\bm{z}}
 \left(
 \bm{y}_{B,t}^i=y_{B,t}^i\mid x_t,\bm{z}=z \right) 
@@ -588,9 +589,7 @@ f_{\bm{y}_{I,t}^i\mid x_t,\bm{z}}
 \left(
 y_{I,t}^i
 \mid x_t,\bm{z}=z
-\right) 
-\end{align}
-\begin{align}
+\right) \nonumber \\
 &= p_{\bm{y}_{B,t}\mid x_t,\bm{z}}
 \left(
 \bm{y}_{B,t}=y_{B,t}
@@ -666,7 +665,7 @@ In fact, the order-$k$ Voronoi tessellation is the optimal workspace partition w
 This section presents a practical sensor model that is better suited to distributed target detection based on the order-$k$ Voronoi partition.
 The modified sensor model is a combination of deterministic workspace partitioning method and the probabilistic sensor model presented in Section \ref{sec:sec3}. 
 In addition, we introduce another constraint for the model, namely the \emph{effective sensing range}, $r_{\text{eff}} >0$, to take into account the fact that the noisy measurement taken by each sensor does not depend on its distance to the target, if the target is sufficiently close to the sensor\footnote{Recall that in our proposed sensor model, we assumed two tasks, detection and measurement, to be completely decoupled, nevertheless our generic noisy sensor model---which which treats all measurements taken within its maximum sensor range equally---can also be generalized to other popular forms (e.g., Gaussian, radially non-uniform, anisotropic, etc.)}. 
-For a given $k$, and $z = (q,I)$, we assume that the following is true for our new sensor model:
+For a given $k$, and $z = (q,I)$, we consider the following sensor model:
 %{\small{
 \begin{align}
 &\textit{Positive detection likelihood:} \nonumber \\
@@ -769,6 +768,7 @@ p_{\bm{y}_{I,t-1}\mid \bm{z}}(y_{I,t-1} \mid z)b_{t-2}(z)\,
 dI  \nonumber \\
 &=
 \underbrace{f_{\bm{q}}(q)}_{\textup{PDF of}\,\bm{q}}\underbrace{\int_{\mathcal{I}} p_{\bm{y}_{I,t} \mid \bm{z}}(y_{I,t}\mid \bm{z} = (q,I))b_{t-2}(I \mid q)\,dI,}_{\textup{marginal likelihood of}\,\bm{y}_{I,t}\,\textup{conditioned on }q}
+\nonumber
 \end{align} 
 and a cost function 
 \begin{align}
@@ -834,7 +834,7 @@ We consider the Particle Filtering approach to reduce the complexity of \HJ{the 
 %\Ram{how is the target map evolving? I thought it was fixed...?I think you mean the reconstruction is being updated as observations appear...}. 
 
 \subsection{Low Discrepancy Sampling} 
-For our numerical simulations, we consider a low discrepancy sampling method (e.g., Halton-Hammersley sequence \cite{beardwood1959shortest}) to sample continuously distributed targets in $z \in \mathcal{Z} = \mathcal{Q} \times {I}$. 
+For our numerical simulations, we consider a low discrepancy sampling method, namely, Halton-Hammersley sequence, to sample continuously distributed targets in $z \in \mathcal{Z} = \mathcal{Q} \times {I}$. 
 This approach has been used for sampling-based algorithms for robot motion planning \cite{lavalle2006planning}.
 
 \subsection{SIR Particle Filter}
@@ -901,7 +901,7 @@ Note that as discussed in previous studies \cite{crisan2002survey}, our particle
 		w_{B,t-1}^{i}w_{I,t-1}^{ij} \rbrace_{j=1}^{N_2} \rbrace_{i=1}^{N_1}
 		,y_{t-1},y_{t},\hat{x}_{t-1}$}
 	\KwOut{$\hat{b}_t$}
-	\tcp{Propogate motion model using MMLE (maximum marginal likelihood estimation); see Algorithm \ref{alg1}}
+	\tcp{Propogate motion model; see Algorithm \ref{alg1}}
 	$\hat{x}_{t}\gets$ \text{MMLE}$(\hat{b}_{t-1}$, $y_{t-1}$, $\hat{x}_{t-1})$ \\
 	\tcp{SIR Particle Filter}
 	\tcp{1) Update using the observation model}
@@ -967,7 +967,6 @@ w_{B,t}^i\cdot w_{I,t}^{ij}
 \section{Numerical Simulations}
 \label{sec:sec7}
 This section presents a suite of multi-agent deployment-map updating simulations with different sensor models.
-
 %\textit{Gaussian PDFs for the Observation Likelihood:}
 %For the simulation, we consider Gaussian kernels for the probability distributions of both the perception model, and the detection model.
 %First, consider the conditional probability distribution for detection likelihood, positive and negative functions respectively
@@ -1015,15 +1014,14 @@ This section presents a suite of multi-agent deployment-map updating simulations
 %\end{cases}
 %\end{align*}
 
-
 \textit{Simulation settings:}
-In the simulation, we consider  $\mathcal{Q}$ be a unit square space $[0,1]\times [0,1]$ in $\mathbb{R}^2$, $\mathcal{I} = [0,\,1]$, and $r_{\text{eff}} =0.2$ (or $\infty$ if it is relaxed). Targets are uniformly distributed over $\mathcal{Q}$, and the initial expected spatial density of the target over $\mathcal{Q}$ is given in Fig. \ref{fig:fig1} as a mixture of Gaussian kernels. The intensity of the expected spatial distribution ranges from $0$ to $1$, blue to red colored areas, respectively.
-$10$ mobile robots---initially deployed at the upper-left corner of $\mathcal{Q}$ (Fig. \ref{fig:fig2}(b))---have no prior knowledge of the target information.
-A number of particles used for the SIR filter is $N= N_1\times N_2 = 1000 \times 100$. We consider Gaussian kernels for the probability distributions of both the perception model, and the detection model. The value of the equipped noisy sensor's covariance matrix is fixed at $\Sigma_I = 0.5\mathbf{I}$, and the binary sensor's covariance is fixed at $\Sigma_B = 0.04\mathbf{I}$ where $\mathbf{I} \in \mathbb{R}^{d\times d}$ is an identity matrix.
+We consider  $\mathcal{Q}$ be a unit square space $[0,1]\times [0,1]$ in $\mathbb{R}^2$, $\mathcal{I} = [0,\,1]$, and $r_{\text{eff}} =0.2$ (or $\infty$ if it is relaxed). Targets are uniformly distributed over $\mathcal{Q}$, and the initial expected spatial density of the target over $\mathcal{Q}$ is given in Fig. \ref{fig:fig1} as a mixture of Gaussian kernels. The intensity of the expected spatial distribution ranges from $0$ to $1$.
+It is assume that the robots have no prior knowledge of the target information.
+A number of particles used for the SIR filter is $N= N_1\times N_2 = 1000 \times 100$. We consider Gaussian kernels for the probability distributions of both the perception model, and the detection model. The value of the equipped noisy sensor's covariance matrix is $\Sigma_I = 0.5\mathbf{I}$, and the binary sensor's covariance is $\Sigma_B = 0.04\mathbf{I}$ where $\mathbf{I} \in \mathbb{R}^{d\times d}$ is an identity matrix.
 \begin{figure}
 	\centering
 	\includegraphics[width=1.6in]{figure/init_10_deploy_c_mod}
-	\caption{An expected target intensity for an arbitrary distribution (the ground truth)} 
+	\caption{Expected target intensity for an arbitrary distribution (the ground truth)} 
 	\label{fig:fig1}
 \end{figure}
 
@@ -1031,17 +1029,17 @@ A number of particles used for the SIR filter is $N= N_1\times N_2 = 1000 \times
 	\centering
 	 \begin{subfigure}[b]{0.22\textwidth}
 	\centering
-	\includegraphics[width=1.5in]{figure/init_10_deploy_cmd2}
+	\includegraphics[width=1.3in]{figure/init_10_deploy_cmd2}
 	\caption{}
 	\end{subfigure}	
 	 \begin{subfigure}[b]{0.22\textwidth}
 	\centering
-	\includegraphics[width=1.68in]{figure/init_10_deploy_cmd1}
+	\includegraphics[width=1.5in]{figure/init_10_deploy_cmd1}
 	%	\caption{$k=1$}
 	\caption{}
 \end{subfigure}	
 %	\includegraphics[width=3.4in]{figure/init_10_deploy_cmd2}
-	\caption{One-time deployment with $k=1$, (a) cost change during Algorithm 1, (b) optimal path respecting unicycle kinematic constraint (small circles: initial positions, stars: target positions, solid lines: partitions at target positions)}
+	\caption{One-time deployment with $k=1$, (a) cost change during Algorithm 1 ($0^{\textup{th}}-1^{\textup{st}}$ step) , (b) optimal path respecting unicycle kinematic constraint (circles: initial positions, stars: target positions, polygons: partition)}
 	\label{fig:fig2}
 \end{figure}
 \begin{figure}
@@ -1061,19 +1059,19 @@ A number of particles used for the SIR filter is $N= N_1\times N_2 = 1000 \times
 	\includegraphics[width=1in]{figure/ordern_step_0110_c}
 	\caption{$k=10$}
 \end{subfigure}
-	\caption{Belief propagation using various methods with moderate detection range where $r_{\textup{eff}} = 0.2$, $\Sigma_B = 0.04\mathbf{I}$ ((a) $k=1$, (b) $k=2$, (c) $k=10$, the 1st row: step 1, the 2nd row: step 10, stars: positions of robots at $10^{\text{th}}$ step)}
+	\caption{Belief propagation using various methods with moderate detection range where $r_{\textup{eff}} = 0.2$, $\Sigma_B = 0.04\mathbf{I}$, (a) $k=1$, (b) $k=2$, (c) $k=10$, the $1^{\textup{st}}$ row: step 1, the $2^{\textup{nd}}$ row: step 10, stars: robots' positions at $10^{\text{th}}$ step}
 	\label{fig:fig3}
 \end{figure}
 
 \textit{Convergence of deployment algorithm:}
-First, the behavior of the deployment strategy is discussed. Given the initial uniform prior belief, robots is governed by the gradient descent strategy (Algorithm \ref{alg1}) to obtain the next way-point $x_1$ for the next time step $1$. As previously noted in the Section \ref{sec:sec5}, robots move toward the locations which maximize the likelihood of positive detections.
-Fig. \ref{fig:fig2}(a) shows the convergence of the algorithm, and Fig. \ref{fig:fig2}(b) illustrates the path generated by optimal control low when each robot has unicycle kinematics. 
+First, the behavior of the deployment strategy is discussed. Given the initial uniform prior belief, robots is governed by the gradient descent strategy (Algorithm \ref{alg1}) to obtain the next way-point $x_1$ for the next time step $1$. As previously noted in the Section \ref{sec:sec5}, robots are controlled to maximize the likelihood of positive detections.
+Fig. \ref{fig:fig2}(a) shows the convergence of the algorithm, and Fig. \ref{fig:fig2}(b) illustrates the path generated by optimal control policy when each robot is a unicycle. 
 
 \textit{Filtering performance:}
-Next, we present the evolution of the object map given the uniform, initial map (Fig. \ref{fig:fig1}(right)) with successive positive observations, each followed by the gradient descent strategy and filtering process. Fig. \ref{fig:fig3} illustrates the map building process, given limited effective sensing range value ($r_{\textup{eff}}=0.2$, the value was chosen empirically relative to the workspace size) 
+Next, we present the evolution of the object map given the uniform, initial map (Fig. \ref{fig:fig1}) with successive positive observations, each followed by the gradient descent strategy and filtering process. Fig. \ref{fig:fig3} illustrates the map building process, given limited effective sensing range value ($r_{\textup{eff}}=0.2$, the value was chosen empirically relative to the workspace size) 
 by different methods with $k=1,\,2,\,10$ respectively, by showing robots' positions and the current belief at time step $1$ and $10$ respectively.
-The results depicted in Fig. \ref{fig:fig3} clearly show that under \emph{limited} sensing range, the non-coordinated strategy ($k=1$) yields relatively better mapping results than coordinated strategies ($k=2,\,10$) compared to the ground truth map shown in Fig \ref{fig:fig1}(left).
-In addition, Fig. \ref{fig:fig5}(a) compares the K-L divergence values 
+The results in Fig. \ref{fig:fig3} clearly show that under \emph{limited} sensing range, the non-coordinated strategy ($k=1$) yields relatively better mapping results than coordinated strategies ($k=2,\,10$) compared to the ground truth map shown in Fig \ref{fig:fig1}.
+Fig. \ref{fig:fig5}(a) compares the K-L divergence values 
 between different strategies during the evolution when $r_{\textup{eff}} =0.2$. We included the results with 2D random walks ($100$ walks) with step size $0.2$ to illustrate the performance gain from our algorithm.
 Finally, Fig. \ref{fig:fig5}(b) compares the K-L divergence values between different strategies when $r_{\textup{eff}}=\infty$ merely to illustrate the filtering performance when the constraint on the sensing range is \emph{relaxed}. As can be seen, in this case, coordinate strategies yields better performance than the the non-coordinate one.
 We also note that in all cases, our deployment strategies has noticeably improved the quality of the map along the evolutions.
@@ -1082,12 +1080,12 @@ The occurrence of sudden jumps (between the time step 0 and 1) in the K-L diverg
 	\centering
 	\begin{subfigure}[b]{0.23\textwidth}
 		\centering
-		\includegraphics[width=1.7in]{figure/kl_div_2_n}
+		\includegraphics[width=1.6in]{figure/kl_div_2_n}
 		\caption{}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.23\textwidth}
 		\centering
-		\includegraphics[width=1.7in]{figure/kl_div_1_n}
+		\includegraphics[width=1.6in]{figure/kl_div_1_n}
 		\caption{}
 	\end{subfigure}
 	\caption{Comparison of K-L divergence from the actual distribution between different sensor models during belief propagation; (a) $r_{\textup{eff}} =0.2$ , (b) $r_{\textup{eff}}=\infty$}
@@ -1115,17 +1113,16 @@ The occurrence of sudden jumps (between the time step 0 and 1) in the K-L diverg
 \end{figure}
 \begin{figure}
 	\centering
-	\includegraphics[width=1.67in]{figure/fault_kl2}
-	\caption{Comparison of K-L divergence from the ground-truth distribution between multiple strategies ($k=1,\,2,\,10$), when two sensors fail, during the evolution}
+	\includegraphics[width=1.6in]{figure/fault_kl2}
+	\caption{Comparison of K-L divergence of the ground-truth between multiple strategies ($k=1,\,2,\,10$), when two sensors fail during the evolution}
 	\label{fig:fig7}
 \end{figure}
 
 \textit{Robustness to sensor failure:}
 As seen in the previous section, 
-despite the relatively higher sensing cost seen from the coordinated methods than the non-coordinated method ($k=1$), performances are even worse for the range-limited case.
-This section presents an example when the coordinated strategy becomes more desirable. And, this happens when the sensors are not perfect and likely to fail to detect a target. 
-Results for configurations and spatial distributions after $10^{\textup{th}}$ step with $k=1,\,2,\,10$, are shown in Fig. \ref{fig:fig6}(a)-(c), respectively. To reveal the full potential of the coordinated strategies, we relaxed the effective sensing range constraint, such that $r_{\textup{eff}} = \infty$.
-As can be seen from Fig \ref{fig:fig6} and Fig. \ref{fig:fig7}, the map retrieved by the coordinated strategies $k=2,\,10$ are more accurate, and more robust to the sensor failure compared to that obtained with the non-coordinated strategy. 
+despite the relatively higher sensing cost seen from the coordinated methods than the non-coordinated method, performances are even worse for the range-limited case. This section will present an example when coordinated strategies become more appealing which happens when the sensors are prone to fail. 
+Results for configurations and spatial distributions after $10^{\textup{th}}$ step with $k=1,\,2,\,10$, are shown in Fig. \ref{fig:fig6}(a)-(c), respectively. To reveal the full potential of the coordinated strategies, we relaxed the effective sensing range constraint such that, $r_{\textup{eff}} = \infty$.
+As can be seen from Fig \ref{fig:fig6} and Fig. \ref{fig:fig7}, the map retrieved by the coordinated strategies $k=2,\,10$ are more accurate/robust to the sensor failure compared to that obtained with the non-coordinated strategy. 
 Due to its fully decentralized nature, it is not surprising to see from this example that the non-coordinated method ($k=1$) works poorly under the sensor failures. 
 
 \textit{Arbitrary spatial distributions with random initial configurations}:
