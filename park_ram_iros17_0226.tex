@@ -375,22 +375,15 @@ Let the $m$-tuple $\bm{y}_t=(\bm{y}_t^1,\dots,\bm{y}_t^m)$ be the observations r
 %Note that if target location is unknown, observations made by different sensors are conditionally independent given the target location \Ram{this is missing a citation}.
 %\Ram{it may also make sense for you to consider a simple example here just to formalize the notation for the reader}
 
-\HJ{\subsection{An Example: Precipitation Mapping}
-Before we formally define our problem, consider an real-world example.
-Suppose that one is interested in building the precipitation map of a city by collecting a group of autonomous vehicles' windshield wiper data (which provides high spatial and temporal resolution) as a preventive measure for flash floods. In this example, the information state is an instantaneous precipitation rate, and the target state is a location in the city. 
-A proper choice of probabilistic observation model which captures the behavior of windshield wipers reasonably well, and a deployment strategy (where to send those vehicles) which maximizes the likelihood of rain detections, can be used as a sensor model, and motion model, respectively, to design a Recursive Bayesian Filter for estimating the true precipitation map. Such probabilistic method can be approximated, e.g., using Particle filter, for rapid reconstruction of the map.}
+To understand this notation, consider the following real-world example.
+Suppose that one is interested in building a real-time precipitation map of a city by utilizing a group of autonomous vehicles' windshield wiper data (which provides high spatial and temporal resolution).
+In this example, the target state is made up of a location in the city and an information state associated with the instantaneous precipitation rate.
+An observation model can capture the relationship between a measured windshield wiper rate and a precipitation rate. 
+The objective of this paper is to design a deployment strategy to maximize the likelihood of rain detections and to develop a Recursive Bayesian Filter to efficiently aggregate the collected observations to generate a precipitation map.
+%A proper choice of probabilistic observation model which captures the behavior of windshield wipers reasonably well, and a deployment strategy (where to send those vehicles) which maximizes the likelihood of rain detections, can be used as a sensor model, and motion model, respectively, to design a Recursive Bayesian Filter for estimating the true precipitation map. 
+%Such probabilistic method can be approximated, e.g., using Particle filter, for rapid reconstruction of the map.
 
-
-
-
-
-
-
- 
- 
- 
 %\subsection{Notations and terminologies}
-
 
 \subsection{Problem Definition}
 Let $b_t$ represent a \emph{belief}, the posterior probability distribution over the target state space at time $t \in \mathbb{Z}^{+}$.
