@@ -302,7 +302,8 @@ Others have employed a non-Bayesian method to perform target distribution mappin
 This approach focused on trying to detect and identify gas concentration that was continuously distributed over a space.
 In this instance, the diffusive sensor, which is typically used in environmental mapping, was only able to provide information about a relatively small area compared to their sonar or laser range scan counterparts.
 To overcome the limitation, the authors proposed a novel grid-mapped technique which used a Gaussian kernel to model the decreasing likelihood that a particular reading represents the true concentration with respect to the distance from the point of measurement. 
-Despite the promising results, their method did not scale well in larger environment since it relied upon a single-robot that was deployed using a pre-specified Mowing pattern.
+Despite the promising results, their method did not scale well in larger environment since it relied upon a single-robot that was deployed using a pre-specified Mowing pattern. 
+It is worth mentioning the work of Lynch et al. \cite{lynch2008decentralized}, who devise distributed control law for MSN to decrease the variance of their state estimate of the environment where they utilized Average Consensus filter to propagate information among the robots.
 
 %While they used a non-Bayesian method, \cite{lilienthal2009statistical} is the most related work that deals with target distribution mapping---in their work, constructing concentration map---by a mobile robot where the mission is of both detection and identification of gas continuously distributed over a space. 
 %In \cite{lilienthal2009statistical}, Lilienthal and Duckett observed that measurement from diffusive sensor provides information about a relatively smaller area compared to the measurement extracted from sonar, or laser range scans. 
