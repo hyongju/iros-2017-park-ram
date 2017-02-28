@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.11.2)  27 FEB 2017 18:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.11.2)  27 FEB 2017 19:09
 entering extended mode
 **./park_ram_iros17_0226.tex
 (park_ram_iros17_0226.tex
@@ -633,20 +633,20 @@ LaTeX Info: Redefining \bm on input line 208.
 (park_ram_iros17_0226.aux)
 \openout1 = `park_ram_iros17_0226.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 125.
+LaTeX Font Info:    ... okay on input line 125.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 125.
+LaTeX Font Info:    ... okay on input line 125.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 125.
+LaTeX Font Info:    ... okay on input line 125.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 125.
+LaTeX Font Info:    ... okay on input line 125.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 125.
+LaTeX Font Info:    ... okay on input line 125.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 125.
+LaTeX Font Info:    ... okay on input line 125.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 125.
+LaTeX Font Info:    ... okay on input line 125.
 
 ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -663,7 +663,7 @@ LaTeX Font Info:    ... okay on input line 123.
 \everyMPtoPDFconversion=\toks28
 )
 \AtBeginShipoutBox=\box65
-Package hyperref Info: Link coloring OFF on input line 123.
+Package hyperref Info: Link coloring OFF on input line 125.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
@@ -672,9 +672,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count156
 )
-LaTeX Info: Redefining \ref on input line 123.
-LaTeX Info: Redefining \pageref on input line 123.
-LaTeX Info: Redefining \nameref on input line 123.
+LaTeX Info: Redefining \ref on input line 125.
+LaTeX Info: Redefining \pageref on input line 125.
+LaTeX Info: Redefining \nameref on input line 125.
 
 (park_ram_iros17_0226.out) (park_ram_iros17_0226.out)
 \@outlinefile=\write3
@@ -682,23 +682,23 @@ LaTeX Info: Redefining \nameref on input line 123.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 213.
-LaTeX Font Info:    Try loading font information for U+msa on input line 213.
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 215.
+LaTeX Font Info:    Try loading font information for U+msa on input line 215.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 213.
+LaTeX Font Info:    Try loading font information for U+msb on input line 215.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 213.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 215.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\jknappen\ursfs.fd"
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 213.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 215.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
@@ -706,14 +706,17 @@ File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 ) [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 
-] [2] [3pdfTeX warning (ext4): destination with the same identifier (name{equat
-ion.2.6}) has been already used, duplicate ignored
+] [2]
+Underfull \vbox (badness 1895) has occurred while \output is active []
+
+ [3pdfTeX warning (ext4): destination with the same identifier (name{equation.2
+.6}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.556 \begin{equation}
-                      ]
-Overfull \hbox (3.55418pt too wide) detected at line 558
+l.554 \end{align}
+                 ]
+Overfull \hbox (3.55418pt too wide) detected at line 568
 \OML/cmm/m/it/10 f[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 y[] \OMS/cmsy/m/n/10 j \O
 ML/cmm/m/it/10 z; x\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 p[]\OT1/cmr/m/n/10 (\OM
 L/cmm/b/it/10 y[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 y[] \OMS/cmsy/m/n/10 j \OM
@@ -722,36 +725,39 @@ m/m/it/10 y[] \OMS/cmsy/m/n/10 j \OML/cmm/m/it/10 z; x\OT1/cmr/m/n/10 )
  []
 
 Package hyperref Info: bookmark level for unknown definition defaults to 0 on i
-nput line 621.
+nput line 631.
 
-Underfull \hbox (badness 10000) in paragraph at lines 622--625
+Underfull \hbox (badness 10000) in paragraph at lines 632--635
 []\OT1/ptm/m/n/10 Let
  []
 
 Package hyperref Info: bookmark level for unknown theorem defaults to 0 on inpu
-t line 645.
+t line 655.
 
-Underfull \hbox (badness 10000) in paragraph at lines 646--651
+Underfull \hbox (badness 10000) in paragraph at lines 656--661
 []\OT1/ptm/m/n/10 For a given $\OML/cmm/m/it/10 x$ \OT1/ptm/m/n/10 and $\OML/cm
 m/m/it/10 k$\OT1/ptm/m/n/10 ,
  []
 
 [4]
+Underfull \vbox (badness 1215) has occurred while \output is active []
+
 Package hyperref Info: bookmark level for unknown lemma defaults to 0 on input 
-line 729.
-
-Underfull \vbox (badness 2865) has occurred while \output is active []
-
+line 739.
  [5]
-Underfull \hbox (badness 2653) in paragraph at lines 958--959
+Underfull \hbox (badness 2653) in paragraph at lines 968--969
 []\OT1/ptm/m/n/10 In this sec-tion, we present a suite of multi-agent
  []
 
-[6] <figure/init_10_deploy_c.pdf, id=210, 686.565pt x 325.215pt>
+
+Underfull \vbox (badness 5622) has occurred while \output is active []
+
+ [6]
+<figure/init_10_deploy_c.pdf, id=210, 686.565pt x 325.215pt>
 File: figure/init_10_deploy_c.pdf Graphic file (type pdf)
 
 <use figure/init_10_deploy_c.pdf>
-Package pdftex.def Info: figure/init_10_deploy_c.pdf used on input line 1015.
+Package pdftex.def Info: figure/init_10_deploy_c.pdf used on input line 1025.
 (pdftex.def)             Requested size: 245.71754pt x 116.3925pt.
 Package epstopdf Info: Source file: <figure/init_10_deploy_cmd2.eps>
 (epstopdf)                    date: 2017-02-10 10:34:51
@@ -762,7 +768,7 @@ o.pdf>
 (epstopdf)                    size: 19858 bytes
 (epstopdf)             Command: <epstopdf --outfile=figure/init_10_deploy_cmd2-
 eps-converted-to.pdf figure/init_10_deploy_cmd2.eps>
-(epstopdf)             \includegraphics on input line 1024.
+(epstopdf)             \includegraphics on input line 1034.
 Package epstopdf Info: Output file is already uptodate.
 
 <figure/init_10_deploy_cmd2-eps-converted-to.pdf, id=211, 413.545pt x 426.59375
@@ -770,7 +776,7 @@ pt>
 File: figure/init_10_deploy_cmd2-eps-converted-to.pdf Graphic file (type pdf)
  <use figure/init_10_deploy_cmd2-eps-converted-to.pdf>
 Package pdftex.def Info: figure/init_10_deploy_cmd2-eps-converted-to.pdf used o
-n input line 1024.
+n input line 1034.
 (pdftex.def)             Requested size: 108.405pt x 111.82304pt.
 Package epstopdf Info: Source file: <figure/init_10_deploy_cmd1.eps>
 (epstopdf)                    date: 2017-02-10 10:34:51
@@ -781,7 +787,7 @@ o.pdf>
 (epstopdf)                    size: 24850 bytes
 (epstopdf)             Command: <epstopdf --outfile=figure/init_10_deploy_cmd1-
 eps-converted-to.pdf figure/init_10_deploy_cmd1.eps>
-(epstopdf)             \includegraphics on input line 1029.
+(epstopdf)             \includegraphics on input line 1039.
 Package epstopdf Info: Output file is already uptodate.
 
 <figure/init_10_deploy_cmd1-eps-converted-to.pdf, id=212, 291.0875pt x 293.095p
@@ -789,10 +795,10 @@ t>
 File: figure/init_10_deploy_cmd1-eps-converted-to.pdf Graphic file (type pdf)
  <use figure/init_10_deploy_cmd1-eps-converted-to.pdf>
 Package pdftex.def Info: figure/init_10_deploy_cmd1-eps-converted-to.pdf used o
-n input line 1029.
+n input line 1039.
 (pdftex.def)             Requested size: 122.13647pt x 122.9783pt.
 
-Overfull \hbox (10.84006pt too wide) in paragraph at lines 1029--1031
+Overfull \hbox (10.84006pt too wide) in paragraph at lines 1039--1041
  [][] 
  []
 
@@ -800,7 +806,7 @@ Overfull \hbox (10.84006pt too wide) in paragraph at lines 1029--1031
 File: figure/order1_step_0110_c.pdf Graphic file (type pdf)
 
 <use figure/order1_step_0110_c.pdf>
-Package pdftex.def Info: figure/order1_step_0110_c.pdf used on input line 1041.
+Package pdftex.def Info: figure/order1_step_0110_c.pdf used on input line 1051.
 
 (pdftex.def)             Requested size: 78.99127pt x 148.10207pt.
 
@@ -808,7 +814,7 @@ Package pdftex.def Info: figure/order1_step_0110_c.pdf used on input line 1041.
 File: figure/order2_step_0110_c.pdf Graphic file (type pdf)
 
 <use figure/order2_step_0110_c.pdf>
-Package pdftex.def Info: figure/order2_step_0110_c.pdf used on input line 1046.
+Package pdftex.def Info: figure/order2_step_0110_c.pdf used on input line 1056.
 
 (pdftex.def)             Requested size: 72.26999pt x 148.0938pt.
 
@@ -816,95 +822,9 @@ Package pdftex.def Info: figure/order2_step_0110_c.pdf used on input line 1046.
 File: figure/ordern_step_0110_c.pdf Graphic file (type pdf)
 
 <use figure/ordern_step_0110_c.pdf>
-Package pdftex.def Info: figure/ordern_step_0110_c.pdf used on input line 1051.
+Package pdftex.def Info: figure/ordern_step_0110_c.pdf used on input line 1061.
 
 (pdftex.def)             Requested size: 72.26999pt x 148.0938pt.
-
-Underfull \vbox (badness 1087) has occurred while \output is active []
-
-Package epstopdf Info: Source file: <figure/kl_div_2_n.eps>
-(epstopdf)                    date: 2017-02-27 14:06:23
-(epstopdf)                    size: 73200 bytes
-(epstopdf)             Output file: <figure/kl_div_2_n-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-02-27 14:06:35
-(epstopdf)                    size: 24167 bytes
-(epstopdf)             Command: <epstopdf --outfile=figure/kl_div_2_n-eps-conve
-rted-to.pdf figure/kl_div_2_n.eps>
-(epstopdf)             \includegraphics on input line 1075.
-Package epstopdf Info: Output file is already uptodate.
-
-<figure/kl_div_2_n-eps-converted-to.pdf, id=227, 413.545pt x 425.59pt>
-File: figure/kl_div_2_n-eps-converted-to.pdf Graphic file (type pdf)
-
-<use figure/kl_div_2_n-eps-converted-to.pdf>
-Package pdftex.def Info: figure/kl_div_2_n-eps-converted-to.pdf used on input l
-ine 1075.
-(pdftex.def)             Requested size: 122.85876pt x 126.43762pt.
-
-Overfull \hbox (6.50624pt too wide) in paragraph at lines 1075--1076
- [][] 
- []
-
-Package epstopdf Info: Source file: <figure/kl_div_1_n.eps>
-(epstopdf)                    date: 2017-02-27 14:05:52
-(epstopdf)                    size: 67303 bytes
-(epstopdf)             Output file: <figure/kl_div_1_n-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-02-27 14:05:52
-(epstopdf)                    size: 23337 bytes
-(epstopdf)             Command: <epstopdf --outfile=figure/kl_div_1_n-eps-conve
-rted-to.pdf figure/kl_div_1_n.eps>
-(epstopdf)             \includegraphics on input line 1080.
-Package epstopdf Info: Output file is already uptodate.
-<figure/kl_div_1_n-eps-converted-to.pdf, id=228, 413.545pt x 425.59pt>
-File: figure/kl_div_1_n-eps-converted-to.pdf Graphic file (type pdf)
-
-<use figure/kl_div_1_n-eps-converted-to.pdf>
-Package pdftex.def Info: figure/kl_div_1_n-eps-converted-to.pdf used on input l
-ine 1080.
-(pdftex.def)             Requested size: 122.85876pt x 126.43762pt.
-
-Overfull \hbox (6.50624pt too wide) in paragraph at lines 1080--1081
- [][] 
- []
-
-<figure/fault_order_1_c.pdf, id=229, 325.215pt x 325.215pt>
-File: figure/fault_order_1_c.pdf Graphic file (type pdf)
-
-<use figure/fault_order_1_c.pdf>
-Package pdftex.def Info: figure/fault_order_1_c.pdf used on input line 1090.
-(pdftex.def)             Requested size: 72.26999pt x 72.26706pt.
-
-<figure/fault_order_2_c.pdf, id=230, 325.215pt x 325.215pt>
-File: figure/fault_order_2_c.pdf Graphic file (type pdf)
-
-<use figure/fault_order_2_c.pdf>
-Package pdftex.def Info: figure/fault_order_2_c.pdf used on input line 1095.
-(pdftex.def)             Requested size: 72.26999pt x 72.26706pt.
-
-<figure/fault_order_n_c.pdf, id=231, 325.215pt x 325.215pt>
-File: figure/fault_order_n_c.pdf Graphic file (type pdf)
-
-<use figure/fault_order_n_c.pdf>
-Package pdftex.def Info: figure/fault_order_n_c.pdf used on input line 1100.
-(pdftex.def)             Requested size: 72.26999pt x 72.26706pt.
-Package epstopdf Info: Source file: <figure/fault_kl2.eps>
-(epstopdf)                    date: 2017-02-27 14:05:52
-(epstopdf)                    size: 68252 bytes
-(epstopdf)             Output file: <figure/fault_kl2-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-02-27 14:05:52
-(epstopdf)                    size: 23526 bytes
-(epstopdf)             Command: <epstopdf --outfile=figure/fault_kl2-eps-conver
-ted-to.pdf figure/fault_kl2.eps>
-(epstopdf)             \includegraphics on input line 1108.
-Package epstopdf Info: Output file is already uptodate.
-
-<figure/fault_kl2-eps-converted-to.pdf, id=232, 413.545pt x 425.59pt>
-File: figure/fault_kl2-eps-converted-to.pdf Graphic file (type pdf)
-
-<use figure/fault_kl2-eps-converted-to.pdf>
-Package pdftex.def Info: figure/fault_kl2-eps-converted-to.pdf used on input li
-ne 1108.
-(pdftex.def)             Requested size: 120.69077pt x 124.2037pt.
  [7 <./figure/init_10_deploy_c.pdf> <./figure/init_10_deploy_cmd2-eps-converted
 -to.pdf> <./figure/init_10_deploy_cmd1-eps-converted-to.pdf> <./figure/order1_s
 tep_0110_c.pdf
@@ -919,12 +839,96 @@ ion: multiple pdfs with page group included in a single page
 
 pdfTeX warning: pdflatex.exe (file ./figure/ordern_step_0110_c.pdf): PDF inclus
 ion: multiple pdfs with page group included in a single page
->] (park_ram_iros17_0226.bbl
-Missing character: There is no â in font ptmr7t!
-Missing character: There is no € in font ptmr7t!
-Missing character: There is no “ in font ptmr7t!
- [8 <./figure/kl_div_2_n-eps-converted-to.pdf> <./figure/kl_div_1_n-eps-convert
-ed-to.pdf> <./figure/fault_order_1_c.pdf> <./figure/fault_order_2_c.pdf
+>]
+Package epstopdf Info: Source file: <figure/kl_div_2_n.eps>
+(epstopdf)                    date: 2017-02-27 19:07:13
+(epstopdf)                    size: 74526 bytes
+(epstopdf)             Output file: <figure/kl_div_2_n-eps-converted-to.pdf>
+(epstopdf)                    date: 2017-02-27 19:07:13
+(epstopdf)                    size: 24167 bytes
+(epstopdf)             Command: <epstopdf --outfile=figure/kl_div_2_n-eps-conve
+rted-to.pdf figure/kl_div_2_n.eps>
+(epstopdf)             \includegraphics on input line 1085.
+Package epstopdf Info: Output file is already uptodate.
+ <figure/kl_div_2_n-eps-converted-to.pdf, id=273, 413.545pt x 425.59pt>
+File: figure/kl_div_2_n-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figure/kl_div_2_n-eps-converted-to.pdf>
+Package pdftex.def Info: figure/kl_div_2_n-eps-converted-to.pdf used on input l
+ine 1085.
+(pdftex.def)             Requested size: 122.85876pt x 126.43762pt.
+
+Overfull \hbox (6.50624pt too wide) in paragraph at lines 1085--1086
+ [][] 
+ []
+
+Package epstopdf Info: Source file: <figure/kl_div_1_n.eps>
+(epstopdf)                    date: 2017-02-27 14:05:52
+(epstopdf)                    size: 67303 bytes
+(epstopdf)             Output file: <figure/kl_div_1_n-eps-converted-to.pdf>
+(epstopdf)                    date: 2017-02-27 14:05:52
+(epstopdf)                    size: 23337 bytes
+(epstopdf)             Command: <epstopdf --outfile=figure/kl_div_1_n-eps-conve
+rted-to.pdf figure/kl_div_1_n.eps>
+(epstopdf)             \includegraphics on input line 1090.
+Package epstopdf Info: Output file is already uptodate.
+<figure/kl_div_1_n-eps-converted-to.pdf, id=274, 413.545pt x 425.59pt>
+File: figure/kl_div_1_n-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figure/kl_div_1_n-eps-converted-to.pdf>
+Package pdftex.def Info: figure/kl_div_1_n-eps-converted-to.pdf used on input l
+ine 1090.
+(pdftex.def)             Requested size: 122.85876pt x 126.43762pt.
+
+Overfull \hbox (6.50624pt too wide) in paragraph at lines 1090--1091
+ [][] 
+ []
+
+<figure/fault_order_1_c.pdf, id=275, 325.215pt x 325.215pt>
+File: figure/fault_order_1_c.pdf Graphic file (type pdf)
+
+<use figure/fault_order_1_c.pdf>
+Package pdftex.def Info: figure/fault_order_1_c.pdf used on input line 1100.
+(pdftex.def)             Requested size: 72.26999pt x 72.26706pt.
+
+<figure/fault_order_2_c.pdf, id=276, 325.215pt x 325.215pt>
+File: figure/fault_order_2_c.pdf Graphic file (type pdf)
+
+<use figure/fault_order_2_c.pdf>
+Package pdftex.def Info: figure/fault_order_2_c.pdf used on input line 1105.
+(pdftex.def)             Requested size: 72.26999pt x 72.26706pt.
+
+<figure/fault_order_n_c.pdf, id=277, 325.215pt x 325.215pt>
+File: figure/fault_order_n_c.pdf Graphic file (type pdf)
+
+<use figure/fault_order_n_c.pdf>
+Package pdftex.def Info: figure/fault_order_n_c.pdf used on input line 1110.
+(pdftex.def)             Requested size: 72.26999pt x 72.26706pt.
+Package epstopdf Info: Source file: <figure/fault_kl2.eps>
+(epstopdf)                    date: 2017-02-27 14:05:52
+(epstopdf)                    size: 68252 bytes
+(epstopdf)             Output file: <figure/fault_kl2-eps-converted-to.pdf>
+(epstopdf)                    date: 2017-02-27 14:05:52
+(epstopdf)                    size: 23526 bytes
+(epstopdf)             Command: <epstopdf --outfile=figure/fault_kl2-eps-conver
+ted-to.pdf figure/fault_kl2.eps>
+(epstopdf)             \includegraphics on input line 1118.
+Package epstopdf Info: Output file is already uptodate.
+
+<figure/fault_kl2-eps-converted-to.pdf, id=278, 413.545pt x 425.59pt>
+File: figure/fault_kl2-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figure/fault_kl2-eps-converted-to.pdf>
+Package pdftex.def Info: figure/fault_kl2-eps-converted-to.pdf used on input li
+ne 1118.
+(pdftex.def)             Requested size: 120.69077pt x 124.2037pt.
+ (park_ram_iros17_0226.bbl
+Underfull \hbox (badness 2762) in paragraph at lines 1--6
+[]\OT1/ptm/m/n/10 <<<<<<< Up-dated up-stream ======= >>>>>>> Stashed
+ []
+
+[8 <./figure/kl_div_2_n-eps-converted-to.pdf> <./figure/kl_div_1_n-eps-converte
+d-to.pdf> <./figure/fault_order_1_c.pdf> <./figure/fault_order_2_c.pdf
 
 pdfTeX warning: pdflatex.exe (file ./figure/fault_order_2_c.pdf): PDF inclusion
 : multiple pdfs with page group included in a single page
@@ -933,6 +937,9 @@ pdfTeX warning: pdflatex.exe (file ./figure/fault_order_2_c.pdf): PDF inclusion
 pdfTeX warning: pdflatex.exe (file ./figure/fault_order_n_c.pdf): PDF inclusion
 : multiple pdfs with page group included in a single page
 > <./figure/fault_kl2-eps-converted-to.pdf>]
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no “ in font ptmr7t!
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
@@ -948,31 +955,29 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the US letter (8.5in X 11in) paper size.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1161.
-[9
-
-]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1161.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1171.
+[9]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1171.
  (park_ram_iros17_0226.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1161.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1161.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1171.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1171.
 
 Package rerunfilecheck Info: File `park_ram_iros17_0226.out' has not changed.
 (rerunfilecheck)             Checksum: 4AB05D81E2F6554310B134E7ECD00F21;1176.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1161.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1171.
  )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 11361 strings out of 493334
- 174925 string characters out of 3139246
- 402319 words of memory out of 3000000
- 14540 multiletter control sequences out of 15000+200000
+ 11362 strings out of 493334
+ 174928 string characters out of 3139246
+ 400351 words of memory out of 3000000
+ 14541 multiletter control sequences out of 15000+200000
  58216 words of font info for 139 fonts, out of 3000000 for 9000
  1144 hyphenation exceptions out of 8191
- 42i,20n,39p,1266b,3283s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 42i,20n,39p,1266b,3284s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C
 :/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Progra
 m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Program Files/M
@@ -1004,7 +1009,7 @@ fb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Fi
 les/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Program Files/MiKTeX 2.9/f
 onts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/ti
 mes/utmri8a.pfb>
-Output written on park_ram_iros17_0226.pdf (9 pages, 693160 bytes).
+Output written on park_ram_iros17_0226.pdf (9 pages, 694720 bytes).
 PDF statistics:
  472 PDF objects out of 1000 (max. 8388607)
  105 named destinations out of 1000 (max. 500000)

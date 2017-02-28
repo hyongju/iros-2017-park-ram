@@ -1,18 +1,39 @@
-\documentclass[letterpaper, 10 pt, conference]{ieeeconf}
+\documentclass[conference]{IEEEtran}
 
 
 
-\IEEEoverridecommandlockouts                              % This command is only needed if 
-% you want to use the \thanks command
 
-\overrideIEEEmargins  
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+  % \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+
+
 
 \usepackage{setspace}
 \usepackage{epsfig}  % for figures
 \usepackage{epstopdf}
 \usepackage{hyperref}
 
-\usepackage{amssymb,amsmath, mathtools}
+\usepackage{amssymb,amsmath,amsthm, mathtools}
 \usepackage{mathrsfs} 
 
 \let\labelindent\relax
@@ -110,9 +131,7 @@
 \newcommand{\Ram}[1]{{\normalsize{\textbf{({\color{green}Ram:\ }#1)}}}}
 
 
-\newcommand{\HJ}[1]{{\color{black}{#1}}}
-%\renewcommand{\HJ}[1]{}
-
+\newcommand{\HJ}[1]{{\color{red}{#1}}}
 
 \newcommand{\HJP}[1]{{\normalsize{\textbf{({\color{blue}Hyongju:\ }#1)}}}}
 
@@ -133,8 +152,8 @@
 % not capitalized unless they are the first or last word of the title.
 % Linebreaks \\ can be used within to get better formatting as desired.
 % Do not put math or special symbols in the title.
-\title{\LARGE \bf
-	 Environmental Mapping by Mobile Sensor Networks: A Bayesian Method
+\title{
+	 Spatial Distribution Mapping by Mobile Sensor Networks: A Bayesian Method
 }
 %
 %
@@ -147,16 +166,11 @@
 % was not built to handle multiple paragraphs
 %
 
-\author{Hyongju~Park${}^1$, Matthew~Johnson-Roberson${}^2$ and Ram~Vasudevan${}^1$
-\thanks{${}^1$Hyongju Park and Ram Vasudevan is with the Department
-	of Mechanical Engineering, University of Michigan, Ann Arbor,
-	MI, 48109 USA {\tt\small hjcpark,ramv@umich.edu}.}% <-this % stops a space
-\thanks{${}^2$Matthew Johnson-Roberson is with the Department of Naval Architecture and Marine Engineering, University of Michigan, Ann Arbor,
-	MI, 48109 USA {\tt\small mattjr@umich.edu}.}% <-this % stops a space        
-}% <-this % stops a space
-
-
-	
+\author{Hyongju~Park, Matthew~Johnson-Roberson and Ram~Vasudevan
+        }% <-this % stops a space
+%\thanks{Hyongju Park is with the Department
+%		of Mechanical Science and Engineering, University of Illinois at Urbana-Champaign, Urbana,
+%		IL, 61801 USA {\tt\small park334@illinois.edu}.}% <-this % stops a space
 %\thanks{Seth A. Hutchinson is with the Department
 %of Electrical and Computer Engineering, University of Illinois at Urbana-Champaign, Urbana,
 %IL, 61801 USA {\tt\small seth@illinois.edu}.}% <-this % stops a space
@@ -1041,7 +1055,7 @@ A number of particles used for the SIR filter is $N= N_1\times N_2 = 1000 \times
 	\caption{}
 \end{subfigure}	
 %	\includegraphics[width=3.4in]{figure/init_10_deploy_cmd2}
-	\caption{One-time deployment with $k=1$, (a) cost change during Algorithm 1, (b) optimal path respecting unicycle kinematic constraint (small circles: initial positions, stars: target positions, solid lines: partitions at target positions)}
+	\caption{One-time deployment, (a) cost change during Algorithm 1, (b) optimal path respecting unicycle kinematic constraint (small circles: initial positions, stars: target positions, solid lines: partitions at target positions)}
 	\label{fig:fig2}
 \end{figure}
 \begin{figure}
@@ -1074,8 +1088,8 @@ Next, we present the evolution of the object map given the uniform, initial map 
 by different methods with $k=1,\,2,\,10$ respectively, by showing robots' positions and the current belief at time step $1$ and $10$ respectively.
 The results depicted in Fig. \ref{fig:fig3} clearly show that under \emph{limited} sensing range, the non-coordinated strategy ($k=1$) yields relatively better mapping results than coordinated strategies ($k=2,\,10$) compared to the ground truth map shown in Fig \ref{fig:fig1}(left).
 In addition, Fig. \ref{fig:fig5}(a) compares the K-L divergence values 
-between different strategies during the evolution when $r_{\textup{eff}} =0.2$. We included the results with 2D random walks ($100$ walks) with step size $0.2$ to illustrate the performance gain from our algorithm.
-Finally, Fig. \ref{fig:fig5}(b) compares the K-L divergence values between different strategies when $r_{\textup{eff}}=\infty$ merely to illustrate the filtering performance when the constraint on the sensing range is \emph{relaxed}. As can be seen, in this case, coordinate strategies yields better performance than the the non-coordinate one.
+between different strategies during the evolution when $r_{\textup{eff}} =0.2$. We included the results with 2D random walk with step size $0.2$ to illustrate the performance gain from our algorithm.
+Finally, Fig. \ref{fig:fig5}(b) compares the K-L divergence values between different strategies when $r_{\textup{eff}}=\infty$ merely to illustrate the filtering performance when the constraint on the sensing range is relaxed. As can be seen, in this case, coordinate strategies yields better performance than the the non-coordinate one.
 We also note that in all cases, our deployment strategies has noticeably improved the quality of the map along the evolutions.
 The occurrence of sudden jumps (between the time step 0 and 1) in the K-L divergence values observed in Fig \ref{fig:fig5}(a) demonstrates the cases when the initial uniform density happened to a better `\emph{guess}' than the crude belief obtained after a single propagation of the filtering process.
 \begin{figure}
