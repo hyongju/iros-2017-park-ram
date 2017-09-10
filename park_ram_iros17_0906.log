@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  9 SEP 2017 11:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  9 SEP 2017 22:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -828,23 +828,23 @@ Package pdftex.def Info: figure/order2deploy2d-eps-converted-to.pdf used on inp
 ut line 1392.
 (pdftex.def)             Requested size: 112.0187pt x 112.01183pt.
 Package epstopdf Info: Source file: <figure/cost_comp1.eps>
-(epstopdf)                    date: 2017-09-09 02:16:24
-(epstopdf)                    size: 73853 bytes
+(epstopdf)                    date: 2017-09-09 22:03:27
+(epstopdf)                    size: 20464 bytes
 (epstopdf)             Output file: <figure/cost_comp1-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-09-09 02:16:24
-(epstopdf)                    size: 16689 bytes
+(epstopdf)                    date: 2017-09-09 22:03:29
+(epstopdf)                    size: 8260 bytes
 (epstopdf)             Command: <repstopdf --outfile=figure/cost_comp1-eps-conv
 erted-to.pdf figure/cost_comp1.eps>
 (epstopdf)             \includegraphics on input line 1401.
 Package epstopdf Info: Output file is already uptodate.
 
-<figure/cost_comp1-eps-converted-to.pdf, id=210, 903.375pt x 451.6875pt>
+<figure/cost_comp1-eps-converted-to.pdf, id=210, 1204.5pt x 602.25pt>
 File: figure/cost_comp1-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figure/cost_comp1-eps-converted-to.pdf>
 Package pdftex.def Info: figure/cost_comp1-eps-converted-to.pdf used on input l
 ine 1401.
-(pdftex.def)             Requested size: 195.12877pt x 97.5658pt.
+(pdftex.def)             Requested size: 209.58255pt x 104.7888pt.
 
 <figure/k_2_result.pdf, id=211, 737.15402pt x 180.675pt>
 File: figure/k_2_result.pdf Graphic file (type pdf)
@@ -853,23 +853,23 @@ File: figure/k_2_result.pdf Graphic file (type pdf)
 Package pdftex.def Info: figure/k_2_result.pdf used on input line 1421.
 (pdftex.def)             Requested size: 469.75499pt x 115.1381pt.
 Package epstopdf Info: Source file: <figure/cost_comp0.eps>
-(epstopdf)                    date: 2017-09-09 02:16:24
-(epstopdf)                    size: 23691 bytes
+(epstopdf)                    date: 2017-09-09 21:59:00
+(epstopdf)                    size: 21015 bytes
 (epstopdf)             Output file: <figure/cost_comp0-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-09-09 02:16:24
-(epstopdf)                    size: 5178 bytes
+(epstopdf)                    date: 2017-09-09 21:59:04
+(epstopdf)                    size: 8486 bytes
 (epstopdf)             Command: <repstopdf --outfile=figure/cost_comp0-eps-conv
 erted-to.pdf figure/cost_comp0.eps>
 (epstopdf)             \includegraphics on input line 1452.
 Package epstopdf Info: Output file is already uptodate.
 
-<figure/cost_comp0-eps-converted-to.pdf, id=218, 903.375pt x 451.6875pt>
+<figure/cost_comp0-eps-converted-to.pdf, id=218, 1204.5pt x 602.25pt>
 File: figure/cost_comp0-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figure/cost_comp0-eps-converted-to.pdf>
 Package pdftex.def Info: figure/cost_comp0-eps-converted-to.pdf used on input l
 ine 1452.
-(pdftex.def)             Requested size: 195.12877pt x 97.5658pt.
+(pdftex.def)             Requested size: 209.58255pt x 104.7888pt.
  [7]
 Underfull \hbox (badness 2799) in paragraph at lines 1484--1489
 \OT1/ptm/m/n/10 fail. We con-sider three dif-fer-ent cases, when $\OMS/cmsy/m/n
@@ -916,18 +916,12 @@ Package epstopdf Info: Source file: <figure/final_config_ordern_fault.eps>
 (epstopdf)                    size: 588902 bytes
 (epstopdf)             Output file: <figure/final_config_ordern_fault-eps-conve
 rted-to.pdf>
-(epstopdf)                    date: 2017-09-09 11:01:59
+(epstopdf)                    date: 2017-09-09 21:50:58
 (epstopdf)                    size: 1088276 bytes
 (epstopdf)             Command: <repstopdf --outfile=figure/final_config_ordern
 _fault-eps-converted-to.pdf figure/final_config_ordern_fault.eps>
 (epstopdf)             \includegraphics on input line 1494.
-runsystem(repstopdf --outfile=figure/final_config_ordern_fault-eps-converted-to
-.pdf figure/final_config_ordern_fault.eps)...executed safely (allowed).
-
-Package epstopdf Info: Result file: <figure/final_config_ordern_fault-eps-conve
-rted-to.pdf>
-(epstopdf)                    date: 2017-09-09 11:02:06
-(epstopdf)                    size: 1088276 bytes.
+Package epstopdf Info: Output file is already uptodate.
 
 <figure/final_config_ordern_fault-eps-converted-to.pdf, id=243, 903.375pt x 903
 .375pt>
@@ -938,11 +932,11 @@ Package pdftex.def Info: figure/final_config_ordern_fault-eps-converted-to.pdf
 used on input line 1494.
 (pdftex.def)             Requested size: 79.49744pt x 79.49448pt.
 Package epstopdf Info: Source file: <figure/cost_comp000.eps>
-(epstopdf)                    date: 2017-09-09 10:55:49
-(epstopdf)                    size: 31368 bytes
+(epstopdf)                    date: 2017-09-09 21:55:55
+(epstopdf)                    size: 29953 bytes
 (epstopdf)             Output file: <figure/cost_comp000-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-09-09 10:56:11
-(epstopdf)                    size: 10231 bytes
+(epstopdf)                    date: 2017-09-09 21:55:59
+(epstopdf)                    size: 10219 bytes
 (epstopdf)             Command: <repstopdf --outfile=figure/cost_comp000-eps-co
 nverted-to.pdf figure/cost_comp000.eps>
 (epstopdf)             \includegraphics on input line 1503.
@@ -954,26 +948,40 @@ File: figure/cost_comp000-eps-converted-to.pdf Graphic file (type pdf)
 <use figure/cost_comp000-eps-converted-to.pdf>
 Package pdftex.def Info: figure/cost_comp000-eps-converted-to.pdf used on input
  line 1503.
-(pdftex.def)             Requested size: 195.12877pt x 97.55661pt.
+(pdftex.def)             Requested size: 209.58255pt x 104.7888pt.
+Package epstopdf Info: Source file: <figure/stat_result.eps>
+(epstopdf)                    date: 2017-09-09 21:53:09
+(epstopdf)                    size: 90420 bytes
+(epstopdf)             Output file: <figure/stat_result-eps-converted-to.pdf>
+(epstopdf)                    date: 2017-09-09 21:53:13
+(epstopdf)                    size: 85612 bytes
+(epstopdf)             Command: <repstopdf --outfile=figure/stat_result-eps-con
+verted-to.pdf figure/stat_result.eps>
+(epstopdf)             \includegraphics on input line 1514.
+Package epstopdf Info: Output file is already uptodate.
 
+<figure/stat_result-eps-converted-to.pdf, id=246, 803.0pt x 602.25pt>
+File: figure/stat_result-eps-converted-to.pdf Graphic file (type pdf)
 
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 1519.
-
-(./park_ram_iros17_0906.bbl
+<use figure/stat_result-eps-converted-to.pdf>
+Package pdftex.def Info: figure/stat_result-eps-converted-to.pdf used on input 
+line 1514.
+(pdftex.def)             Requested size: 195.12877pt x 146.3441pt.
+ (./park_ram_iros17_0906.bbl
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
- [8 <./figure/gtruth3d-eps-converted-to.pdf> <./figure/order1deploy2d-eps-conve
-rted-to.pdf> <./figure/order2deploy2d-eps-converted-to.pdf> <./figure/cost_comp
-1-eps-converted-to.pdf>]
+
+[8 <./figure/gtruth3d-eps-converted-to.pdf> <./figure/order1deploy2d-eps-conver
+ted-to.pdf> <./figure/order2deploy2d-eps-converted-to.pdf> <./figure/cost_comp1
+-eps-converted-to.pdf>]
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
  [9 <./figure/k_2_result.pdf> <./figure/cost_comp0-eps-converted-to.pdf> <./fig
 ure/order1_conf-eps-converted-to.pdf> <./figure/order2_conf-eps-converted-to.pd
 f> <./figure/final_config_ordern_fault-eps-converted-to.pdf> <./figure/cost_com
-p000-eps-converted-to.pdf>])
+p000-eps-converted-to.pdf> <./figure/stat_result-eps-converted-to.pdf>])
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -1003,10 +1011,10 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1580.
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 11355 strings out of 493014
- 176198 string characters out of 6133351
- 403843 words of memory out of 5000000
- 14548 multiletter control sequences out of 15000+600000
+ 11360 strings out of 493014
+ 176391 string characters out of 6133351
+ 403759 words of memory out of 5000000
+ 14552 multiletter control sequences out of 15000+600000
  58216 words of font info for 139 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
  42i,21n,39p,1661b,3291s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1045,10 +1053,10 @@ exmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/20
 s/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/u
 rw/times/utmr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/u
 tmri8a.pfb>
-Output written on park_ram_iros17_0906.pdf (10 pages, 2754999 bytes).
+Output written on park_ram_iros17_0906.pdf (10 pages, 2832718 bytes).
 PDF statistics:
- 480 PDF objects out of 1000 (max. 8388607)
- 383 compressed objects within 4 object streams
+ 494 PDF objects out of 1000 (max. 8388607)
+ 387 compressed objects within 4 object streams
  99 named destinations out of 1000 (max. 500000)
- 227 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 232 words of extra memory for PDF output out of 10000 (max. 10000000)
 

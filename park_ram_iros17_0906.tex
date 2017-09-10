@@ -1398,7 +1398,7 @@ In our simulation, we will compare the three methods summarized in Table \ref{ta
 
 \begin{figure}
 	\centering
-	\includegraphics[width=2.7in]{figure/cost_comp1}
+	\includegraphics[width=2.9in]{figure/cost_comp1}
 	%\includegraphics[width=1.57in]{figure/final_config_order1_fault}
 	%	\includegraphics[width=3.4in]{figure/init_10_deploy_cmd2}
 	\caption{Convergence test for one-time deployment with different methods.}
@@ -1449,7 +1449,7 @@ Fig. \ref{fig:fig5} compares the K-L divergence values between different strateg
 %The occurrence of sudden jumps (between the time step 0 and 1) in the K-L divergence values observed in Fig \ref{fig:fig5}(a) demonstrates the cases when the initial uniform density happened to a better `\emph{guess}' than the crude belief obtained after a single propagation of the filtering process.
 \begin{figure}
 	\centering
-	\includegraphics[width=2.7in]{figure/cost_comp0}
+	\includegraphics[width=2.9in]{figure/cost_comp0}
 	\caption{Comparison of K-L divergence from the actual distribution between different methods during belief propagation.}
 	\label{fig:fig5}
 \end{figure}
@@ -1500,7 +1500,7 @@ Due to its fully decentralized nature, it is not surprising to see from this exa
 \end{figure}
 \begin{figure}
 	\centering
-	\includegraphics[width=2.7in]{figure/cost_comp000}
+	\includegraphics[width=2.9in]{figure/cost_comp000}
 	\caption{Comparison of K-L divergence from the actual distribution between different methods during belief propagation when part of the sensor fail.}
 	\label{fig:fig7}
 \end{figure}
@@ -1508,27 +1508,27 @@ Due to its fully decentralized nature, it is not surprising to see from this exa
 
 \subsection{Statistical results with different initial conditions/faults compositions}
 Statistical results shows that our method can be used to estimate arbitrary target distribution given randomly chosen initial configuration, with different fault compositions reasonably well. 
-The mean and standard deviations of the K-L divergence of the ground truth and the reconstructed distribution at the $10^{\textup{th}}$ beginning from $10$ random configurations are summarized in Table \ref{table1}.
-%\begin{figure}
-%	\centering
-%	\includegraphics[width=3.4in]{figure/fig8}
-%	\caption{Expected target intensities for 5 arbitrary environmental map} 
-%	\label{fig:fig8}
-%\end{figure}
-
-\begin{table}[]
+Fig. \ref{fig:fig8} shows a distribution of K-L divergence values at the $t=10$ for a given $100$ random initial configurations with randomly sampled faults $1\leq \left|\mathcal{F}\right| \leq 5$.
+\begin{figure}
 	\centering
-	\caption{Mean and standard deviations (parenthesis) of K-L divergence for  arbitrary distributions under 100 random initial configurations with fault compositions [WILL REPLACE THIS WITH HISTOGRAM...]}
-	\label{table1}
-			{\scriptsize
-	\resizebox{\linewidth}{!}{%	
-	\begin{tabular}{llllll}
-		\hline
-		Distribution type:           & \#1 & \#2 & \#3 & \#4 & \#5 \\ \hline
-		\multirow{2}{*}{K-L divergence} &  0.0358   &  0.0308   & 0.0495    &  0.0293   &  0.0339   \\ 
-	& (0.0034)    &  (0.0033)   &   (0.0041)  &  (0.0012)   &  	(0.0024)   \\ \cline{1-6}
-	\end{tabular}}}
-\end{table}
+	\includegraphics[width=2.7in]{figure/stat_result}
+	\caption{Robustness test with 100 test dataset, distribution of $\left|\mathcal{F}\right|$ (top), K-L divergence at $t=10$ (bottom)} 
+	\label{fig:fig8}
+\end{figure}
+
+%\begin{table}[]
+%	\centering
+%	\caption{Mean and standard deviations (parenthesis) of K-L divergence for  arbitrary distributions under 100 random initial configurations with fault compositions [WILL REPLACE THIS WITH HISTOGRAM...]}
+%	\label{table1}
+%			{\scriptsize
+%	\resizebox{\linewidth}{!}{%	
+%	\begin{tabular}{llllll}
+%		\hline
+%		Distribution type:           & \#1 & \#2 & \#3 & \#4 & \#5 \\ \hline
+%		\multirow{2}{*}{K-L divergence} &  0.0358   &  0.0308   & 0.0495    &  0.0293   &  0.0339   \\ 
+%	& (0.0034)    &  (0.0033)   &   (0.0041)  &  (0.0012)   &  	(0.0024)   \\ \cline{1-6}
+%	\end{tabular}}}
+%\end{table}
 
 
 
