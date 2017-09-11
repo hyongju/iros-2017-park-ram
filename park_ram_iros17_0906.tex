@@ -1005,10 +1005,10 @@ Note that for a given $k$, by substituting ${f}_{\bm{q}}$ with $\phi$ and $x$ wi
 %The problem is NP-Hard for $k=1$ and so on.
 If $h$ is differentiable, our deployment strategy can use the gradient $\nabla  \mathcal{L}(x_t)=\left[\frac{\partial\mathcal{L}(x_t)}{\partial x_1^t},\dots,\frac{\partial\mathcal{L}(x_t)}{\partial x_m^t}\right]$ where for each $i$,
 \begin{align*}
-\frac{\partial\mathcal{L}(x_t)}{\partial x_i^t} 
-&= -\sum_{j:W_t^j \in {}^kG^{-1}(x_t^i)} \int_{W_t^j}
+\frac{\partial\mathcal{L}(x_t)}{\partial x_t^i} 
+&= -\sum_{j \in \lbrace 1,\dots,l \rbrace: \atop W_t^j \in {}^kG^{-1}(x_t^i)} \int_{W_t^j}
 \frac{\partial h(\left\| q-x_t^i \right\|)}{\partial x_t^i} \\
-&\,\,\,\,\,\,\, \times \prod_{l:x_{t}^l \in {}^kG(W_t^j),l\neq i, l \notin \mathcal{F}} \left(1- h \left(\left\|
+&\,\,\,\,\,\,\, \times \prod_{l \in \lbrace 1,\dots,m \rbrace: \atop x_{t}^l \in {}^kG(W_t^j),l\neq i, l \notin \mathcal{F}} \left(1- h \left(\left\|
 q - x_t^i \right\|  \right) \right){f}_{\bm{q}}(q)\,dq,
 \end{align*}
 to find the desirable control policy of the robots as described in Algorithm \ref{alg1}. Algorithm \ref{alg1} uses coordinate gradient descent in cyclic fashion to obtain a sub-optimal solution, namely, $\hat{u}_t$ for each time $t$.
@@ -1376,7 +1376,7 @@ In our simulation, we will compare the three methods summarized in Table \ref{ta
 \begin{figure}
 	\centering
 	\includegraphics[width=2.5in]{figure/gtruth3d}
-	\caption{Elevation map of some region in Connecticut (the ground truth)} 
+	\caption{Elevation map of some region in Connecticut (the ground truth).} 
 	\label{fig:fig1}
 \end{figure}
 
@@ -1392,7 +1392,7 @@ In our simulation, we will compare the three methods summarized in Table \ref{ta
   	  	\includegraphics[width=1.55in]{figure/order2deploy2d}
 %\includegraphics[width=1.57in]{figure/final_config_order1_fault}
 	%	\includegraphics[width=3.4in]{figure/init_10_deploy_cmd2}
-	\caption{One-time deployment with non-robust (left) and robust ($k=2$) (right) overlay-ed with map at $t=1$ (lines: gradient descent flow, stars: positions of robots, polygons: partition)}
+	\caption{One-time deployment with non-robust (left) and robust ($k=2$) (right) overlaid with map at $t=1$ (lines: gradient descent flow, stars: positions of robots, polygons: partition).}
 	\label{fig:fig2}
 \end{figure}
 
@@ -1431,7 +1431,7 @@ In our simulation, we will compare the three methods summarized in Table \ref{ta
 %	\includegraphics[width=1in]{figure/ordern_step_0110_c}
 %	\caption{$k=10$}
 %\end{subfigure}
-	\caption{Belief propagation with our robust deployment strategy where $k=2$, $r_{\textup{eff}} = 0.3$, $\Sigma_B = 0.04\mathbf{I}$.}
+	\caption{Time evolution of expected belief with robust method ($k=2$), $r_{\textup{eff}} = 2.89$, $\Sigma_B = 0.04\mathbf{I}$.}
 	\label{fig:fig3}
 \end{figure*}
 
@@ -1512,7 +1512,7 @@ Fig. \ref{fig:fig8} shows a distribution of K-L divergence values at the $t=10$ 
 \begin{figure}
 	\centering
 	\includegraphics[width=2.7in]{figure/stat_result}
-	\caption{Robustness test with 100 test dataset, distribution of $\left|\mathcal{F}\right|$ (top), K-L divergence at $t=10$ (bottom)} 
+	\caption{Robustness test with 100 test dataset, distribution of $\left|\mathcal{F}\right|$ (top), K-L divergence at $t=10$ (bottom).} 
 	\label{fig:fig8}
 \end{figure}
 
