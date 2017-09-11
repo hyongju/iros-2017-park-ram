@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.2.6)  11 SEP 2017 11:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.2.6)  11 SEP 2017 11:06
 entering extended mode
 **./park_ram_iros17_0906.tex
 (park_ram_iros17_0906.tex
@@ -871,11 +871,6 @@ Package pdftex.def Info: figure/cost_comp0-eps-converted-to.pdf used on input l
 ine 1452.
 (pdftex.def)             Requested size: 209.58255pt x 104.7888pt.
  [7]
-Underfull \hbox (badness 2799) in paragraph at lines 1484--1489
-\OT1/ptm/m/n/10 fail. We con-sider three dif-fer-ent cases, when $\OMS/cmsy/m/n
-/10 F \OT1/cmr/m/n/10 =
- []
-
 Package epstopdf Info: Source file: <figure/order1_conf.eps>
 (epstopdf)                    date: 2017-09-08 22:16:24
 (epstopdf)                    size: 534555 bytes
@@ -884,14 +879,15 @@ Package epstopdf Info: Source file: <figure/order1_conf.eps>
 (epstopdf)                    size: 238126 bytes
 (epstopdf)             Command: <epstopdf --outfile=figure/order1_conf-eps-conv
 erted-to.pdf figure/order1_conf.eps>
-(epstopdf)             \includegraphics on input line 1492.
+(epstopdf)             \includegraphics on input line 1491.
 Package epstopdf Info: Output file is already uptodate.
+
 <figure/order1_conf-eps-converted-to.pdf, id=239, 903.375pt x 903.375pt>
 File: figure/order1_conf-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figure/order1_conf-eps-converted-to.pdf>
 Package pdftex.def Info: figure/order1_conf-eps-converted-to.pdf used on input 
-line 1492.
+line 1491.
 (pdftex.def)             Requested size: 79.49744pt x 79.49448pt.
 Package epstopdf Info: Source file: <figure/order2_conf.eps>
 (epstopdf)                    date: 2017-09-08 22:16:24
@@ -901,7 +897,7 @@ Package epstopdf Info: Source file: <figure/order2_conf.eps>
 (epstopdf)                    size: 235509 bytes
 (epstopdf)             Command: <epstopdf --outfile=figure/order2_conf-eps-conv
 erted-to.pdf figure/order2_conf.eps>
-(epstopdf)             \includegraphics on input line 1493.
+(epstopdf)             \includegraphics on input line 1492.
 Package epstopdf Info: Output file is already uptodate.
 
 <figure/order2_conf-eps-converted-to.pdf, id=240, 903.375pt x 903.375pt>
@@ -909,7 +905,7 @@ File: figure/order2_conf-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figure/order2_conf-eps-converted-to.pdf>
 Package pdftex.def Info: figure/order2_conf-eps-converted-to.pdf used on input 
-line 1493.
+line 1492.
 (pdftex.def)             Requested size: 79.49744pt x 79.49448pt.
 Package epstopdf Info: Source file: <figure/final_config_ordern_fault.eps>
 (epstopdf)                    date: 2017-09-09 11:47:14
@@ -920,7 +916,7 @@ rted-to.pdf>
 (epstopdf)                    size: 1088276 bytes
 (epstopdf)             Command: <epstopdf --outfile=figure/final_config_ordern_
 fault-eps-converted-to.pdf figure/final_config_ordern_fault.eps>
-(epstopdf)             \includegraphics on input line 1494.
+(epstopdf)             \includegraphics on input line 1493.
 Package epstopdf Info: Output file is already uptodate.
 
 <figure/final_config_ordern_fault-eps-converted-to.pdf, id=241, 903.375pt x 903
@@ -929,7 +925,7 @@ File: figure/final_config_ordern_fault-eps-converted-to.pdf Graphic file (type
 pdf)
  <use figure/final_config_ordern_fault-eps-converted-to.pdf>
 Package pdftex.def Info: figure/final_config_ordern_fault-eps-converted-to.pdf 
-used on input line 1494.
+used on input line 1493.
 (pdftex.def)             Requested size: 79.49744pt x 79.49448pt.
 Package epstopdf Info: Source file: <figure/cost_comp000.eps>
 (epstopdf)                    date: 2017-09-09 17:55:55
@@ -939,7 +935,7 @@ Package epstopdf Info: Source file: <figure/cost_comp000.eps>
 (epstopdf)                    size: 10219 bytes
 (epstopdf)             Command: <epstopdf --outfile=figure/cost_comp000-eps-con
 verted-to.pdf figure/cost_comp000.eps>
-(epstopdf)             \includegraphics on input line 1503.
+(epstopdf)             \includegraphics on input line 1502.
 Package epstopdf Info: Output file is already uptodate.
 
 <figure/cost_comp000-eps-converted-to.pdf, id=242, 1204.5pt x 602.25pt>
@@ -947,8 +943,14 @@ File: figure/cost_comp000-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figure/cost_comp000-eps-converted-to.pdf>
 Package pdftex.def Info: figure/cost_comp000-eps-converted-to.pdf used on input
- line 1503.
+ line 1502.
 (pdftex.def)             Requested size: 209.58255pt x 104.7888pt.
+
+Underfull \hbox (badness 2799) in paragraph at lines 1484--1506
+\OT1/ptm/m/n/10 fail. We con-sider three dif-fer-ent cases, when $\OMS/cmsy/m/n
+/10 F \OT1/cmr/m/n/10 =
+ []
+
 Package epstopdf Info: Source file: <figure/stat_result.eps>
 (epstopdf)                    date: 2017-09-09 17:53:09
 (epstopdf)                    size: 90420 bytes
@@ -957,15 +959,14 @@ Package epstopdf Info: Source file: <figure/stat_result.eps>
 (epstopdf)                    size: 85612 bytes
 (epstopdf)             Command: <epstopdf --outfile=figure/stat_result-eps-conv
 erted-to.pdf figure/stat_result.eps>
-(epstopdf)             \includegraphics on input line 1514.
+(epstopdf)             \includegraphics on input line 1513.
 Package epstopdf Info: Output file is already uptodate.
-
 <figure/stat_result-eps-converted-to.pdf, id=244, 803.0pt x 602.25pt>
 File: figure/stat_result-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figure/stat_result-eps-converted-to.pdf>
 Package pdftex.def Info: figure/stat_result-eps-converted-to.pdf used on input 
-line 1514.
+line 1513.
 (pdftex.def)             Requested size: 195.12877pt x 146.3441pt.
 Package epstopdf Info: Source file: <figure/50_order2_last.eps>
 (epstopdf)                    date: 2017-09-11 09:33:26
@@ -976,7 +977,7 @@ Package epstopdf Info: Source file: <figure/50_order2_last.eps>
 (epstopdf)                    size: 375305 bytes
 (epstopdf)             Command: <epstopdf --outfile=figure/50_order2_last-eps-c
 onverted-to.pdf figure/50_order2_last.eps>
-(epstopdf)             \includegraphics on input line 1541.
+(epstopdf)             \includegraphics on input line 1540.
 Package epstopdf Info: Output file is already uptodate.
 
 <figure/50_order2_last-eps-converted-to.pdf, id=246, 903.375pt x 903.375pt>
@@ -984,7 +985,7 @@ File: figure/50_order2_last-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figure/50_order2_last-eps-converted-to.pdf>
 Package pdftex.def Info: figure/50_order2_last-eps-converted-to.pdf used on inp
-ut line 1541.
+ut line 1540.
 (pdftex.def)             Requested size: 195.12877pt x 195.1316pt.
  (park_ram_iros17_0906.bbl
 Missing character: There is no â in font ptmr7t!
@@ -1013,18 +1014,18 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the US letter (8.5in X 11in) paper size.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1592.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1591.
 [10
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1592.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1591.
  (park_ram_iros17_0906.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1592.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1592.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1591.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1591.
 
 Package rerunfilecheck Info: File `park_ram_iros17_0906.out' has not changed.
 (rerunfilecheck)             Checksum: 093DE1CAB228A61BEE2A20C5D9FE7088;1803.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1592.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1591.
  )
 (\end occurred inside a group at level 1)
 
@@ -1070,7 +1071,7 @@ m Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.
 9/fonts/type1/urw/times/utmbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/ur
 w/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.p
 fb>
-Output written on park_ram_iros17_0906.pdf (10 pages, 3263019 bytes).
+Output written on park_ram_iros17_0906.pdf (10 pages, 3262999 bytes).
 PDF statistics:
  498 PDF objects out of 1000 (max. 8388607)
  100 named destinations out of 1000 (max. 500000)

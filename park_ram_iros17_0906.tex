@@ -1484,9 +1484,8 @@ Fig. \ref{fig:fig5} compares the K-L divergence values between different strateg
 This section will present a number of examples when robust method become more appealing than non-robust method, which happens when the sensors are prone to fail. 
 We consider three different cases, when $\mathcal{F} = \lbrace 1 \rbrace,\,\lbrace 1,2\rbrace,\,\lbrace 1,2,3 \rbrace$.
 Results for robots configuration and target distributions after $10^{\textup{th}}$ step with non-robust and robust methods in the case when $\mathcal{F}= \lbrace 1\rbrace$ are shown in Fig. \ref{fig:fig6}. 
-As can be seen from Fig \ref{fig:fig6} and Fig. \ref{fig:fig7}, the map retrieved by the proposed method $k=2$ is more robust to the sensor failure compared to that obtained with the non-robust method. In Fig \ref{fig:fig6}(right) the unmapped area in the bottom-middle is owing to the limited sensing range.
-Due to its fully decentralized nature, it is not surprising to see from this example that the non-robust method works poorly even with a single sensor failures. 
-
+As can be seen from Fig \ref{fig:fig6} and Fig. \ref{fig:fig7}, the map retrieved by the proposed method $k=2$ is more robust to the sensor failure compared to that obtained with the non-robust method. In Fig \ref{fig:fig6}, both middle and right, the unmapped area is owe to the limited sensing range.
+It is not surprising to see from this example that the maximum information gain method shows the best robustness to sensor failures among the three; however this is due to the help from the central information fusion sever and relatively large communication load.
 \begin{figure}
 	\centering
 	\includegraphics[width=1.1in]{figure/order1_conf}
