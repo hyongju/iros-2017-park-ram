@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.2.6)  11 SEP 2017 12:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.2.6)  12 SEP 2017 15:15
 entering extended mode
 **./park_ram_iros17_0906.tex
 (park_ram_iros17_0906.tex
@@ -971,24 +971,24 @@ File: figure/stat_result-eps-converted-to.pdf Graphic file (type pdf)
 Package pdftex.def Info: figure/stat_result-eps-converted-to.pdf used on input 
 line 1513.
 (pdftex.def)             Requested size: 195.12877pt x 146.3441pt.
-Package epstopdf Info: Source file: <figure/50_order2_last.eps>
-(epstopdf)                    date: 2017-09-11 09:33:26
-(epstopdf)                    size: 657563 bytes
-(epstopdf)             Output file: <figure/50_order2_last-eps-converted-to.pdf
->
-(epstopdf)                    date: 2017-09-11 10:51:12
-(epstopdf)                    size: 375305 bytes
-(epstopdf)             Command: <epstopdf --outfile=figure/50_order2_last-eps-c
-onverted-to.pdf figure/50_order2_last.eps>
+Package epstopdf Info: Source file: <figure/100_order2_last.eps>
+(epstopdf)                    date: 2017-09-12 14:58:51
+(epstopdf)                    size: 712215 bytes
+(epstopdf)             Output file: <figure/100_order2_last-eps-converted-to.pd
+f>
+(epstopdf)                    date: 2017-09-12 15:15:11
+(epstopdf)                    size: 453465 bytes
+(epstopdf)             Command: <epstopdf --outfile=figure/100_order2_last-eps-
+converted-to.pdf figure/100_order2_last.eps>
 (epstopdf)             \includegraphics on input line 1540.
 Package epstopdf Info: Output file is already uptodate.
 
-<figure/50_order2_last-eps-converted-to.pdf, id=246, 903.375pt x 903.375pt>
-File: figure/50_order2_last-eps-converted-to.pdf Graphic file (type pdf)
+<figure/100_order2_last-eps-converted-to.pdf, id=246, 903.375pt x 903.375pt>
+File: figure/100_order2_last-eps-converted-to.pdf Graphic file (type pdf)
 
-<use figure/50_order2_last-eps-converted-to.pdf>
-Package pdftex.def Info: figure/50_order2_last-eps-converted-to.pdf used on inp
-ut line 1540.
+<use figure/100_order2_last-eps-converted-to.pdf>
+Package pdftex.def Info: figure/100_order2_last-eps-converted-to.pdf used on in
+put line 1540.
 (pdftex.def)             Requested size: 195.12877pt x 195.1316pt.
  (park_ram_iros17_0906.bbl
 Missing character: There is no â in font ptmr7t!
@@ -1001,7 +1001,7 @@ ted-to.pdf> <./figure/order2deploy2d-eps-converted-to.pdf> <./figure/cost_comp1
 onverted-to.pdf> <./figure/order1_conf-eps-converted-to.pdf> <./figure/order2_c
 onf-eps-converted-to.pdf> <./figure/final_config_ordern_fault-eps-converted-to.
 pdf> <./figure/cost_comp000-eps-converted-to.pdf> <./figure/stat_result-eps-con
-verted-to.pdf> <./figure/50_order2_last-eps-converted-to.pdf>]
+verted-to.pdf> <./figure/100_order2_last-eps-converted-to.pdf>]
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
@@ -1036,8 +1036,8 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1591.
 ### bottom level 
 Here is how much of TeX's memory you used:
  11422 strings out of 493333
- 176140 string characters out of 3139189
- 405562 words of memory out of 3000000
+ 176145 string characters out of 3139189
+ 405563 words of memory out of 3000000
  14601 multiletter control sequences out of 15000+200000
  58216 words of font info for 139 fonts, out of 3000000 for 9000
  1144 hyphenation exceptions out of 8191
@@ -1074,7 +1074,7 @@ m Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.
 9/fonts/type1/urw/times/utmbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/ur
 w/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.p
 fb>
-Output written on park_ram_iros17_0906.pdf (10 pages, 3260013 bytes).
+Output written on park_ram_iros17_0906.pdf (10 pages, 3338153 bytes).
 PDF statistics:
  490 PDF objects out of 1000 (max. 8388607)
  100 named destinations out of 1000 (max. 500000)
