@@ -4,7 +4,7 @@
 \BOOKMARK [2][-]{subsection.2.2}{An illustrative Example: Airborne LiDAR for DEM generation}{section.2}% 4
 \BOOKMARK [2][-]{subsection.2.3}{Deployment strategy for the worst-case optimal target detection under sensor failures}{section.2}% 5
 \BOOKMARK [2][-]{subsection.2.4}{Combined sensor model}{section.2}% 6
-\BOOKMARK [2][-]{subsection.2.5}{Environmental mapping using recursive Bayesian filter}{section.2}% 7
+\BOOKMARK [2][-]{subsection.2.5}{Evaluation of mapping performance}{section.2}% 7
 \BOOKMARK [1][-]{section.3}{Probabilistic Range-limited Sensor Model}{}% 8
 \BOOKMARK [1][-]{section.4}{Deployment strategy}{}% 9
 \BOOKMARK [2][-]{subsection.4.1}{The higher-order Voronoi Partition for Robust deployment}{section.4}% 10

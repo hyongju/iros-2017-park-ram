@@ -1,43 +1,47 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: park_ram_iros17_0906.aux
 The style file: IEEEtran.bst
 Database file #1: reference_park_17.bib
-I was expecting a `,' or a `}'---line 464 of file reference_park_17.bib
+I was expecting a `,' or a `}'---line 484 of file reference_park_17.bib
  :  author={Kolmogorov, Andre{\u\i}} 
  :                                   Nikolaevich and Fomin, Serge{\u\i}} Vasilʹevich},
 I'm skipping whatever remains of this entry
-Repeated entry---line 622 of file reference_park_17.bib
+Repeated entry---line 642 of file reference_park_17.bib
  : @book{choset2005principles
  :                           ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 763 of file reference_park_17.bib
+Repeated entry---line 783 of file reference_park_17.bib
  : @inproceedings{kumar2004k
  :                          ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 2113 of file reference_park_17.bib
+Repeated entry---line 941 of file reference_park_17.bib
+ : @inproceedings{rekleitis2004limited
+ :                                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2133 of file reference_park_17.bib
  : @article{schwager2009decentralized
  :                                   ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 2388 of file reference_park_17.bib
+Repeated entry---line 2408 of file reference_park_17.bib
  : @article{cortes_coverage_2004
  :                              ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 2577 of file reference_park_17.bib
+Repeated entry---line 2597 of file reference_park_17.bib
  : @inproceedings{hutchinson_robust_2012
  :                                      ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 3047 of file reference_park_17.bib
+Repeated entry---line 3067 of file reference_park_17.bib
  : @article{schwager2009decentralized
  :                                   ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 4406 of file reference_park_17.bib
+Repeated entry---line 4426 of file reference_park_17.bib
  : @article{cortes_coverage_2004
  :                              ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 4592 of file reference_park_17.bib
+Repeated entry---line 4612 of file reference_park_17.bib
  : @inproceedings{hutchinson_robust_2012
  :                                      ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 5062 of file reference_park_17.bib
+Repeated entry---line 5082 of file reference_park_17.bib
  : @article{schwager2009decentralized
  :                                   ,
 I'm skipping whatever remains of this entry
@@ -46,4 +50,4 @@ I'm skipping whatever remains of this entry
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 
 Done.
-(There were 10 error messages)
+(There were 11 error messages)

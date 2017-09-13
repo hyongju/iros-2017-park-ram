@@ -64,6 +64,10 @@ K.~M. Lynch, I.~B. Schwartz, P.~Yang, and R.~A. Freeman, ``Decentralized
   environmental modeling by mobile sensor networks,'' \emph{IEEE Transactions
   on Robotics}, vol.~24, no.~3, pp. 710--724, 2008.
 
+\bibitem{shannon2001mathematical}
+C.~E. Shannon, ``A mathematical theory of communication,'' \emph{ACM SIGMOBILE
+  Mobile Computing and Communications Review}, vol.~5, no.~1, pp. 3--55, 2001.
+
 \bibitem{pahlajani2014networked}
 C.~D. Pahlajani, I.~Poulakakis, and H.~G. Tanner, ``Networked decision making
   for poisson processes with applications to nuclear detection,'' \emph{IEEE
@@ -147,5 +151,11 @@ D.~Portugal and R.~Rocha, ``A survey on multi-robot patrolling algorithms,'' in
   \emph{Doctoral Conference on Computing, Electrical and Industrial
   Systems}.\hskip 1em plus 0.5em minus 0.4em\relax Springer, 2011, pp.
   139--146.
+
+\bibitem{rekleitis2004limited}
+I.~Rekleitis, V.~Lee-Shue, A.~P. New, and H.~Choset, ``Limited communication,
+  multi-robot team based coverage,'' in \emph{Robotics and Automation, 2004.
+  Proceedings. ICRA'04. 2004 IEEE International Conference on}, vol.~4.\hskip
+  1em plus 0.5em minus 0.4em\relax IEEE, 2004, pp. 3462--3468.
 
 \end{thebibliography}

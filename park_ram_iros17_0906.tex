@@ -293,7 +293,7 @@ This paper aims to develop a class of cooperative detection model and deployment
 %[ISSUE \#1: COMPUTATIONAL COMPLEXITY, SCALABILITY TO MSNs ON ENVIRONMENTAL MAPPING TASKS]
 %Others have employed a non-Bayesian method to perform target distribution mapping using a single mobile robot
 
-One of the most popular method of addressing the problem of Environmental mapping via deploying MSNs has been defining a mutual information function, and robots are controlled to follow the information gradient.
+One of the most popular method of addressing the problem of Environmental mapping via deploying MSNs has been defining a mutual information function \cite{shannon2001mathematical}, and robots are controlled to follow the information gradient.
 \cite{cortez2011information} has studied the multi-agent environment mapping problem, where  a mutual information gathering---utilize this idea of maximizing information gain---was used to control multiple robots to build a intensity map in a hazardous environment. Recently, \cite{schwager2017multi} has proposed algorithm utilize the gradient of mutual information to enable MSNs to estimate a map of finite events in the environment while avoiding failures due to unknown hazards. They considered probabilistic robot failure model where probability of failure of each robot depends on the distances between hazard and the robot. They utilized the history of robot failures to avoid hazardous areas. In \cite{pahlajani2014networked}, the authors considered the problem of detecting a time-inhomogeneous Poisson process concealed in the background radiation using MSNs. As was noted previously \cite{schwager2017multi, julian2012distributed}, the computational complexity for computing the \emph{information gradient}, which is used as the key control policy is exponential of the number of robots, sensor measurements and environment discretization cells. 
 However, in general the computation of the gradient requires that every robot be omniscient, i.e., to have current knowledge of every other robot’s position and sensor measurements, For the reason, in most cases, mutual information-based methods are limited to small groups of robots with fully connected network. 
 
@@ -453,26 +453,33 @@ This section presents the notation used throughout the paper, an illustrative ex
 %\subsection{Our system}
 \subsection{Notations and Our System Definition}
 \label{sec:sec21}
-Throughout the text, the italic bold font is used to describe random quantities, a subscript $t$ indicates that the value is measured at time step $t$, and $\mathbb{Z}^{+}$ denotes nonnegative integers. %We may also suppress subscript $t$ if it is clear from the context. 
+Throughout the text, the italic bold font is used to describe random quantities, a subscript $t$ indicates that the value is measured at time step $t$, and $\mathbb{Z}_{\geq 0}$ denotes nonnegative integers. %We may also suppress subscript $t$ if it is clear from the context. 
 Given a continuous random variable $\bm{x}$, if it is distributed according to a Probability Density Function (PDF), we denote it by $f_{\bm{x}}$.
 Given a discrete random variable $\bm{y}$, if it is distributed according to a Probability Mass Function (PMF), we denote it by $p_{\bm{y}}$.
 Consider a group of $m$ mobile robots deployed in a workspace, i.e., ambient space, $\mathcal{Q} \subseteq \mathbb{R}^d$ where $d = 2,3$. 
 This paper assumes $d=2$ though the presented framework generalizes to $d=3$. 
-Let $\mathbb{S}^{d-1} = \lbrace s\in \mathbb{R}^d\mid \left\| s \right\|=1 \rbrace$ be a unit circle/sphere, then the state of $m$ robots is the set of locations and orientations at time $t$, and it is represented as an $m$-tuple $x_t = (x_t^1,\dots,x_t^m)$, where $x_t^i \in \mathcal{Q} \times \mathbb{S}^{d-1}$. We denote by the set ${x}_{0:t}\coloneqq \lbrace {x}_0,\dots,{x}_t \rbrace$ the robot states up to time $t$. 
-Given a pair of states $(x_t,x_{t+1})$, robots follow a way-point-based, continuous-time, deterministic motion model with dynamic constraints:
+Let $\mathbb{S}^{d-1} = \lbrace s\in \mathbb{R}^d\mid \left\| s \right\|=1 \rbrace$ be a unit circle/sphere, then the state of $m$ robots is the set of locations and orientations at time $t$, and it is represented as an $m$-tuple $x_t = (x_t^1,\dots,x_t^m)$, where $x_t^i \in \mathcal{Q} \times \mathbb{S}^{d-1}$. The state of robots are assumed completely \emph{known}.
+We denote by the set ${x}_{0:t}\coloneqq \lbrace {x}_0,\dots,{x}_t \rbrace$ the robot states up to time $t$. 
+
+The group of robots follow a way-point-based, discretized, deterministic kinematic
+motion model:
+%
+%
+%Given a pair of states $(x_t,x_{t+1})$, robots follow a way-point-based, continuous-time, deterministic motion model with dynamic constraints:
 \begin{equation}
-\dot{x}_{t+1} = \textup{f}(x(l),\,u(l)), \,\,\, l \in [l_0,\,l_f]
+x_{t+1} = x_t + u_t, \,\,\,\,\,\,\, t \in \mathbb{Z}_{\geq 0}
 \label{eq:constraint}
 \end{equation}
-with boundary conditions $x(l_0) = x_t$ and $x(l_f) = x_{t+1}$ where $u(t)$ is a control, $t_0$ is the \emph{initial time}, and $t_f$ is the \emph{final time} which is free. 
-Let $u_t^{\star}$ be the \emph{optimal control policy}\footnote{In the current context, the optimal control policy is a sequence of control inputs (in discrete time domain) or control path (in continuous time domain) governed by dynamics of the vehicle. On example of such optimal control policy can be generated by Linear-Quadratic Regulator (LQR) if the dynamics were linear.} which drives robots' state from $x_t$ to $x_{t+1}$ in minimum time under the dynamic (or kinematic) constraints. Similarly, let $u_{0:t}$ be the sequence of control policies up to time $t$.
+where $u_t \in \mathcal{U} \subseteq \mathbb{R}^d$ is the control.
+%Let $u_t^{\star}$ be the \emph{optimal control policy}\footnote{In the current context, the optimal control policy is a sequence of control inputs (in discrete time domain) or control path (in continuous time domain) governed by dynamics of the vehicle. On example of such optimal control policy can be generated by Linear-Quadratic Regulator (LQR) if the dynamics were linear.} which drives robots' state from $x_t$ to $x_{t+1}$ in minimum time under the dynamic (or kinematic) constraints. 
+Similarly, let $u_{0:t}$ be the sequence of control policies up to time $t$.
 We define a \emph{target} to be a physical object or some measurable quantity spatially distributed over a bounded domain.
 Let $\bm{z}$ be the \emph{target state} which is a random vector. 
-The target state consists of location, $\bm{q} \in \mathcal{Q}$, and information state (quantitative information about the target), $\bm{I} \in \mathcal{I} \subseteq \mathbb{R}$.
+The target state consists of location, $\bm{q} \in \mathcal{Q}$, and information state (i.e., quantitative information about the target), $\bm{I} \in \mathcal{I} \subseteq \mathbb{R}$ where we let $\mathcal{I} =[I_{\min}\,I_{\max}]$.
 The Cartesian product $\mathcal{Z} = \mathcal{Q} \times \mathcal{I}$ is the \emph{target state space}.
-Let $\bm{y}_{t}=(\bm{y}_{t}^{1},\dots,\bm{y}_{t}^{n})$ be binary random $n$ tuple which indicates the observation made by $m$ robots at time step $t$ where each $\bm{y}_{t}^{i} \in \lbrace 0,\,1 \rbrace$, and $n$ is the dimension of the sensor input.
+Let $\bm{y}_{t}=(\bm{y}_{t}^{1},\dots,\bm{y}_{t}^{m})$ be binary random $m$-tuple which indicates the observation made by $m$ robots at time step $t$ where $\bm{y}_{t}^{i} \in \lbrace 0,\,1 \rbrace$ for each $i$.
 Let the set $\bm{y}_{1:t}\coloneqq \lbrace \bm{y}_1,\dots,\bm{y}_t \rbrace$ denote observations made by robots up to time $t$. Let $\bm{y}_{D}$ a binary random tuple of size $m$ where each $\bm{y}_{D}^i \in \lbrace 0,\,1 \rbrace$ which denotes the detection by $i$th robot.
-Finally, we let $\mathcal{F} \subseteq \lbrace 1,\dots,m \rbrace$ be the index set of robots whose sensor has failed.
+Finally, we let $\mathcal{F} \subsetneq \lbrace 1,\dots,m \rbrace$ be the index set of robots whose sensors have failed.
 %\Ram{it may make sense for the subsequent development for you to mention that $y$ is a function of $z$ and $x$.}
 %Note that if target location is unknown, observations made by different sensors are conditionally independent given the target location \Ram{this is missing a citation}.
 %\Ram{it may also make sense for you to consider a simple example here just to formalize the notation for the reader}
@@ -495,35 +502,34 @@ Finally, we let $\mathcal{F} \subseteq \lbrace 1,\dots,m \rbrace$ be the index s
 
 \subsection{An illustrative Example: Airborne LiDAR for DEM generation}
 \label{sec:sec22}
-Consider a group of autonomous aerial vehicles trying to acquire an accurate Digital Elevation Model (DEM)\footnote{A digital elevation model (DEM) is a digital model or 3D representation of a terrain's surface — commonly for a planet (including Earth), moon, or asteroid -- created from terrain elevation data [THIS HAS BEEN TAKEN FROM WIKIPEDIA. I WILL NEED TO CHANGE THIS...].} of some bounded region using airborne LIDAR measurements.
-The first problem is: given a finite number of vehicles, how to deploy those vehicles such that the probability that robots will fail to targets dispersed over the region of interest stays minimum. Also, it may be possible that LIDAR measurement from some part of the fleet is corrupt or unreliable which could degrade the quality of DEM. Taking such adversarial scenarios into account, it is crucial to design a deployment strategy along given a sensor model capable of fault-detection which guarantees worst-case optimal target detection performance. 
-Finally, it is also important to process the measurement to update the belief on target state over time in efficient manner such tat within a reasonable time, the autonomous fleet could obtain an accurate DEM model.
+Consider a group of autonomous aerial vehicles trying to acquire an accurate Digital Elevation Model (DEM)\footnote{A digital elevation model (DEM) is a digital 3D model of a terrain's surface created from terrain elevation data.} of some bounded region using airborne LIDAR measurements.
+The first problem is: given a finite number of vehicles, how to deploy those vehicles such that the probability that robots will fail to targets dispersed over the region of interest stays minimum. Also, it may be possible that LIDAR measurements from a part of the fleet are corrupt or unreliable which can potentially degrade the quality of DEM. Taking such adversarial scenarios into account, it is crucial to design a deployment strategy along with an underlying sensor model, which can guarantee worst-case optimal target detection performance. 
+Finally, it is also important to process the measurement to update the belief on target state over time in efficient manner such that, within a reasonable time, the autonomous fleet can obtain an accurate DEM model.
 
 
 \subsection{Deployment strategy for the worst-case optimal target detection under sensor failures}
 \label{sec:sec23}
 %Let $\bm{y}_{D}$ a binary random tuple of size $m$ where each $\bm{y}_{D}^i \in \lbrace 0,\,1 \rbrace$ which returns the detection by $i$th robot.
-For a given target located at $q \in \mathcal{Q}$, 
-$
+For a given target located at $q \in \mathcal{Q}$, let $
 p(\bm{y}_{D}^i =0 \mid x^i,\bm{q} = q)
 $
-is the probability that $i$th robot detected target located at $q$, and $\bm{y}_{D}^i = 1$ otherwise.
-In a similar manner, the joint event $p(\bm{y}_{D}=\bm{0} \mid x, \bm{q}=q)$ is the probability that $m$ robots failed to detect the target at $q$. 
+be the probability that $i$th robot fails to detect target located at $q$, and $\bm{y}_{D}^i = 1$ otherwise.
+In a similar manner, $p(\bm{y}_{D}=\bm{0} \mid x, \bm{q}=q)$ is the probability of a joint event that a group of $m$ robots fail to detect the target at $q$. 
 %WRITE EQUATIONS HERE....
-The optimal configuration---for the case when sensors in $\mathcal{F}$ fail to operate---must satisfy:
+For the case when sensors with identifies $\mathcal{F}$ have failed, our aim is to find an optimal configuration which solves:
 \begin{equation}
 x^{\star} = \arg
 \min_{x \in \mathcal{Q}^m} 
-p(y_{D} = \bm{0} \mid x, \mathcal{F})
+p(\bm{y}_{D} = \bm{0} \mid x)
 \label{mainprob}
 \end{equation}
 subject to
 \begin{equation}
-p(y_D = \bm{0} \mid x,\bm{q}=q,\mathcal{F}) <1\,\,\,\forall q \in \mathcal{Q}.
+p(y_D = \bm{0} \mid x,\bm{q}=q,\mathcal{F}) <1, \,\,\,\,\,\,\, q \in \mathcal{Q}.
 \label{const}
 \end{equation}
-In other words given the sensor failure $\mathcal{F}$, for each target, there must be at least one robot that can detect it, which is an essential constraint for the environmental mapping task\footnote{Worst-case optimal (minimax) solution to the problem could lead to too conservative in these type of applications.}.
-The target distribution of $\bm{q}$ has been marginalized out. Unfortunately, obtaining the global solution of even the outer minimization problem can be proven to be NP-Hard by reduction from a simpler static locational optimization problem, namely, \emph{$m$-median problem}\footnote{$m$-median problem is one of the popular locational optimization problem where the objective is to locate $m$ facilities to minimize the distance between demands and the facilities given uniform prior. The problem is NP-Hard in general graph (not necessarily a tree).}. To overcome the computational complexity, we will consider a gradient descent (greedy) approach where control policy at each time step minimizes the missed-detection probability of targets by robots at their future locations (one-step lookahead). We will utilize the higher order Voronoi tessellation [REFs] for robot target assignment, and will show that the solution given the assignment solves \eqref{mainprob}.
+In other words given the sensor failure $\mathcal{F}$, for each target, there must be at least one robot that can detect it, which is an essential constraint for the environmental mapping task\footnote{This paper considers an average-case optimal solution with respect to sensor failures. For our purpose, the worst-case optimal (minimax) solution can, in fact, be too conservative.}.
+The target distribution of $\bm{q}$ has been marginalized out. Unfortunately, obtaining the global solution of even the outer minimization problem can be proven to be NP-Hard by reduction from a simpler static locational optimization problem, namely, \emph{$m$-median problem}\footnote{$m$-median problem is one of the popular locational optimization problem where the objective is to locate $m$ facilities to minimize the distance between demands and the facilities given uniform prior. The problem is NP-Hard in general graph (not necessarily a tree).}. To overcome the computational complexity, we will consider a gradient descent (greedy) approach where control policy at each time step minimizes the missed-detection probability of targets by robots at their future locations (one-step lookahead). We will utilize the higher order Voronoi tessellation \cite{shamos1975closest} for robot target assignment, and will show that the solution under such assignment solves \eqref{mainprob}.
 
 %We will present a gradient decent method to derive a local solution to the problem given a constant probability of failure for all robots, i.e., $p(i \in \mathcal{F}) = p_{\mathcal{F}}^i$.
 %Thus, given a target $q$ distributed over $\mathcal{Q}$, with prior  distribution $f_q$, 
@@ -532,17 +538,16 @@ The target distribution of $\bm{q}$ has been marginalized out. Unfortunately, ob
 
 \subsection{Combined sensor model}
 \label{sec:sec24}
-Here, we make a simple assumption that given a target, a sensor can correctly measure the target only if the sensor can detect target\footnote{Successful detection of a target means that the sensor can discern the target from others.} \emph{a priori}.
-Furthermore we assume that, if a sensor can detect a target, a measurement of the target by the sensor is simply corrupted by noise (e.g., Gaussian). On the other hand, of a robot fail to detect a target, the measurement given the target may be unreliable and should not be considered as a correct measurement. In other words, only the sensor measurement provided from a positive detection is considered, but others will be abandoned. These assumptions turned out to be unrestrictive according to the work of \cite{anguelov2004detecting} in which authors has experimentally verified a similar combined sensor model 
-on mobile robot using laser range finder and a panoramic camera measurement.
+Here, we make a simple assumption that given a target, a sensor can correctly measure the target only if the sensor can detect target (i.e., the sensor can discern the target from others.) \emph{a priori}.
+We further assume that, if a sensor can detect a target, a measurement of the target by the sensor is simply corrupted by noise (e.g., Gaussian). On the other hand, of a robot fail to detect a target, the measurement given the target may be unreliable and should not be considered equally as a correct measurement. These assumptions have turned out to be non-restrictive according to the work of \cite{anguelov2004detecting} in which authors has experimentally verified a similar combined sensor model 
+on a mobile robot using laser range finder and a panoramic camera measurement.
 
-\subsection{Environmental mapping using recursive Bayesian filter}
+\subsection{Evaluation of mapping performance}
 \label{sec:sec25}
-Based on our sensor model, and the deployment strategy, we derive Bayesian filtering equation to recursively update beliefs on a particular unknown environment. 
-Let $b_t$ represent a the posterior probability distribution of the target state at time $t \in \mathbb{Z}_{\geq 0}$, the initial belief $b_0$ is assumed to be uniform density if no prior information on the target is available, and let $b^{\star}$ be the \emph{true posterior belief}\footnote{We assume for now that the true posterior target distribution can be obtained, e.g., via exhaustive search and measurements made by a MSN on the target state.} 
-To this end, we quantify the difference between the true posterior belief, $b^{\star}$ and an approximation using our method via the Kullback-Leibler (K-L) divergence.
+We derive particle filter to recursively update approximate beliefs on a particular unknown environment. Let $\hat{b}_t$ represent a the approximate posterior probability distribution of the target state at time $t \in \mathbb{Z}_{\geq 0}$, the initial belief $\hat{b}_0$ is assumed to be uniform density if no prior information on the target is available, and let $\hat{b}^{\star}$ be the PMF estimate of the \emph{true posterior belief}\footnote{We assume for now that the true posterior target distribution can be obtained, e.g., via exhaustive search and measurements made by a MSN on the target state.} 
+To this end, we quantify the difference between the true posterior belief, $b^{\star}$ and our method via the Kullback-Leibler (K-L) divergence.
 %\footnote{K-L divergence is often used to measure the difference between two probability distributions; given $f_{\bm{x}},f_{\bm{y}}$,		$D_{\text{KL}} \left( \bm{x} \middle\| \bm{y} \right) = \int_{-\infty}^{\infty} f_{\bm{x}}(x)\log\left(\frac{f_{\bm{x}}(x)}{f_{\bm{y}}(y)}\right) $.}.
-We demonstrate via our numerical simulation in Section \ref{sec:sec7} that for a given $\epsilon>0$ and $\mathcal{F} \neq \emptyset$, there is reasonably small $T >0$ such that if robots use the proposed deployment strategy, $t>T$ implies $D_{\text{KL}}\left(b_{t} \middle\| b^{\star}\right) < \epsilon$.
+We demonstrate via a suite of numerical simulations in Section \ref{sec:sec7} that for a given $\epsilon>0$ and $\mathcal{F} \neq \emptyset$, there is reasonably small $T >0$ such that if robots use the proposed deployment strategy, $t>T$ implies $D_{\text{KL}}(\hat{b}_{t} || \hat{b}^{\star}) < \epsilon$.
 
 %\Ram{How do you in practice solve this problem since we do not know $b_t^*$?}
 
@@ -552,7 +557,7 @@ We demonstrate via our numerical simulation in Section \ref{sec:sec7} that for a
 \label{sec:sec3}
 In this section, we present our combined sensor model. Each mobile robot is equipped with a \emph{range-limited sensor} that can measure quantitative information from afar and a \emph{radio} to communicate with other nodes to share its belief. 
 %% MOTIVATION....
-Each range sensor measurement is corrupted by noise, and the measurement is valid only if the target is detected.
+Each range sensor measurement of a target is corrupted by noise, and the measurement is valid only if the target has been detected.
 This combined sensor model joins the generic noisy sensor model with the binary detection model \cite{viswanathan1997distributed,djuric2008target}.
 % The probabilistic range sensor model is, in fact, not new. 
 %Anguelov et al., \cite{anguelov2004detecting} apply the Expectation Maximization (EM) algorithm to cluster different types of objects from sequences of range data, where they adopted their such combined range sensor model. 
@@ -570,13 +575,13 @@ While performing the detection task, we assume each sensor returns a $1$ if a ta
 The ability to detect a target for each $i^{\textup{th}}$ robot is a binary random variable $\bm{y}_D^i$ with a distribution that depends on the relative distance between the target and robot. 
 %In other words, $\bm{y}_{D}^i=1$ is the event that the target is detected by the $i^{\textup{th}}$ sensor and $\bm{y}_{D}^i=0$ is the event that the target is not detected by the $i^{\textup{th}}$ sensor. 
 This binary detection model, however, does not account for false positive or negatives.
-For example for a given $\mathcal{F}$, the probability of the event that all $m$ sensors with configuration $x_t$ fail to detect the target located at $q \in \mathcal{Q}$ is
+For example, the probability of the event that all $m$ sensors with configuration $x_t$ fail to detect the target located at $q \in \mathcal{Q}$ is:
 \begin{align}
 &p_{\bm{y}_{D,t} \mid
-	{x}_{t},\bm{z},\mathcal{F}}\left(
+	{x}_{t},\bm{z}}\left(
 \bm{y}_{D,t} = \bm{0} \mid {x}_{t},
-\bm{z}=(q,I),\mathcal{F}\right) \nonumber \\
-&= \prod_{i \notin \mathcal{F}}
+\bm{z}=(q,I)\right) \nonumber \\
+&= \prod_{i =1 }^{m}
 p_{\bm{y}_{D,t}^i \mid
 	{x}_{t},\bm{q}}\left(
 \bm{y}_{D,t}^i = 0 \mid
@@ -600,35 +605,33 @@ p(\bm{y}_t^i = 1 \mid x_t, \bm{z} = (q,I)),
 or \eqref{lhd} can be obtained via other distributed sensor fusion techniques (see e.g., \cite{stroupe2001distributed}).
 In our sensor model, we assume that the random vector $\bm{y}$ depends on $\bm{y}_D$ which is a random $m$-tuple corresponds to detection by $m$ robots such that $\bm{y}_D = (\bm{y}_D^1,\dots,\bm{y}_D^m)$ where $\bm{y}_D^i \in \lbrace 0,\,1 \rbrace$ for all $i$ when conditioned on $x_t,\bm{z}$, so that the conditional PDF can be computed as:
 \begin{align*}
-&f_{\bm{y}_t \mid \bm{z},x_{t},\mathcal{F}}(\bm{y_t}=\bm{1} \mid z,x_{t},\mathcal{F}) \\
-&=f_{\bm{y}_t \mid \bm{z},x_{t},\bm{y}_{D,t},\mathcal{F}}(\bm{y_t}=\bm{1} \mid z,x_{t},\bm{y}_{D,t} \neq \mathbf{0},\mathcal{F}) \\ 
-&\,\,\,\,\,\,\,\times p_{\bm{y}_{D,t} \mid \bm{z},x_{t},\mathcal{F}}(\bm{y}_{D,t} \neq \mathbf{0} \mid z,x_{t},\mathcal{F}) \nonumber\\
-&+f_{\bm{y}_t \mid \bm{z},x_{t},\bm{y}_{D,t},\mathcal{F}}(\bm{y_t}=\bm{1} \mid z,x_{t},\bm{y}_{D,t}=\mathbf{0},\mathcal{F}) \\
-&\,\,\,\,\,\,\,\times p_{\bm{y}_{D,t} \mid \bm{z},x_{t},\mathcal{F}}(\bm{y}_{D,t} =\mathbf{0} \mid z,x_{t},\mathcal{F}), \nonumber
+&f_{\bm{y}_t \mid \bm{z},x_{t}}(\bm{y_t}=\bm{1} \mid z,x_{t}) \\
+&=f_{\bm{y}_t \mid \bm{z},x_{t},\bm{y}_{D,t}}(\bm{y_t}=\bm{1} \mid z,x_{t},\bm{y}_{D,t} \neq \mathbf{0}) \\ 
+&\,\,\,\,\,\,\,\times p_{\bm{y}_{D,t} \mid \bm{z},x_{t}}(\bm{y}_{D,t} \neq \mathbf{0} \mid z,x_{t}) \nonumber\\
+&+f_{\bm{y}_t \mid \bm{z},x_{t},\bm{y}_{D,t}}(\bm{y_t}=\bm{1} \mid z,x_{t},\bm{y}_{D,t}=\mathbf{0}) \\
+&\,\,\,\,\,\,\,\times p_{\bm{y}_{D,t} \mid \bm{z},x_{t}}(\bm{y}_{D,t} =\mathbf{0} \mid z,x_{t}), \nonumber
 \end{align*}
 where $\bm{y}_D \neq \mathbf{0}$ means there is $j \in \lbrace 1,\dots,m \rbrace$ such that $\bm{y}_D^j = 1$ and $\bm{y}_D = \mathbf{0}$ means $\bm{y}_D^j = 0$ for all $j \in \lbrace 1,\dots,m \rbrace$. 
-If target is missed-detected, i.e., $\bm{y}_{D,t} =\bm{0}$, the measurement is random which is modeled by uniform density, i.e.,
+If target is missed-detected, i.e., $\bm{y}_{D,t} =\bm{0}$, the measurement is taken as random and the likelihood function is modeled by uniform distribution, i.e.,
 \begin{align*}
-&f_{\bm{y}_t \mid \bm{z},x_{t},\bm{y}_{D,t},\mathcal{F}}(\bm{y}_t = \bm{1} \mid z,x_{t},\bm{y}_{D,t}=\mathbf{0},\mathcal{F}) \\
+&f_{\bm{y}_t \mid \bm{z},x_{t},\bm{y}_{D,t}}(\bm{y}_t = \bm{1} \mid z,x_{t},\bm{y}_{D,t}=\mathbf{0}) \\
 &=f_{\bm{y}_t \mid \bm{z},x_{t},\bm{y}_{D,t}}(\bm{y}_t = \bm{1} \mid z,x_{t},\bm{y}_{D,t}=\mathbf{0})= I_{\textup{range}}^{-1}
 \end{align*}
-where $I_{\textup{range}} := I_{\max} - I_{\min}$. By the law of total probability, we have
+where $I_{\textup{range}} := I_{\max} - I_{\min}$. By the law of total probability,
 %\begin{align*}
 %&p_{\bm{y}_{D,t} \mid \bm{z},x_{t-1},u_t,\mathcal{F}}(\bm{y}_{D,t} =\mathbf{0}  \mid z,x_{t-1},u_t,\mathcal{F}) \\
 %&= 1-p_{\bm{y}_{D,t} \mid \bm{z},x_{t-1},u_t,\mathcal{F}}(\bm{y}_{D,t} \neq \mathbf{0} \mid z,x_{t-1},u_t,\mathcal{F}).
 %\end{align*}
 \begin{align}
-&f_{\bm{y}_t \mid \bm{z},x_{t},\mathcal{F}}(\bm{y}_t = \bm{1} \mid z,x_{t},\mathcal{F}) \nonumber \\
+&f_{\bm{y}_t \mid \bm{z},x_{t}}(\bm{y}_t = \bm{1} \mid z,x_{t}) \nonumber \\
 &=(1-
 \underbrace{
-p_{\bm{y}_{D,t} \mid \bm{z},x_{t},\mathcal{F}}(\bm{y}_{D,t} = \mathbf{0} \mid z,x_{t},\mathcal{F}))}_{\textup{ }(\star) \textup{ the probability of missded detection}} \nonumber 
-\end{align}
-\begin{align}
-&\,\,\,\,\,\,\,\times \underbrace{f_{\bm{y}_t \mid \bm{z},x_{t}\bm{y}_{D,t},\mathcal{F}}(y_t \mid z,x_{t},\bm{y}_{D,t}\neq \mathbf{0},\mathcal{F})}_{\textup{the likelihood of reliable measurements}}, \nonumber \\
-&+I_{\textup{range}}^{-1}p_{\bm{y}_{D,t} \mid \bm{z},x_{t},\mathcal{F}}(\bm{y}_{D,t} = \mathbf{0} \mid z,x_{t},\mathcal{F})
+p_{\bm{y}_{D,t} \mid \bm{z},x_{t}}(\bm{y}_{D,t} = \mathbf{0} \mid z,x_{t}))}_{\textup{ }(\star) \textup{ the probability of missded detection}} \nonumber \\ 
+&\,\,\,\,\,\,\,\times \underbrace{f_{\bm{y}_t \mid \bm{z},x_{t}\bm{y}_{D,t}}(y_t \mid z,x_{t},\bm{y}_{D,t}\neq \mathbf{0})}_{\textup{the likelihood of reliable measurements}}, \nonumber \\
+&+I_{\textup{range}}^{-1}p_{\bm{y}_{D,t} \mid \bm{z},x_{t}}(\bm{y}_{D,t} = \mathbf{0} \mid z,x_{t}).
 \label{eq10}
 \end{align}
-By minimizing $(\star)$, one can ensure that only reliable measurements on the target state is considered. 
+For the given target $z \in \mathcal{Z}$, by minimizing $(\star)$, one can ensure that the reliable measurements on the target state has been given more weight than the unreliable ones. 
 
 %We are merely interested in maximizing \rood{marginal} likelihood of reliable measurements \rood{where the target state $z$ has been marginalized out}.
 
@@ -708,19 +711,19 @@ By minimizing $(\star)$, one can ensure that only reliable measurements on the t
 
 \section{Deployment strategy}
 \label{sec:sec4}
-This section presents our class of robust deployment strategies.
-At each time, $m$ robots move to new locations so as to minimize the missed-detection probability under sensor failures to promote one-step future observations. Since the set of robots with faulty sensors is unknown, we cannot solve to our problem for arbitrary number of sensor failures. Instead by setting a robot-target assignment rule based on space partitioning technique, we could however, ensure that every target is being detected by at least one robot, and such assignment is optimal in terms of minimizing Euclidean distance between robots and every target in $\mathcal{Q}$. 
+This section presents a class of deployment strategies for target detection capable of providing relative robustness.
+At each time, $m$ robots move to new locations so as to minimize the missed-detection probability to promote the next observations. Since the set of robots with faulty sensors is unknown, we chose not to pose our problem to deal with the worst-case sensor failure scenarios which could be too conservative (e.g., the probability that multiple sensors fail at the same time is low). Instead, we adopt a provably optimal robot--target assignment method which can ensure that every target will be detected by at least one robot.
 %By promoting the probability that at least one sensor can detect the target, one can ensure a worst-case guarantee.
 %We consider a partitioned-based strategy where the workspace is partitioned into $m$ disjoint regions, and each robot is assigned to a region where it confines its detections 
 %\Ram{just to be clear we are only going to consider the fully partitioned strategy in this paper?}.
 %region is assigned to robots which will only attempt to detect targets in their regions, and will simply ignore target in other regions. 
 This so called partitioned-based deployment is common to multi-robot coverage problems \cite{cortes_coverage_2004,hutchinson_robust_2012,schwager2009decentralized,park2014robust}. 
 The most popular one is based on the Voronoi tessellations (see e.g., \cite{cortes_coverage_2004}, which we call a \emph{non-robust deployment}).
-There are, in fact more general methods, which partition the workspace into $p$ regions and assign $k \in \lbrace 1,\dots,m \rbrace$ robots each region (note that if $k=m$, the method becomes \emph{centralized}) \cite{hutchinson_robust_2012}. 
+There are, in fact more general methods, which partition the workspace into $l$ regions and assign $k \in \lbrace 1,\dots,m \rbrace$ robots each region (note that if $k=m$, the method becomes \emph{centralized}) \cite{hutchinson_robust_2012}. 
 By doing so, one can ensure that each target has a chance to be detected by at least one of the $k$ sensors.
 % such that the chance that target is missed detected by $m$ sensors decreases as we increase the value $k$. 
 This approach, which we call the \emph{robust deployment}, can provide relative robustness by varying the value of $k$ from $1$ to $m$.
-Thus, if each sensor has an effective sensing range long enough to cover the whole workspace, utilizing all $m$ sensors to detect every target in the workspace becomes the most desirable strategy.
+%Thus, if each sensor has an effective sensing range long enough to cover the whole workspace, utilizing all $m$ sensors to detect every target in the workspace becomes the most desirable strategy.
 
 %\subsection{Robust detection}
 \subsection{The higher-order Voronoi Partition for Robust deployment}
@@ -819,8 +822,8 @@ For a given $k$, and the target $z = (q,I)$, our range-limited binary detection 
 %{\small{
 \begin{align}
 %&\textit{Positive detection likelihood:} \nonumber \\
-&p_{\bm{y}_{D,t}^i \mid \bm{q},x_{t-1},u_t
-}\left(\bm{y}_{D,t}^i = 1 \mid ,x_{t-1},u_t,\bm{q}=q
+&p_{\bm{y}_{D,t}^i \mid \bm{q},x_{t}
+}\left(\bm{y}_{D,t}^i = 1 \mid ,x_{t},\bm{q}=q
 \right) \nonumber\\
 &=\begin{cases}
 h\left(\left\|q-x_t^i \right\|\right) & \textup{if }q \in {}^kG_t^{\star}(x_t^i)
@@ -950,7 +953,7 @@ This section will present gradient-decent-based deployment strategy.
 %\end{align}
 %Through deployment at each time, $m$ robots try to maximize the observation likelihood under sensor failures. Since the set of robots with faulty sensors, whose index set $\mathcal{F}$, is unknown, we cannot solve to our problem which applied to all cases; however we could solve the minimax version of the problem, namely, to maximize the likelihood that at least one sensors can detect the target. The idea behind this is: by the robot-target assignment rule from Section (?), each target is assigned to $k$ number of robots, and for up to $k-1$ faulty robots, there is at least one robot that can still detect a target. By promoting the probability that at least one sensor can detect the target, one can ensure a worst-case guarantee.
 %We note that the maximum of the positive observation likelihood depends not only on the distance between targets and the robots, but also on the likelihood of the noisy sensor measurements.
-Given the prior belief and the observations, robots compute/move their next way-points, and the posterior belief is updated at the new locations given the collected information.
+Given the current configurations, robots compute and move their next way-points, and the posterior belief is updated at the new locations given the information collected from their sensors.
 %Using (\ref{eq10}), we state the observation likelihood of positive detections as:
 %\begin{align}
 %&\int_{\mathcal{Q}}\int_{\mathcal{I}} f_{\bm{y}_{t} \mid \bm{z},x_t}(\bm{y}_{t}=\bm{1}\mid \bm{z}=(q,I),x_t)b_{t-1}(I \mid \bm{q} =q)\,dIdq \nonumber  \\
@@ -967,7 +970,7 @@ Given the prior belief and the observations, robots compute/move their next way-
 %\widetilde{f}_{\bm{q}}(q) &:= \int_{\mathcal{I}}f_{\bm{y}_t \mid \bm{z},x_{t-1},u_t,\bm{y}_{D,t},\mathcal{F}}(y_t \mid z,x_{t-1},u_t,\bm{y}_{D,t}\neq \mathbf{0},\mathcal{F})) \\
 %&\,\,\,\,\,\,\,\times b_{t-1}(I \mid \bm{q} =q)\,dI\,f_{\bm{q}}(q).
 %\end{align*}
- By using $f_{\bm{q}}$, and \eqref{cost2}, for a given $x_{t-1}$ and $\mathcal{F}$ at time $t-1$, we want to obtain the next way-point $x_t^{\star}$ which solves
+ By using $f_{\bm{q}}$, and \eqref{cost2}, for a given $x_{t-1}$ at time $t-1$, we want to obtain the next way-point $x_t^{\star}$ which solves
 \begin{align}
 &x_{t}^{\star} \gets \arg\min_{x_{t}}\Biggl\{\mathcal{L}(x_{t}):=\Biggr.
 %&:=\int_{\mathcal{Q}}p_{\bm{y}_{D,t} \mid \bm{q},x_t}(\bm{y}_{D,t} = \mathbf{0} \mid \bm{q}=q,x_t)\widetilde{f}_{\bm{q}}(q)\,dq \nonumber \\
@@ -986,7 +989,7 @@ Given the prior belief and the observations, robots compute/move their next way-
 %\widetilde{b}_{t-1}(q)
 %\,dq 
 \nonumber \\
-\Biggl.& \sum_{j = 1}^l \int_{W_t^j} \prod_{x_{t}^i \in {}^kG(W_t^j)} \left(1- h \left(\left\|
+\Biggl.& \sum_{j = 1}^l \int_{W_t^j} \prod_{x_{t}^i \in {}^kG^{\star}(W_t^j)} \left(1- h \left(\left\|
 q - x_t^i \right\|  \right) \right){f}_{\bm{q}}(q)\,dq \Biggr\}.
 \label{cost1}
 \end{align}
@@ -1006,55 +1009,53 @@ Note that for a given $k$, by substituting ${f}_{\bm{q}}$ with $\phi$ and $x$ wi
 If $h$ is differentiable, our deployment strategy can use the gradient $\nabla  \mathcal{L}(x_t)=\left[\frac{\partial\mathcal{L}(x_t)}{\partial x_1^t},\dots,\frac{\partial\mathcal{L}(x_t)}{\partial x_m^t}\right]$ where for each $i$,
 \begin{align*}
 \frac{\partial\mathcal{L}(x_t)}{\partial x_t^i} 
-&= -\sum_{j \in \lbrace 1,\dots,l \rbrace: \atop W_t^j \in {}^kG^{-1}(x_t^i)} \int_{W_t^j}
+&= -\sum_{j \in \lbrace 1,\dots,l \rbrace: \atop W_t^j \in {}^kG^{\star-1}(x_t^i)} \int_{W_t^j}
 \frac{\partial h(\left\| q-x_t^i \right\|)}{\partial x_t^i} \\
-&\,\,\,\,\,\,\, \times \prod_{l \in \lbrace 1,\dots,m \rbrace: \atop x_{t}^l \in {}^kG(W_t^j),l\neq i, l \notin \mathcal{F}} \left(1- h \left(\left\|
+&\,\,\,\,\,\,\, \times \prod_{l \in \lbrace 1,\dots,m \rbrace: \atop x_{t}^l \in {}^kG^{\star}(W_t^j),l\neq i} \left(1- h \left(\left\|
 q - x_t^i \right\|  \right) \right){f}_{\bm{q}}(q)\,dq,
 \end{align*}
 to find the desirable control policy of the robots as described in Algorithm \ref{alg1}. Algorithm \ref{alg1} uses coordinate gradient descent in cyclic fashion to obtain a sub-optimal solution, namely, $\hat{u}_t$ for each time $t$.
 {\tiny{
 		\begin{algorithm}
 			\DontPrintSemicolon
-			\KwIn{$\mathcal{L}_k,\,\textup{f},\,\hat{x}_{t-1},\,\epsilon >0 $}
+			\KwIn{$\mathcal{L}_k,\,\hat{x}_{t},\,\epsilon >0 $}
 			\KwOut{$\hat{u}_t$}
 			$k \gets 0$, $\Delta \gets \epsilon$\\
 			\While{$\Delta > \epsilon$}{
 			\ForEach{$i \in \lbrace 1,\dots,m \rbrace $}{
 				$x_{t,k+1}^i \gets x_{t,k}^i- \alpha_{t,k}^i 
 				\nabla_{i} \mathcal{L}_k(x_{t,k}) $ \\
-				\tcp{$\alpha_{t,k}^i$ is obtained using a line search method}
+				\tcp{$\alpha_{t,k}^i$ is a step-size obtained using a line search method}
 	}
 				$\Delta \gets
  \mathcal{L}_k(x_{t,k})  - 
  \mathcal{L}_k(x_{t,k+1}) $	\\
 $k \gets k +1$
 }
-$\hat{x}_t \gets x_{t,k}$ \\
-$\hat{u}_{t}\gets$ \text{LQR}($\hat{x}_{t}$, $\hat{x}_{t-1}$, $\textup{f}$) \\
+$\hat{x}_t^{\star} \gets x_{t,k}$, $\hat{u}_{t}\gets \hat{x}_t^{\star} - \hat{x}_t$ \\
 \Return $\hat{u}_t$
-			\caption{Gradient Algorithm (MMLE)}\label{alg1}
+			\caption{Gradient Algorithm}\label{alg1}
 		\end{algorithm}
 }}
 Algorithm \ref{alg1} can be shown to be convergent via Invariance Principle. The theorem along with the formal proof is contained in our previous paper \cite{park2014robust}.
 
 \section{Implementation: environmental mapping}
 \label{sec:sec6}
-In this section, we first introduce Bayesian filtering equations under our particular target distribution setting, and then present a particle filter to reduce the complexity of \HJ{the map construction process.} 
+In this section, we first introduce Bayesian filtering equations for our particular target distribution, and then present a particle filter to reduce the complexity of \HJ{the map construction process.} 
 %\Ram{how is the target map evolving? I thought it was fixed...?I think you mean the reconstruction is being updated as observations appear...}. 
 
 \subsection{Recursive Bayesian Filter}
 We present a brief overview of the Bayesian filter, and the derivation of the filtering equations for our primary goal: environmental mapping by $m$ robots. 
-Recall that $b_t(z)$ represent a \emph{belief} on target $\lbrace \textup{information, location}\rbrace$ state at time $t \in \mathbb{Z}_{\geq 0}$, the posterior probability distribution of the target state described by a random vector $\bm{z} \in \mathcal{Z}$. Thus, $b_t$ describes the  environmental map of some bounded region at time $t$. The state of robots are assumed completely \emph{known}.
+Recall that $b_t(z)$ represent a \emph{belief} on target state---the posterior probability distribution of the target state described by a random vector $\bm{z} \in \mathcal{Z}$---at time $t \in \mathbb{Z}_{\geq 0}$. 
 %Recall that the belief about a given target state $z$ at time $t \in \mathbb{N}$, i.e., an environmental map at time $t$, was denoted by $b_t(z)$. 
-In a similar manner, the belief of target information state $\bm{I}$ given the target located at $q$ is given by:
+In a similar manner, the belief of target information state $I$ given the target located at $q$ is given by:
 \begin{align}
 &b_t(I \mid \bm{q} = q) = f_{\bm{I}\mid b_0,{x}_{0:t}\bm{y}_{1:t},\bm{q}}\left(I \mid b_0,{x}_{0:t},y_{1:t},\bm{q}=q\right)
 \label{eqb}
 \end{align}
 where we denote the initial belief on target state by $b_0$.
-Note that $b_t(I \mid \bm{q} = q)$ depends on the initial belief $b_0$, the previous robot trajectories up until time $t$ where $t\in \mathbb{Z}^{+}$, and observations up to this point, $\bm{y}_{1:t}$. 
-
-If the probability distribution about the target location, namely $f_{\bm{q}}$ is known \emph{a priori}, the belief on the complete target state $\bm{z}$ is:
+%Note that $b_t(I \mid \bm{q} = q)$ depends on the initial belief $b_0$, the previous robot trajectories up until time $t$ where $t\in \mathbb{Z}_{\geq 0}$, and observations up to this point, $\bm{y}_{1:t}$. 
+The belief on the complete target state $\bm{z}$ is:
 \begin{align}
 b_t(z)&=
 f_{\bm{z} \mid b_0,{x}_{0:t},\bm{y}_{1:t}}
@@ -1066,52 +1067,52 @@ b_t(I\mid \bm{q}=q)f_{\bm{q}}(q).
 \label{eq0}
 \end{align}
 %\Ram{I don't understand the marginal in the first line of the previous equation. Are you saying that we know $b_0$ or $b_0(z)$? Those are two distinct objects.}
-If there is no prior knowledge of the target information at the initial time, one can choose the prior distribution as the \emph{uniform} density. 
+%If there is no prior knowledge of the target information at the initial time, one can choose the prior distribution as the \emph{uniform} density. 
 %Recall that the generic Bayes' Theorem states,
 %$
 %P(B\mid A) = \frac{P(A \mid B)P(B)}{P(A)}
 %$
 %where $A$, $B$ are events, $P(B\mid A)$ is the posterior probability distribution, $P(A \mid B)$ is the likelihood function, $P(B)$ is the prior probability distribution, and $P(A)$ is the marginal probability of the event $A$. Let the event $B$ represent the prior belief on target information state $b_{t-1}(I\mid \bm{q}=q)$, and $A$ represent the sensor measurements at time $t$, $\bm{y}_t$, then 
-The observation $\bm{y}_{t}$ is conditionally independent of $b_0$, $\bm{y}_{1:t-1}$, and $x_{0:t-2}$ when it is conditioned on $\bm{z}$ and $x_t$ 
-Applying \emph{Bayes' Theorem}, (\ref{eqb}) becomes:
-{\small{
-		\begin{align*}
-		&b_{t}(I \mid \bm{q} =q)=
-		\frac{
-			f_{\bm{y}_{t} \mid
-				\bm{z},
-				{x}_{t}
-			}\left(
-			y_{t} \mid
-			\bm{z}=(I,q),
-			{x}_{t}
-			\right)
-			b_{t-1}(I\mid \bm{q} = q)
-		}
-		{
-			f_{\bm{y}_{t} \mid
-				\bm{q},
-				{x}_{t}	
-			}\left(
-			y_{t} \mid
-			\bm{q}=q,
-			{x}_{t}
-			\right)
-		}
-		\end{align*}}}where $t \in \mathbb{N}$.
-%\Ram{I still do not understand this previous equation. Here are my questions: 1) is it $b_0(z)$ or $b_0$ 2) is it $x_{0:t}$ or $x_{0:t-1}$? }.
-%\Ram{again is this supposed to be $b_0(z)$ or $b_0$?}. 
-One can simplify the likelihood function in the target information map by using this observation, which yields:
+In our problem, the observation $\bm{y}_{t}$ is conditionally independent of $b_0$, $\bm{y}_{1:t-1}$, and $x_{0:t-2}$ when it is conditioned on $\bm{z}$ and $x_t$. Applying \emph{Bayes' Theorem}, (\ref{eqb}) becomes:
+%{\small{
+%		\begin{align*}
+%		&b_{t}(I \mid \bm{q} =q)=
+%		\frac{
+%			f_{\bm{y}_{t} \mid
+%				\bm{z},
+%				{x}_{t}
+%			}\left(
+%			y_{t} \mid
+%			\bm{z}=(I,q),
+%			{x}_{t}
+%			\right)
+%			b_{t-1}(I\mid \bm{q} = q)
+%		}
+%		{
+%			f_{\bm{y}_{t} \mid
+%				\bm{q},
+%				{x}_{t}	
+%			}\left(
+%			\bm{y}_{t} = \bm{1} \mid
+%			\bm{q}=q,
+%			{x}_{t}
+%			\right)
+%		}
+%		\end{align*}}}where $t \in \mathbb{N}$.
+%%\Ram{I still do not understand this previous equation. Here are my questions: 1) is it $b_0(z)$ or $b_0$ 2) is it $x_{0:t}$ or $x_{0:t-1}$? }.
+%%\Ram{again is this supposed to be $b_0(z)$ or $b_0$?}. 
+%One can simplify the likelihood function in the target information map by using this observation, which yields:
 \begin{align}
 &b_{t}(I \mid \bm{q} = q)= \nonumber \\
 &\eta_t\,
 f_{\bm{y}_{t} \mid
 	\bm{z},{x}_{t}}\left(
-y_{t} \mid
+\bm{y}_{t} = \bm{1} \mid
 \bm{z}=(I,q),{x}_{t}\right)
 b_{t-1}(I \mid \bm{q} = q)
 \label{eq1}
 \end{align}
+where 
 $
 \eta_{t} \coloneqq \left(
 f_{\bm{y}_{t} \mid
@@ -1119,56 +1120,56 @@ f_{\bm{y}_{t} \mid
 	b_0,
 	{x}_{t}	
 }\left(
-y_{t} \mid
+\bm{y}_{t}=\bm{1} \mid
 \bm{q}=q,b_0,
 {x}_{t}
 \right)
 \right)^{-1}
 %\label{eq2}
-$
-denotes the marginal probability, which is known as the \emph{normalization constant}.
-This usually cannot be directly computed, but can be obtained by utilizing the total law of probability:
-\begin{align*}
-\eta_{t} =
-&\bigg(\int_{\mathcal{I}}
-f_{\bm{y}_{t} \mid
-	\bm{z},
-	{x}_{t}	
-}\left(
-y_{t} \mid
-\bm{z}=(I,q),
-{x}_{t}
-\right) b_{t-1}(I\mid \bm{q} = q)
-\,dI\bigg)^{-1}
-\end{align*}
+$ is a \emph{normalization constant}. 
+%
+% which usually cannot be directly computed, but can be obtained by utilizing the total law of probability:
+%\begin{align*}
+%\eta_{t} =
+%&\bigg(\int_{\mathcal{I}}
+%f_{\bm{y}_{t} \mid
+%	\bm{z},
+%	{x}_{t}	
+%}\left(
+%y_{t} \mid
+%\bm{z}=(I,q),
+%{x}_{t}
+%\right) b_{t-1}(I\mid \bm{q} = q)
+%\,dI\bigg)^{-1}
+%\end{align*}
 By joining the \eqref{eq0} and \eqref{eq1}, one can obtain a simplified form of the filtering equation:
-\begin{align}
+\begin{align*}
 b_t(z) &=
 \eta_t\,
 f_{\bm{y}_{t} \mid
 	\bm{z},{x}_{t}}\left(
-y_{t} \mid
+\bm{y}_{t} = \bm{1} \mid
 z,{x}_{t}\right)
 b_{t-1}(z) \nonumber\\
 &=\left(\prod_{i=1}^t
 \eta_i
 f_{\bm{y}_{i} \mid
 	\bm{z},{x}_{i}}\left(
-y_{i} \mid
+\bm{y_{i}}=\bm{1} \mid
 z,{x}_{i}\right) \right)
 b_0(z).
-\end{align}
-We assume that $m$ robots share their beliefs.
+\end{align*}
+%We assume that $m$ robots share their beliefs.
 % \Ram{so you are assuming full information sharing?} 
 
 \subsection{Belief Approximation via SIR Particle Filter}
 For our numerical simulations, we consider a low discrepancy sampling method, namely, Halton-Hammersley sequence, to sample continuously distributed targets in $z \in \mathcal{Z}$. 
 This approach has been used for sampling-based algorithms for robot motion planning \cite{lavalle2006planning}.
 We consider Sequential Importance Resampling (SIR) \cite{arulampalam2002tutorial} for the particle filtering process.
-For a given distribution on target locations, $f_{\bm{q}}(q)$, at each time $t$, based on the observations, the locations belief hypothesis is populated for $N_1$ samples initially generated with Halton-Hammersley sequence.
-\begin{equation}
- q^{1},\dots,q^{N_1}
-\end{equation}
+For a given distribution on target locations, $f_{\bm{q}}(q)$, at each time $t$, based on the observations, the locations belief hypothesis is populated for $N_1$ samples initially generated with Halton-Hammersley sequence,
+%\begin{equation*}
+$q^{1},\dots,q^{N_1}$
+%\end{equation*}
 %where $w_T^{(i)} = 1/N_1$ for all $i$.
 where for each $i \in \lbrace 1,\dots,N_1 \rbrace$, $j \in \lbrace 1,\dots,N_2 \rbrace$,
 %\begin{equation}
@@ -1179,30 +1180,30 @@ where for each $i \in \lbrace 1,\dots,N_1 \rbrace$, $j \in \lbrace 1,\dots,N_2 \
 %\hat{x}_{t},\bm{z}=(q_t^i,I)\right) 
 %\end{equation}
 
-\begin{equation}
-\widetilde{w}_t^{ij} \propto f_{\bm{y}_t \mid \bm{z}_t,x_t}(\bm{y}_t - \bm{1} \mid \hat{x}_t,\, \bm{z}=(q^i,I^{ij}))
+\begin{equation*}
+\widetilde{w}_t^{ij} \propto f_{\bm{y}_t \mid \bm{z}_t,x_t}(\bm{y}_t = \bm{1} \mid \hat{x}_t,\, \bm{z}=(q^i,I^{ij})).
 %p_{\bm{y}_{D,t} \mid
 %	\hat{x}_{t},\bm{z}}\left(
 %y_{D,t} \mid
 %\hat{x}_{t},\bm{z}=(q_t^i,I)\right) 
-\end{equation}
+\end{equation*}
 In a similar manner, for each sample $q^{i}$
-the information belief hypothesis is populated for $N_2$ samples from $\mathcal{I}$ initially generated by the Halton-Hammersley sequence. If we let $z_t^{ij} \coloneqq (q^{i},I_t^{ij})$, then the collection of $N\coloneqq N_1\times N_2$ tuples where each tuple is a particle-weight pair is
+the information belief hypothesis is populated for $N_2$ samples from $\mathcal{I}$ initially generated by the Halton-Hammersley sequence. If we let $z_t^{ij} \coloneqq (q^{i},I_t^{ij})$, then the collection of $N\coloneqq N_1\times N_2$ tuples---where each tuple is a particle-weight pair---is
 \begin{align*}
-&\left\{
+\left\{
 \left\{
 \left(
-z^{11},\widetilde{w}_{t}^{11}\right),\dots,\left(
-z^{1N_2},\widetilde{w}_{t}^{1N_2}\right) \right\}\right.,  \\
-&\left\{\left(
-z^{21},\widetilde{w}_{t}^{21}\right),\dots,\left(
-z^{2N_2},\widetilde{w}_{t}^{2N_2}\right) \right\},\dots, \\
-&\left. \left\{
-\left(
-z^{N_11},\widetilde{w}_{t}^{N_11}\right),\dots,\left(
-z^{N_1N_2},\widetilde{w}_{t}^{N_1N_2}\right) \right\} \right\}
+z^{i1},\widetilde{w}_{t}^{i1}\right),\dots,\left(
+z^{iN_2},\widetilde{w}_{t}^{iN_2}\right) \right\}_{i\in \lbrace 1,\dots,N_1\rbrace}\right\}
+%&\left\{\left(
+%z^{21},\widetilde{w}_{t}^{21}\right),\dots,\left(
+%z^{2N_2},\widetilde{w}_{t}^{2N_2}\right) \right\},\dots, \\
+%&\left. \left\{
+%\left(
+%z^{N_11},\widetilde{w}_{t}^{N_11}\right),\dots,\left(
+%z^{N_1N_2},\widetilde{w}_{t}^{N_1N_2}\right) \right\} \right\}
 \end{align*}
-where for each $i = 1,\dots,N_1$, $\sum_{j=1}^{N_2} \widetilde{w}_{t}^{ij} = 1$.
+where for each $t$ and $i = 1,\dots,N_1$, $\sum_{j=1}^{N_2} \widetilde{w}_{t}^{ij} = 1$.
 %\begin{equation}
 %\widetilde{w}_{I,t}^{ij} \propto
 %p_{\bm{y}_{I,t} \mid
@@ -1211,7 +1212,6 @@ where for each $i = 1,\dots,N_1$, $\sum_{j=1}^{N_2} \widetilde{w}_{t}^{ij} = 1$.
 %\hat{x}_{t},\bm{z}=(q^i,I^{ij})\right)
 %\end{equation}
 %for all $i \in \lbrace 1,\dots,N_1 \rbrace$.
-
 %\begin{equation}
 %\left\{
 %\left\{
@@ -1222,12 +1222,11 @@ where for each $i = 1,\dots,N_1$, $\sum_{j=1}^{N_2} \widetilde{w}_{t}^{ij} = 1$.
 %z^k,\widetilde{w}_t^k
 %\right\}_{k=1}^N
 %\end{equation}
-
 After resampling and normalizing, the approximate posterior belief becomes
-\begin{equation}
+\begin{equation*}
 \hat{b}_t(z) = \sum_{k=1}^{N} 
 w_t^{k} \delta(z - z^{k})
-\end{equation}
+\end{equation*}
 which is a form of discrete random measure where the $w_t^1,\dots,w_t^N$ are resampled, normalized weight such that $\sum_{k=1}^{N} w_t^{k} = 1$, and $\delta(z - z^{k})$ is Dirac-delta function evaluate at $z^{k}$. 
 %We note that resampling is only taken on the target information state, namely, $\bm{I}_t$.
 The whole filtering process is depicted in Algorithm \ref{costalgorithm}.
@@ -1236,10 +1235,10 @@ Note that as discussed in previous studies \cite{crisan2002survey}, our particle
 \begin{algorithm}
 	\DontPrintSemicolon
 	\KwIn{$\hat{b}_{t-1}= \lbrace z^l,\,w_{t-1}^l \rbrace_{l=1}^N 
-		,y_{t},\hat{x}_{t-1},\,I_{\textup{range}}$}
+		,y_{t},\hat{x}_{t},\,I_{\textup{range}}$}
 	\KwOut{$\hat{b}_t$}
-	\tcp{Propogate motion model; see Algorithm \ref{alg1}}
-	$\hat{u}_{t}\gets$ \text{MMLE}($y_{D,t}$, $\hat{x}_{t-1})$ \\
+%	\tcp{Propogate motion model; see Algorithm \ref{alg1}}
+%	$\hat{u}_{t}\gets$ \text{MMLE}($y_{D,t}$, $\hat{x}_{t-1})$ \\
 	\tcp{SIR Particle Filter}
 	\tcp{1) Update using the observation model}
 		\ForEach{$i \in \lbrace 1,\dots,N_1\rbrace$}{
@@ -1250,9 +1249,9 @@ Note that as discussed in previous studies \cite{crisan2002survey}, our particle
 %		\hat{x}_{t},\bm{q}=q_t^i\right)$ \\
 		\ForEach{$j \in \lbrace 1,\dots,N_2 \rbrace$}{
 			$\widetilde{w}_{t}^{ij} \gets 
-			p_{\bm{y}_{D,t} \mid \bm{q},\hat{x}_{t-1},\hat{u}_t}(\bm{y}_{D,t} = \mathbf{0} \mid \bm{q}=q^i,\hat{x}_{t-1},\hat{u}_t)  
-			( I_{\textup{range}}^{-1} -  w_{t-1}^{ij} f_{\bm{y}_t \mid \bm{z},\hat{x}_{t-1},\hat{u}_t,\bm{y}_{D,t}}(y_t \mid \bm{z} = z_t^{ij},\hat{x}_{t-1},\hat{u}_t,\bm{y}_{D,t}\neq \mathbf{0}))
-			+ w_{t-1}^{ij}f_{\bm{y}_t \mid \bm{z},\hat{x}_{t-1},\hat{u}_t,\bm{y}_{D,t}}(y \mid z,\hat{x}_{t-1},\hat{u}_t,\bm{y}_{D,t}\neq \mathbf{0})
+			p_{\bm{y}_{D,t} \mid \bm{q},\hat{x}_{t}}(\bm{y}_{D,t} = \mathbf{0} \mid \bm{q}=q^i,\hat{x}_t)  
+			( I_{\textup{range}}^{-1} -  w_{t-1}^{ij} f_{\bm{y}_t \mid \bm{z},\hat{x}_{t},\bm{y}_{D,t}}(\bm{y}_t = \bm{1} \mid \bm{z} = z_t^{ij},\hat{x}_{t},\bm{y}_{D,t}\neq \mathbf{0}))
+			+ w_{t-1}^{ij}f_{\bm{y}_t \mid \bm{z},\hat{x}_{t},\bm{y}_{D,t}}(\bm{y}_t = \bm{1} \mid z,\hat{x}_{t},\bm{y}_{D,t}\neq \mathbf{0})
 			 $
 	}
 }
@@ -1596,7 +1595,7 @@ Fig. \ref{fig:fig0} shows one of the results with $100$ robots after $t=10$ wher
 \label{sec:sec9}
 This paper presents a general deployment strategy for autonomous fleet to maximize the recovery of environmental map over a bounded space, robots to sensor failures. 
 It is expected that our method will fail if there is not enough number of mobile agents having sufficiently long effective sensing ranges compared to the workspace size. 
-One of our future works is, therefore, to develop multi-agent patrolling algorithms (see e.g., \cite{portugal2011survey}) to resolve such problems where there may not be enough sensors to cover the whole target space.
+One of our future works is, therefore, to employ multi-agent patrolling \cite{portugal2011survey} or sweep coverage \cite{rekleitis2004limited} algorithms or to resolve such problems where there may not be enough sensors to cover the whole target space.
 Also, as reported in the literature \cite{anguelov2004detecting}, our combined sensor model has been adopted to emulate the real-world laser scanner's behavior, nevertheless, it is one of our future works to conduct extensive real world multi-robot experiments for further validation of our range sensor model.
 Lastly, we assumed in this study that the beliefs are shared between robots such that both tasks of information gathering, propagating and approximating belief require a central entity. 
 In the future, we will explore how to devise distributed communication protocol to enable distributed belief estimation. 
