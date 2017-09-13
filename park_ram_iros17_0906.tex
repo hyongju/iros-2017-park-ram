@@ -1375,7 +1375,7 @@ In our simulation, we will compare the three methods summarized in Table \ref{ta
 
 \begin{figure}
 	\centering
-	\includegraphics[width=2.5in]{figure/gtruth3d}
+	\includegraphics[width=2.6in]{figure/gtruth3d}
 	\caption{Elevation map of some region in Connecticut (the ground truth).} 
 	\label{fig:fig1}
 \end{figure}
@@ -1388,8 +1388,8 @@ In our simulation, we will compare the three methods summarized in Table \ref{ta
 %\end{figure}
 \begin{figure}
 		\centering
-  	\includegraphics[width=1.55in]{figure/order1deploy2d}
-  	  	\includegraphics[width=1.55in]{figure/order2deploy2d}
+  	\includegraphics[width=1.55in]{figure/new_path1}
+  	  	\includegraphics[width=1.55in]{figure/new_path2}
 %\includegraphics[width=1.57in]{figure/final_config_order1_fault}
 	%	\includegraphics[width=3.4in]{figure/init_10_deploy_cmd2}
 	\caption{One-time deployment with non-robust (left) and robust ($k=2$) (right) overlaid with map at $t=1$ (lines: gradient descent flow, stars: positions of robots, polygons: partition).}
@@ -1398,7 +1398,16 @@ In our simulation, we will compare the three methods summarized in Table \ref{ta
 
 \begin{figure}
 	\centering
-	\includegraphics[width=2.9in]{figure/cost_comp1}
+	\begin{subfigure}[b]{0.23\textwidth}
+		\centering
+	\includegraphics[width=1.7in]{figure/cost_left}
+	\caption{}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.23\textwidth}
+		\centering
+	\includegraphics[width=1.7in]{figure/kl_right}
+	\caption{}
+	\end{subfigure}
 	%\includegraphics[width=1.57in]{figure/final_config_order1_fault}
 	%	\includegraphics[width=3.4in]{figure/init_10_deploy_cmd2}
 	\caption{Convergence test for one-time deployment with different methods.}
@@ -1418,7 +1427,7 @@ In our simulation, we will compare the three methods summarized in Table \ref{ta
 %	\centering
 %	 \begin{subfigure}[b]{0.165\textwidth}
 	 	\centering
-		\includegraphics[width=6.5in]{figure/k_2_result}
+		\includegraphics[width=6.4in]{figure/k_2_result}
 %		\caption{$k=1$}
 %	\end{subfigure}
 %	\begin{subfigure}[b]{0.15\textwidth}
@@ -1438,21 +1447,21 @@ In our simulation, we will compare the three methods summarized in Table \ref{ta
 \subsection{Convergence of our deployment algorithm}
 First, the behavior of the deployment strategy is discussed. Given the initial uniform prior belief and the initial configuration at $x_0$, three algorithms, summarized in Table \ref{table2}, were tested.
 Fig. \ref{fig:fig2} shows the configurations after $t=1$ with non-robust method (left) and robust method (right) where $k=2$. 
-Fig. \ref{fig:fig0} compares the convergence speed and the cost between three methods.
+Fig. \ref{fig:fig0}(a) compares the convergence speed and the cost between three methods.
 
 \subsection{Environmental mapping/filtering performance w/o failure}
 Next, we present the evolution of the object map given the uniform, initial map (Fig. \ref{fig:fig1}) with successive positive observations, each followed by the gradient descent strategy and filtering process. Fig. \ref{fig:fig3} illustrates the map building process, given limited effective sensing range value ($r_{\textup{eff}}=0.3$, the value was chosen empirically relative to the workspace size) when using our robust method. Others show similar performance, and are omitted due to the lack of space.
 %
 %
 %The results in Fig. \ref{fig:fig3} clearly show that under \emph{limited} sensing range, the non-coordinated strategy ($k=1$) yields relatively better mapping results than coordinated strategies ($k=2,\,10$) compared to the ground truth map shown in Fig \ref{fig:fig1}.
-Fig. \ref{fig:fig5} compares the K-L divergence values between different strategies during the evolution. While the max. information gain approach shows the best result, other methods also shows competitive mapping performance compared to the ground truth.
+Fig. \ref{fig:fig0}(b) compares the K-L divergence values between different strategies during the evolution. While the max. information gain approach shows the best result, other methods also shows competitive mapping performance compared to the ground truth.
 %The occurrence of sudden jumps (between the time step 0 and 1) in the K-L divergence values observed in Fig \ref{fig:fig5}(a) demonstrates the cases when the initial uniform density happened to a better `\emph{guess}' than the crude belief obtained after a single propagation of the filtering process.
-\begin{figure}
-	\centering
-	\includegraphics[width=2.9in]{figure/cost_comp0}
-	\caption{Comparison of K-L divergence from the actual distribution between different methods during belief propagation.}
-	\label{fig:fig5}
-\end{figure}
+%\begin{figure}
+%	\centering
+%	\includegraphics[width=2.9in]{figure/cost_comp0}
+%	\caption{Comparison of K-L divergence from the actual distribution between different methods during belief propagation.}
+%	\label{fig:fig5}
+%\end{figure}
 %\begin{figure}
 %	\centering
 %	\begin{subfigure}[b]{0.15\textwidth}
@@ -1488,9 +1497,9 @@ As can be seen from Fig \ref{fig:fig6} and Fig. \ref{fig:fig7}, the map retrieve
 It is not surprising to see from this example that the maximum information gain method shows the best robustness to sensor failures among the three; however this is due to the help from the central information fusion sever and relatively large communication load.
 \begin{figure}
 	\centering
-	\includegraphics[width=1.1in]{figure/order1_conf}
-	\includegraphics[width=1.1in]{figure/order2_conf}
-	\includegraphics[width=1.1in]{figure/final_config_ordern_fault}
+	\includegraphics[width=1.1in]{figure/new_fault1}
+	\includegraphics[width=1.1in]{figure/new_fault2}
+	\includegraphics[width=1.1in]{figure/new_faultn}
 	%\includegraphics[width=1.57in]{figure/final_config_order1_fault}
 	%	\includegraphics[width=3.4in]{figure/init_10_deploy_cmd2}
 	\caption{The belief at $t=10$ with non-robust method (left) and robust method (middle), and max. information method (right) Also showing robot configurations (stars, where red stars are robots whose sensors have failed), effective sensing range (dashed line), and partition (solid lines).
@@ -1499,7 +1508,7 @@ It is not surprising to see from this example that the maximum information gain 
 \end{figure}
 \begin{figure}
 	\centering
-	\includegraphics[width=2.9in]{figure/cost_comp000}
+	\includegraphics[width=2.6in]{figure/cost_comp000}
 	\caption{Comparison of K-L divergence from the actual distribution between different methods during belief propagation when part of the sensor fail.}
 	\label{fig:fig7}
 \end{figure}
@@ -1510,7 +1519,7 @@ Statistical results shows that our method can be used to estimate arbitrary targ
 Fig. \ref{fig:fig8} shows a distribution of K-L divergence values at the $t=10$ for a given $100$ random initial configurations with randomly sampled faults $1\leq \left|\mathcal{F}\right| \leq 5$.
 \begin{figure}
 	\centering
-	\includegraphics[width=2.7in]{figure/stat_result}
+	\includegraphics[width=2.8in]{figure/stat_result}
 	\caption{Robustness test with 100 test dataset, distribution of $\left|\mathcal{F}\right|$ (top), K-L divergence at $t=10$ (bottom).} 
 	\label{fig:fig8}
 \end{figure}
@@ -1537,11 +1546,20 @@ Fig. \ref{fig:fig0} shows one of the results with $100$ robots after $t=10$ wher
 \begin{figure}
 	\centering
 %	\includegraphics[width=1.1in]{figure/100_order1}
-	\includegraphics[width=2.7in]{figure/100_order2_last}
+\begin{subfigure}[b]{0.17\textwidth}
+	\includegraphics[width=1.27in]{figure/100_order2_last_left}
+		\centering
+		\caption{}
+	\end{subfigure}
+\begin{subfigure}[b]{0.30\textwidth}
+	\includegraphics[width=2.2in]{figure/100_order2_last}
+			\centering
+	\caption{}
+\end{subfigure}
 %	\includegraphics[width=1.1in]{figure/100_ordern}
 	%\includegraphics[width=1.57in]{figure/final_config_order1_fault}
 	%	\includegraphics[width=3.4in]{figure/init_10_deploy_cmd2}
-	\caption{Simulations with 100 robots where 10 sensors have failed.}
+	\caption{Simulations with 100 robots estimating an elevation map of a mountain area (Oregon USA) using our robust method where 10 sensors have failed (left: ground truth, right: configuration and partition overlaid over the expected belief after $t=10$)}
 	\label{fig:fig9}
 \end{figure}
 

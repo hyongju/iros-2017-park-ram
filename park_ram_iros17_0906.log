@@ -1,10 +1,12 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.2.6)  12 SEP 2017 15:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  13 SEP 2017 00:20
 entering extended mode
-**./park_ram_iros17_0906.tex
-(park_ram_iros17_0906.tex
-LaTeX2e <2017/01/01> patch level 1
-Babel <3.9r> and hyphenation patterns for 75 language(s) loaded.
-(ieeeconf.cls
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**park_ram_iros17_0906.tex
+(./park_ram_iros17_0906.tex
+LaTeX2e <2016/03/31>
+Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
+(./ieeeconf.cls
 Document Class: ieeeconf 2016/4/23 revision V1.6b by Pradeep Misra
 \@IEEEtrantmpdimenA=\dimen102
 \@IEEEtrantmpdimenB=\dimen103
@@ -13,7 +15,7 @@ Document Class: ieeeconf 2016/4/23 revision V1.6b by Pradeep Misra
 \@IEEEtrantmptoksA=\toks14
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 794.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 \@IEEEnormalsizefontbaselineskip=\skip41
@@ -97,37 +99,37 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
 )
 ** ATTENTION: Overriding command lockouts (line 3).
 ** ATTENTION: Overriding IEEE standard margins (line 6).
-("C:\Program Files\MiKTeX 2.9\tex\latex\setspace\setspace.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2011/12/19 v6.7a set line spacing
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\epsfig.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/epsfig.sty
 Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks15
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
-Package: graphics 2016/10/09 v1.0u Standard LaTeX Graphics (DPC,SPQR)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2016/05/09 v1.0r Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\graphics.cfg"
-File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/01/02 v1.10 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 99.
+Package graphics Info: Driver file: pdftex.def on input line 96.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-def\pdftex.def"
-File: pdftex.def 2017/01/12 v0.06k Graphics/color for pdfTeX
+(/usr/local/texlive/2016/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/infwarerr.sty
 Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count91
@@ -138,28 +140,28 @@ Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 \epsfxsize=\dimen115
 \epsfysize=\dimen116
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/epstopdf.sty
 Package: epstopdf 2016/05/15 v2.6 Conversion with epstopdf on the fly (HO)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/grfext.sty
 Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\kvdefinekeys.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
 Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\kvsetkeys.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
 Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\etexcmds.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/etexcmds.sty
 Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifluatex.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ifluatex.sty
 Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
 )
@@ -168,11 +170,11 @@ Package etexcmds Info: Could not find \expanded.
 (etexcmds)             that some package has redefined \expanded.
 (etexcmds)             In the latter case, load this package earlier.
 )))
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
-Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2016/05/10 v0.21 Utility functions of pdfTeX for LuaTeX (HO
 )
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ifpdf.sty
 Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
 )
 Package pdftexcmds Info: LuaTeX not detected.
@@ -180,21 +182,23 @@ Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-38.
 Package grfext Info: Graphics extension search list:
 (grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
-))
-("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty"
-Package: hyperref 2016/06/24 v6.83q Hypertext links for LaTeX
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-hyperref.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+)))
+(/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2016/05/05 v6.83n Hypertext links for LaTeX
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
 Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
 
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-generic.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
 Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
 Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
 Package hobsub Info: Skipping package `infwarerr' (already loaded).
@@ -220,55 +224,55 @@ Package: hopatch 2016/05/16 v1.3 Wrapper for package hooks (HO)
 Package: xcolor-patch 2016/05/16 xcolor patch
 Package: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
 Package atveryend Info: \enddocument detected (standard20110627).
-Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
+Package: atbegshi 2016/05/16 v1.17 At begin shipout hook (HO)
 Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
 Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\auxhook.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/auxhook.sty
 Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
 )
 \@linkdim=\dimen117
 \Hy@linkcounter=\count92
 \Hy@pagecounter=\count93
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\pd1enc.def"
-File: pd1enc.def 2016/06/24 v6.83q Hyperref: PDFDocEncoding definition (HO)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2016/05/05 v6.83n Hyperref: PDFDocEncoding definition (HO)
 )
 \Hy@SavedSpaceFactor=\count94
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
-Package hyperref Info: Hyper figures OFF on input line 4486.
-Package hyperref Info: Link nesting OFF on input line 4491.
-Package hyperref Info: Hyper index ON on input line 4494.
-Package hyperref Info: Plain pages OFF on input line 4501.
-Package hyperref Info: Backreferencing OFF on input line 4506.
+Package hyperref Info: Hyper figures OFF on input line 4446.
+Package hyperref Info: Link nesting OFF on input line 4451.
+Package hyperref Info: Hyper index ON on input line 4454.
+Package hyperref Info: Plain pages OFF on input line 4461.
+Package hyperref Info: Backreferencing OFF on input line 4466.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4735.
+Package hyperref Info: Bookmarks ON on input line 4691.
 \c@Hy@tempcnt=\count95
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\url\url.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 5088.
+LaTeX Info: Redefining \url on input line 5044.
 \XeTeXLinkMargin=\dimen118
 \Fld@menulength=\count96
 \Field@Width=\dimen119
 \Fld@charsize=\dimen120
-Package hyperref Info: Hyper figures OFF on input line 6342.
-Package hyperref Info: Link nesting OFF on input line 6347.
-Package hyperref Info: Hyper index ON on input line 6350.
-Package hyperref Info: backreferencing OFF on input line 6357.
-Package hyperref Info: Link coloring OFF on input line 6362.
-Package hyperref Info: Link coloring with OCG OFF on input line 6367.
-Package hyperref Info: PDF/A mode OFF on input line 6372.
-LaTeX Info: Redefining \ref on input line 6412.
-LaTeX Info: Redefining \pageref on input line 6416.
+Package hyperref Info: Hyper figures OFF on input line 6298.
+Package hyperref Info: Link nesting OFF on input line 6303.
+Package hyperref Info: Hyper index ON on input line 6306.
+Package hyperref Info: backreferencing OFF on input line 6313.
+Package hyperref Info: Link coloring OFF on input line 6318.
+Package hyperref Info: Link coloring with OCG OFF on input line 6323.
+Package hyperref Info: PDF/A mode OFF on input line 6328.
+LaTeX Info: Redefining \ref on input line 6368.
+LaTeX Info: Redefining \pageref on input line 6372.
 \Hy@abspage=\count97
 \c@Item=\count98
 \c@Hfootnote=\count99
@@ -276,22 +280,22 @@ LaTeX Info: Redefining \pageref on input line 6416.
 
 Package hyperref Message: Driver (autodetected): hpdftex.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hpdftex.def"
-File: hpdftex.def 2016/06/24 v6.83q Hyperref driver for pdfTeX
+(/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2016/05/05 v6.83n Hyperref driver for pdfTeX
 \Fld@listcount=\count100
 \c@bookmark@seq@number=\count101
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\rerunfilecheck.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
 Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
 \Hy@SectionHShift=\skip47
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \@emptytoks=\toks16
 \symAMSa=\mathgroup4
@@ -299,41 +303,41 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
-Package: amsmath 2016/11/05 v2.16a AMS math features
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2016/03/10 v2.15b AMS math features
 \@mathmargin=\skip48
 
 For additional information on amsmath, use the `?' option.
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01 AMS text
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks17
 \ex@=\dimen121
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen122
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
 \inf@bad=\count102
-LaTeX Info: Redefining \frac on input line 213.
+LaTeX Info: Redefining \frac on input line 199.
 \uproot@=\count103
 \leftroot@=\count104
-LaTeX Info: Redefining \overline on input line 375.
+LaTeX Info: Redefining \overline on input line 297.
 \classnum@=\count105
 \DOTSCASE@=\count106
-LaTeX Info: Redefining \ldots on input line 472.
-LaTeX Info: Redefining \dots on input line 475.
-LaTeX Info: Redefining \cdots on input line 596.
+LaTeX Info: Redefining \ldots on input line 394.
+LaTeX Info: Redefining \dots on input line 397.
+LaTeX Info: Redefining \cdots on input line 518.
 \Mathstrutbox@=\box27
 \strutbox@=\box28
 \big@size=\dimen123
-LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
+LaTeX Font Info:    Redeclaring font encoding OML on input line 634.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
 \macc@depth=\count107
 \c@MaxMatrixCols=\count108
 \dotsspace@=\muskip11
@@ -354,13 +358,13 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
 \multlinegap=\skip49
 \multlinetaggap=\skip50
 \mathdisplay@stack=\toks21
-LaTeX Info: Redefining \[ on input line 2817.
-LaTeX Info: Redefining \] on input line 2818.
+LaTeX Info: Redefining \[ on input line 2739.
+LaTeX Info: Redefining \] on input line 2740.
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\mathtools\mathtools.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/mathtools/mathtools.sty
 Package: mathtools 2015/11/12 v1.18 mathematical typesetting tools
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\tools\calc.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count114
 \calc@Bcount=\count115
@@ -373,7 +377,7 @@ LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Ccount=\count116
 \calc@Cskip=\skip53
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\mathtools\mhsetup.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/mathtools/mhsetup.sty
 Package: mhsetup 2010/01/21 v1.2a programming setup (MH)
 )
 LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 129.
@@ -390,11 +394,11 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 \l_MT_above_shortintertext_sep=\dimen137
 \l_MT_below_shortintertext_sep=\dimen138
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\jknappen\mathrsfs.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
 Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
 \symrsfs=\mathgroup6
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\enumitem\enumitem.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \labelindent=\skip55
 \enit@outerparindent=\dimen139
@@ -402,20 +406,20 @@ Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \enit@inbox=\box29
 \enitdp@description=\count118
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\subfiles\subfiles.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/subfiles/subfiles.sty
 Package: subfiles 2012/05/23 Federico Garcia
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\tools\verbatim.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/tools/verbatim.sty
 Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
 \every@verbatim=\toks23
 \verbatim@line=\toks24
 \verbatim@in@stream=\read1
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\caption\caption.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\caption\caption3.sty"
-Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2016/02/04 v1.7-139 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 67.
 \captionmargin=\dimen140
 \captionmargin@=\dimen141
@@ -442,15 +446,15 @@ mpboxa \hbox {\footnotesize #1.~~ }\parbox [t]{\hsize }{\footnotesize \noindent
 xa \hfil }\fi \fi \fi .
 \c@ContinuedFloat=\count119
 Package caption Info: hyperref package is loaded.
-) ("C:\Program Files\MiKTeX 2.9\tex\latex\caption\subcaption.sty"
-Package: subcaption 2016/05/22 v1.1-161 Sub-captions (AR)
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2016/02/20 v1.1-142 Sub-captions (AR)
 \c@subfigure=\count120
 \c@subtable=\count121
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\color.cfg"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
@@ -464,20 +468,20 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\algorithm2e\algorithm2e.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
 Package: algorithm2e 2013/01/06 v5.00 algorithms environments
 \c@AlgoLine=\count122
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \algocf@hangindent=\skip56
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\tools\xspace.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\ltxmisc\relsize.sty"
-Package: relsize 2003/07/04 ver 3.1
+(/usr/local/texlive/2016/texmf-dist/tex/latex/relsize/relsize.sty
+Package: relsize 2013/03/29 ver 4.1
 )
 ********************************************************
 Package `algorithm2e' Release 5.1 -- october 19 2015 --
@@ -520,46 +524,46 @@ subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
 \c@algocf=\count125
 \algocf@algoframe=\box36
 \algocf@algobox=\box37
-) ("C:\Program Files\MiKTeX 2.9\tex\latex\lipsum\lipsum.sty"
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/lipsum/lipsum.sty
 Package: lipsum 2014/07/27 v1.3 150 paragraphs of Lorem Ipsum dummy text
 \c@lips@count=\count126
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\cite\cite.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/cite/cite.sty
 LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 332.
 Package: cite 2015/02/27  v 5.5
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\thmtools\thmtools.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/thmtools/thmtools.sty
 Package: thmtools 2014/04/21 v66
 \thmt@toks=\toks25
 \c@thmt@dummyctr=\count127
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\thmtools\thm-patch.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/thmtools/thm-patch.sty
 Package: thm-patch 2014/04/21 v66
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\thmtools\parseargs.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/thmtools/parseargs.sty
 Package: parseargs 2014/04/21 v66
 \@parsespec=\toks26
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\thmtools\thm-kv.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/thmtools/thm-kv.sty
 Package: thm-kv 2014/04/21 v66
 Package thm-kv Info: Theorem names will be uppercased on input line 40.
 Package thm-kv Info: kvsetkeys patch (v1.16 or later) on input line 156.
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\thmtools\thm-autoref.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/thmtools/thm-autoref.sty
 Package: thm-autoref 2014/04/21 v66
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\thmtools\aliasctr.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/thmtools/aliasctr.sty
 Package: aliasctr 2014/04/21 v66
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\carlisle\remreset.sty")))
-("C:\Program Files\MiKTeX 2.9\tex\latex\thmtools\thm-listof.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/carlisle/remreset.sty)))
+(/usr/local/texlive/2016/texmf-dist/tex/latex/thmtools/thm-listof.sty
 Package: thm-listof 2014/04/21 v66
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\thmtools\thm-restate.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/thmtools/thm-restate.sty
 Package: thm-restate 2014/04/21 v66
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\tools\multicol.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/tools/multicol.sty
 Package: multicol 2016/04/07 v1.8p multicolumn formatting (FMi)
 \c@tracingmulticols=\count128
 \mult@box=\box38
@@ -608,36 +612,32 @@ Package: multicol 2016/04/07 v1.8p multicolumn formatting (FMi)
 \colbreak@box=\box63
 \mc@col@check@num=\count136
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\multirow\multirow.sty"
-Package: multirow 2016/11/25 v2.2 Span multiple rows of a table
-\multirow@colwidth=\skip76
-\multirow@cntb=\count137
-\multirow@dima=\skip77
+(/usr/local/texlive/2016/texmf-dist/tex/latex/multirow/multirow.sty
 \bigstrutjot=\dimen162
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\tools\bm.sty"
-Package: bm 2017/01/16 v1.2c Bold Symbol Support (DPC/FMi)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/tools/bm.sty
+Package: bm 2016/02/27 v1.2a Bold Symbol Support (DPC/FMi)
 \symboldoperators=\mathgroup7
 \symboldletters=\mathgroup8
 \symboldsymbols=\mathgroup9
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 141.
-LaTeX Info: Redefining \bm on input line 207.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 142.
+LaTeX Info: Redefining \bm on input line 208.
 )
-\c@definition=\count138
-\c@proposition=\count139
-\c@lemma=\count140
-\c@example=\count141
-\c@theorem=\count142
-\c@alg=\count143
-\c@corollary=\count144
-\c@remark=\count145
-\c@assumption=\count146
-\c@conjecture=\count147
-\c@claim=\count148
-\c@property=\count149
-\c@condition=\count150
+\c@definition=\count137
+\c@proposition=\count138
+\c@lemma=\count139
+\c@example=\count140
+\c@theorem=\count141
+\c@alg=\count142
+\c@corollary=\count143
+\c@remark=\count144
+\c@assumption=\count145
+\c@conjecture=\count146
+\c@claim=\count147
+\c@property=\count148
+\c@condition=\count149
 
-(park_ram_iros17_0906.aux)
+(./park_ram_iros17_0906.aux)
 \openout1 = `park_ram_iros17_0906.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 127.
@@ -655,35 +655,35 @@ LaTeX Font Info:    ... okay on input line 127.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 127.
 LaTeX Font Info:    ... okay on input line 127.
 
-("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+(/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count151
+\scratchcounter=\count150
 \scratchdimen=\dimen163
 \scratchbox=\box64
-\nofMPsegments=\count152
-\nofMParguments=\count153
+\nofMPsegments=\count151
+\nofMParguments=\count152
 \everyMPshowfont=\toks27
-\MPscratchCnt=\count154
+\MPscratchCnt=\count153
 \MPscratchDim=\dimen164
-\MPnumerator=\count155
-\makeMPintoPDFobject=\count156
+\MPnumerator=\count154
+\makeMPintoPDFobject=\count155
 \everyMPtoPDFconversion=\toks28
 )
 \AtBeginShipoutBox=\box65
 Package hyperref Info: Link coloring OFF on input line 127.
- ("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
-Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count157
+\c@section@level=\count156
 )
 LaTeX Info: Redefining \ref on input line 127.
 LaTeX Info: Redefining \pageref on input line 127.
 LaTeX Info: Redefining \nameref on input line 127.
 
-(park_ram_iros17_0906.out) (park_ram_iros17_0906.out)
+(./park_ram_iros17_0906.out) (./park_ram_iros17_0906.out)
 \@outlinefile=\write3
 \openout3 = `park_ram_iros17_0906.out'.
 
@@ -692,29 +692,29 @@ Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Calculating math sizes for size <11> on input line 223.
 LaTeX Font Info:    Try loading font information for U+msa on input line 223.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 223.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Try loading font information for U+rsfs on input line 223.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\jknappen\ursfs.fd"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Try loading font information for OT1+pcr on input line 223.
 
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
+(/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
- [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
+ [1{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
@@ -759,7 +759,8 @@ Overfull \hbox (2.07948pt too wide) in paragraph at lines 1067--1067
 
 
 Underfull \hbox (badness 6641) in paragraph at lines 1114--1131
-$\OML/cmm/m/it/10 [] [][]\OT1/cmr/m/n/10 = [][]$ \OT1/ptm/m/n/10 de-notes the
+$\OML/cmm/m/it/10 ^^Q[] [][]\OT1/cmr/m/n/10 = [][]$ \OT1/ptm/m/n/10 de-notes th
+e
  []
 
 
@@ -773,239 +774,271 @@ LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 1357.
 
 Package epstopdf Info: Source file: <figure/gtruth3d.eps>
-(epstopdf)                    date: 2017-09-05 11:05:52
-(epstopdf)                    size: 606010 bytes
+(epstopdf)                    date: 2017-09-12 22:01:19
+(epstopdf)                    size: 509754 bytes
 (epstopdf)             Output file: <figure/gtruth3d-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-09-05 11:07:56
-(epstopdf)                    size: 139766 bytes
-(epstopdf)             Command: <epstopdf --outfile=figure/gtruth3d-eps-convert
-ed-to.pdf figure/gtruth3d.eps>
+(epstopdf)                    date: 2017-09-12 22:01:22
+(epstopdf)                    size: 422891 bytes
+(epstopdf)             Command: <repstopdf --outfile=figure/gtruth3d-eps-conver
+ted-to.pdf figure/gtruth3d.eps>
 (epstopdf)             \includegraphics on input line 1378.
 Package epstopdf Info: Output file is already uptodate.
-<figure/gtruth3d-eps-converted-to.pdf, id=205, 903.375pt x 903.375pt>
+<figure/gtruth3d-eps-converted-to.pdf, id=207, 803.0pt x 803.0pt>
 File: figure/gtruth3d-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figure/gtruth3d-eps-converted-to.pdf>
 Package pdftex.def Info: figure/gtruth3d-eps-converted-to.pdf used on input lin
 e 1378.
-(pdftex.def)             Requested size: 180.67499pt x 180.6718pt.
-Package epstopdf Info: Source file: <figure/order1deploy2d.eps>
-(epstopdf)                    date: 2017-09-08 22:16:24
-(epstopdf)                    size: 370916 bytes
-(epstopdf)             Output file: <figure/order1deploy2d-eps-converted-to.pdf
->
-(epstopdf)                    date: 2017-09-08 22:16:24
-(epstopdf)                    size: 262660 bytes
-(epstopdf)             Command: <epstopdf --outfile=figure/order1deploy2d-eps-c
-onverted-to.pdf figure/order1deploy2d.eps>
+(pdftex.def)             Requested size: 187.90244pt x 187.89635pt.
+Package epstopdf Info: Source file: <figure/new_path1.eps>
+(epstopdf)                    date: 2017-09-12 20:24:11
+(epstopdf)                    size: 695085 bytes
+(epstopdf)             Output file: <figure/new_path1-eps-converted-to.pdf>
+(epstopdf)                    date: 2017-09-12 21:13:15
+(epstopdf)                    size: 1153454 bytes
+(epstopdf)             Command: <repstopdf --outfile=figure/new_path1-eps-conve
+rted-to.pdf figure/new_path1.eps>
 (epstopdf)             \includegraphics on input line 1391.
 Package epstopdf Info: Output file is already uptodate.
 
-<figure/order1deploy2d-eps-converted-to.pdf, id=206, 903.375pt x 903.375pt>
-File: figure/order1deploy2d-eps-converted-to.pdf Graphic file (type pdf)
+<figure/new_path1-eps-converted-to.pdf, id=208, 803.0pt x 803.0pt>
+File: figure/new_path1-eps-converted-to.pdf Graphic file (type pdf)
 
-<use figure/order1deploy2d-eps-converted-to.pdf>
-Package pdftex.def Info: figure/order1deploy2d-eps-converted-to.pdf used on inp
-ut line 1391.
-(pdftex.def)             Requested size: 112.0187pt x 112.01183pt.
-Package epstopdf Info: Source file: <figure/order2deploy2d.eps>
-(epstopdf)                    date: 2017-09-08 22:16:24
-(epstopdf)                    size: 834898 bytes
-(epstopdf)             Output file: <figure/order2deploy2d-eps-converted-to.pdf
->
-(epstopdf)                    date: 2017-09-08 22:16:24
-(epstopdf)                    size: 293241 bytes
-(epstopdf)             Command: <epstopdf --outfile=figure/order2deploy2d-eps-c
-onverted-to.pdf figure/order2deploy2d.eps>
+<use figure/new_path1-eps-converted-to.pdf>
+Package pdftex.def Info: figure/new_path1-eps-converted-to.pdf used on input li
+ne 1391.
+(pdftex.def)             Requested size: 112.0187pt x 112.0149pt.
+Package epstopdf Info: Source file: <figure/new_path2.eps>
+(epstopdf)                    date: 2017-09-12 20:24:47
+(epstopdf)                    size: 779519 bytes
+(epstopdf)             Output file: <figure/new_path2-eps-converted-to.pdf>
+(epstopdf)                    date: 2017-09-12 21:13:16
+(epstopdf)                    size: 1270546 bytes
+(epstopdf)             Command: <repstopdf --outfile=figure/new_path2-eps-conve
+rted-to.pdf figure/new_path2.eps>
 (epstopdf)             \includegraphics on input line 1392.
 Package epstopdf Info: Output file is already uptodate.
 
-<figure/order2deploy2d-eps-converted-to.pdf, id=207, 903.375pt x 903.375pt>
-File: figure/order2deploy2d-eps-converted-to.pdf Graphic file (type pdf)
+<figure/new_path2-eps-converted-to.pdf, id=209, 803.0pt x 803.0pt>
+File: figure/new_path2-eps-converted-to.pdf Graphic file (type pdf)
 
-<use figure/order2deploy2d-eps-converted-to.pdf>
-Package pdftex.def Info: figure/order2deploy2d-eps-converted-to.pdf used on inp
-ut line 1392.
-(pdftex.def)             Requested size: 112.0187pt x 112.01183pt.
-Package epstopdf Info: Source file: <figure/cost_comp1.eps>
-(epstopdf)                    date: 2017-09-09 18:03:27
-(epstopdf)                    size: 20464 bytes
-(epstopdf)             Output file: <figure/cost_comp1-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-09-09 18:03:29
-(epstopdf)                    size: 8260 bytes
-(epstopdf)             Command: <epstopdf --outfile=figure/cost_comp1-eps-conve
-rted-to.pdf figure/cost_comp1.eps>
-(epstopdf)             \includegraphics on input line 1401.
+<use figure/new_path2-eps-converted-to.pdf>
+Package pdftex.def Info: figure/new_path2-eps-converted-to.pdf used on input li
+ne 1392.
+(pdftex.def)             Requested size: 112.0187pt x 112.0149pt.
+Package epstopdf Info: Source file: <figure/cost_left.eps>
+(epstopdf)                    date: 2017-09-12 21:39:28
+(epstopdf)                    size: 18482 bytes
+(epstopdf)             Output file: <figure/cost_left-eps-converted-to.pdf>
+(epstopdf)                    date: 2017-09-12 21:39:37
+(epstopdf)                    size: 7856 bytes
+(epstopdf)             Command: <repstopdf --outfile=figure/cost_left-eps-conve
+rted-to.pdf figure/cost_left.eps>
+(epstopdf)             \includegraphics on input line 1403.
 Package epstopdf Info: Output file is already uptodate.
 
-<figure/cost_comp1-eps-converted-to.pdf, id=208, 1204.5pt x 602.25pt>
-File: figure/cost_comp1-eps-converted-to.pdf Graphic file (type pdf)
+<figure/cost_left-eps-converted-to.pdf, id=210, 803.0pt x 602.25pt>
+File: figure/cost_left-eps-converted-to.pdf Graphic file (type pdf)
 
-<use figure/cost_comp1-eps-converted-to.pdf>
-Package pdftex.def Info: figure/cost_comp1-eps-converted-to.pdf used on input l
-ine 1401.
-(pdftex.def)             Requested size: 209.58255pt x 104.7888pt.
+<use figure/cost_left-eps-converted-to.pdf>
+Package pdftex.def Info: figure/cost_left-eps-converted-to.pdf used on input li
+ne 1403.
+(pdftex.def)             Requested size: 122.85876pt x 92.14394pt.
+
+Overfull \hbox (6.50624pt too wide) in paragraph at lines 1403--1404
+ [][] 
+ []
+
+Package epstopdf Info: Source file: <figure/kl_right.eps>
+(epstopdf)                    date: 2017-09-12 21:39:08
+(epstopdf)                    size: 18308 bytes
+(epstopdf)             Output file: <figure/kl_right-eps-converted-to.pdf>
+(epstopdf)                    date: 2017-09-12 21:39:37
+(epstopdf)                    size: 7563 bytes
+(epstopdf)             Command: <repstopdf --outfile=figure/kl_right-eps-conver
+ted-to.pdf figure/kl_right.eps>
+(epstopdf)             \includegraphics on input line 1408.
+Package epstopdf Info: Output file is already uptodate.
+<figure/kl_right-eps-converted-to.pdf, id=211, 803.0pt x 602.25pt>
+File: figure/kl_right-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figure/kl_right-eps-converted-to.pdf>
+Package pdftex.def Info: figure/kl_right-eps-converted-to.pdf used on input lin
+e 1408.
+(pdftex.def)             Requested size: 122.85876pt x 92.14394pt.
+
+Overfull \hbox (6.50624pt too wide) in paragraph at lines 1408--1409
+ [][] 
+ []
 
 
-pdfTeX warning: pdflatex.exe (file ./figure/k_2_result.pdf): PDF inclusion: fou
-nd PDF version <1.7>, but at most version <1.5> allowed
-<figure/k_2_result.pdf, id=209, 737.15402pt x 180.675pt>
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./figure/k_2_result.pdf): PD
+F inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<figure/k_2_result.pdf, id=212, 921.4425pt x 180.675pt>
 File: figure/k_2_result.pdf Graphic file (type pdf)
 
 <use figure/k_2_result.pdf>
-Package pdftex.def Info: figure/k_2_result.pdf used on input line 1421.
-(pdftex.def)             Requested size: 469.75499pt x 115.1381pt.
-Package epstopdf Info: Source file: <figure/cost_comp0.eps>
-(epstopdf)                    date: 2017-09-09 17:59:00
-(epstopdf)                    size: 21015 bytes
-(epstopdf)             Output file: <figure/cost_comp0-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-09-09 17:59:04
-(epstopdf)                    size: 8486 bytes
-(epstopdf)             Command: <epstopdf --outfile=figure/cost_comp0-eps-conve
-rted-to.pdf figure/cost_comp0.eps>
-(epstopdf)             \includegraphics on input line 1452.
-Package epstopdf Info: Output file is already uptodate.
-
-<figure/cost_comp0-eps-converted-to.pdf, id=216, 1204.5pt x 602.25pt>
-File: figure/cost_comp0-eps-converted-to.pdf Graphic file (type pdf)
-
-<use figure/cost_comp0-eps-converted-to.pdf>
-Package pdftex.def Info: figure/cost_comp0-eps-converted-to.pdf used on input l
-ine 1452.
-(pdftex.def)             Requested size: 209.58255pt x 104.7888pt.
+Package pdftex.def Info: figure/k_2_result.pdf used on input line 1430.
+(pdftex.def)             Requested size: 462.52756pt x 90.69014pt.
  [7]
-Package epstopdf Info: Source file: <figure/order1_conf.eps>
-(epstopdf)                    date: 2017-09-08 22:16:24
-(epstopdf)                    size: 534555 bytes
-(epstopdf)             Output file: <figure/order1_conf-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-09-08 22:16:24
-(epstopdf)                    size: 238126 bytes
-(epstopdf)             Command: <epstopdf --outfile=figure/order1_conf-eps-conv
-erted-to.pdf figure/order1_conf.eps>
-(epstopdf)             \includegraphics on input line 1491.
+Package epstopdf Info: Source file: <figure/new_fault1.eps>
+(epstopdf)                    date: 2017-09-12 20:55:01
+(epstopdf)                    size: 480519 bytes
+(epstopdf)             Output file: <figure/new_fault1-eps-converted-to.pdf>
+(epstopdf)                    date: 2017-09-12 21:41:51
+(epstopdf)                    size: 973546 bytes
+(epstopdf)             Command: <repstopdf --outfile=figure/new_fault1-eps-conv
+erted-to.pdf figure/new_fault1.eps>
+(epstopdf)             \includegraphics on input line 1500.
 Package epstopdf Info: Output file is already uptodate.
 
-<figure/order1_conf-eps-converted-to.pdf, id=239, 903.375pt x 903.375pt>
-File: figure/order1_conf-eps-converted-to.pdf Graphic file (type pdf)
+<figure/new_fault1-eps-converted-to.pdf, id=241, 803.0pt x 803.0pt>
+File: figure/new_fault1-eps-converted-to.pdf Graphic file (type pdf)
 
-<use figure/order1_conf-eps-converted-to.pdf>
-Package pdftex.def Info: figure/order1_conf-eps-converted-to.pdf used on input 
-line 1491.
-(pdftex.def)             Requested size: 79.49744pt x 79.49448pt.
-Package epstopdf Info: Source file: <figure/order2_conf.eps>
-(epstopdf)                    date: 2017-09-08 22:16:24
-(epstopdf)                    size: 466046 bytes
-(epstopdf)             Output file: <figure/order2_conf-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-09-08 22:16:24
-(epstopdf)                    size: 235509 bytes
-(epstopdf)             Command: <epstopdf --outfile=figure/order2_conf-eps-conv
-erted-to.pdf figure/order2_conf.eps>
-(epstopdf)             \includegraphics on input line 1492.
+<use figure/new_fault1-eps-converted-to.pdf>
+Package pdftex.def Info: figure/new_fault1-eps-converted-to.pdf used on input l
+ine 1500.
+(pdftex.def)             Requested size: 79.49744pt x 79.49602pt.
+Package epstopdf Info: Source file: <figure/new_fault2.eps>
+(epstopdf)                    date: 2017-09-12 20:47:33
+(epstopdf)                    size: 517635 bytes
+(epstopdf)             Output file: <figure/new_fault2-eps-converted-to.pdf>
+(epstopdf)                    date: 2017-09-12 21:41:52
+(epstopdf)                    size: 1060259 bytes
+(epstopdf)             Command: <repstopdf --outfile=figure/new_fault2-eps-conv
+erted-to.pdf figure/new_fault2.eps>
+(epstopdf)             \includegraphics on input line 1501.
 Package epstopdf Info: Output file is already uptodate.
 
-<figure/order2_conf-eps-converted-to.pdf, id=240, 903.375pt x 903.375pt>
-File: figure/order2_conf-eps-converted-to.pdf Graphic file (type pdf)
+<figure/new_fault2-eps-converted-to.pdf, id=242, 803.0pt x 803.0pt>
+File: figure/new_fault2-eps-converted-to.pdf Graphic file (type pdf)
 
-<use figure/order2_conf-eps-converted-to.pdf>
-Package pdftex.def Info: figure/order2_conf-eps-converted-to.pdf used on input 
-line 1492.
-(pdftex.def)             Requested size: 79.49744pt x 79.49448pt.
-Package epstopdf Info: Source file: <figure/final_config_ordern_fault.eps>
-(epstopdf)                    date: 2017-09-09 11:47:14
-(epstopdf)                    size: 588902 bytes
-(epstopdf)             Output file: <figure/final_config_ordern_fault-eps-conve
-rted-to.pdf>
-(epstopdf)                    date: 2017-09-09 17:50:58
-(epstopdf)                    size: 1088276 bytes
-(epstopdf)             Command: <epstopdf --outfile=figure/final_config_ordern_
-fault-eps-converted-to.pdf figure/final_config_ordern_fault.eps>
-(epstopdf)             \includegraphics on input line 1493.
-Package epstopdf Info: Output file is already uptodate.
-
-<figure/final_config_ordern_fault-eps-converted-to.pdf, id=241, 903.375pt x 903
-.375pt>
-File: figure/final_config_ordern_fault-eps-converted-to.pdf Graphic file (type 
-pdf)
- <use figure/final_config_ordern_fault-eps-converted-to.pdf>
-Package pdftex.def Info: figure/final_config_ordern_fault-eps-converted-to.pdf 
-used on input line 1493.
-(pdftex.def)             Requested size: 79.49744pt x 79.49448pt.
-Package epstopdf Info: Source file: <figure/cost_comp000.eps>
-(epstopdf)                    date: 2017-09-09 17:55:55
-(epstopdf)                    size: 29953 bytes
-(epstopdf)             Output file: <figure/cost_comp000-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-09-09 17:55:59
-(epstopdf)                    size: 10219 bytes
-(epstopdf)             Command: <epstopdf --outfile=figure/cost_comp000-eps-con
-verted-to.pdf figure/cost_comp000.eps>
+<use figure/new_fault2-eps-converted-to.pdf>
+Package pdftex.def Info: figure/new_fault2-eps-converted-to.pdf used on input l
+ine 1501.
+(pdftex.def)             Requested size: 79.49744pt x 79.49602pt.
+Package epstopdf Info: Source file: <figure/new_faultn.eps>
+(epstopdf)                    date: 2017-09-12 22:09:38
+(epstopdf)                    size: 533766 bytes
+(epstopdf)             Output file: <figure/new_faultn-eps-converted-to.pdf>
+(epstopdf)                    date: 2017-09-12 22:09:42
+(epstopdf)                    size: 977740 bytes
+(epstopdf)             Command: <repstopdf --outfile=figure/new_faultn-eps-conv
+erted-to.pdf figure/new_faultn.eps>
 (epstopdf)             \includegraphics on input line 1502.
 Package epstopdf Info: Output file is already uptodate.
 
-<figure/cost_comp000-eps-converted-to.pdf, id=242, 1204.5pt x 602.25pt>
+<figure/new_faultn-eps-converted-to.pdf, id=243, 803.0pt x 803.0pt>
+File: figure/new_faultn-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figure/new_faultn-eps-converted-to.pdf>
+Package pdftex.def Info: figure/new_faultn-eps-converted-to.pdf used on input l
+ine 1502.
+(pdftex.def)             Requested size: 79.49744pt x 79.49602pt.
+Package epstopdf Info: Source file: <figure/cost_comp000.eps>
+(epstopdf)                    date: 2017-09-12 21:50:59
+(epstopdf)                    size: 29060 bytes
+(epstopdf)             Output file: <figure/cost_comp000-eps-converted-to.pdf>
+(epstopdf)                    date: 2017-09-12 21:51:02
+(epstopdf)                    size: 10119 bytes
+(epstopdf)             Command: <repstopdf --outfile=figure/cost_comp000-eps-co
+nverted-to.pdf figure/cost_comp000.eps>
+(epstopdf)             \includegraphics on input line 1511.
+Package epstopdf Info: Output file is already uptodate.
+
+<figure/cost_comp000-eps-converted-to.pdf, id=244, 1003.75pt x 602.25pt>
 File: figure/cost_comp000-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figure/cost_comp000-eps-converted-to.pdf>
 Package pdftex.def Info: figure/cost_comp000-eps-converted-to.pdf used on input
- line 1502.
-(pdftex.def)             Requested size: 209.58255pt x 104.7888pt.
+ line 1511.
+(pdftex.def)             Requested size: 187.90244pt x 112.7378pt.
 
-Underfull \hbox (badness 2799) in paragraph at lines 1484--1506
+Underfull \hbox (badness 2799) in paragraph at lines 1493--1515
 \OT1/ptm/m/n/10 fail. We con-sider three dif-fer-ent cases, when $\OMS/cmsy/m/n
 /10 F \OT1/cmr/m/n/10 =
  []
 
 Package epstopdf Info: Source file: <figure/stat_result.eps>
-(epstopdf)                    date: 2017-09-09 17:53:09
-(epstopdf)                    size: 90420 bytes
+(epstopdf)                    date: 2017-09-12 22:21:21
+(epstopdf)                    size: 80909 bytes
 (epstopdf)             Output file: <figure/stat_result-eps-converted-to.pdf>
-(epstopdf)                    date: 2017-09-09 17:53:13
-(epstopdf)                    size: 85612 bytes
-(epstopdf)             Command: <epstopdf --outfile=figure/stat_result-eps-conv
-erted-to.pdf figure/stat_result.eps>
-(epstopdf)             \includegraphics on input line 1513.
+(epstopdf)                    date: 2017-09-12 22:21:24
+(epstopdf)                    size: 77521 bytes
+(epstopdf)             Command: <repstopdf --outfile=figure/stat_result-eps-con
+verted-to.pdf figure/stat_result.eps>
+(epstopdf)             \includegraphics on input line 1522.
 Package epstopdf Info: Output file is already uptodate.
-<figure/stat_result-eps-converted-to.pdf, id=244, 803.0pt x 602.25pt>
+<figure/stat_result-eps-converted-to.pdf, id=246, 873.2625pt x 480.79625pt>
 File: figure/stat_result-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figure/stat_result-eps-converted-to.pdf>
 Package pdftex.def Info: figure/stat_result-eps-converted-to.pdf used on input 
-line 1513.
-(pdftex.def)             Requested size: 195.12877pt x 146.3441pt.
-Package epstopdf Info: Source file: <figure/100_order2_last.eps>
-(epstopdf)                    date: 2017-09-12 14:58:51
-(epstopdf)                    size: 712215 bytes
-(epstopdf)             Output file: <figure/100_order2_last-eps-converted-to.pd
-f>
-(epstopdf)                    date: 2017-09-12 15:15:11
-(epstopdf)                    size: 453465 bytes
-(epstopdf)             Command: <epstopdf --outfile=figure/100_order2_last-eps-
-converted-to.pdf figure/100_order2_last.eps>
-(epstopdf)             \includegraphics on input line 1540.
+line 1522.
+(pdftex.def)             Requested size: 202.35622pt x 111.4098pt.
+Package epstopdf Info: Source file: <figure/100_order2_last_left.eps>
+(epstopdf)                    date: 2017-09-12 23:40:41
+(epstopdf)                    size: 355787 bytes
+(epstopdf)             Output file: <figure/100_order2_last_left-eps-converted-
+to.pdf>
+(epstopdf)                    date: 2017-09-12 23:40:44
+(epstopdf)                    size: 386004 bytes
+(epstopdf)             Command: <repstopdf --outfile=figure/100_order2_last_lef
+t-eps-converted-to.pdf figure/100_order2_last_left.eps>
+(epstopdf)             \includegraphics on input line 1550.
 Package epstopdf Info: Output file is already uptodate.
 
-<figure/100_order2_last-eps-converted-to.pdf, id=246, 903.375pt x 903.375pt>
+<figure/100_order2_last_left-eps-converted-to.pdf, id=248, 432.61626pt x 746.79
+pt>
+File: figure/100_order2_last_left-eps-converted-to.pdf Graphic file (type pdf)
+ <use figure/100_order2_last_left-eps-converted-to.pdf>
+Package pdftex.def Info: figure/100_order2_last_left-eps-converted-to.pdf used 
+on input line 1550.
+(pdftex.def)             Requested size: 91.7832pt x 158.43723pt.
+
+Overfull \hbox (5.78284pt too wide) in paragraph at lines 1550--1552
+ [][] 
+ []
+
+Package epstopdf Info: Source file: <figure/100_order2_last.eps>
+(epstopdf)                    date: 2017-09-12 23:23:26
+(epstopdf)                    size: 885429 bytes
+(epstopdf)             Output file: <figure/100_order2_last-eps-converted-to.pd
+f>
+(epstopdf)                    date: 2017-09-12 23:37:22
+(epstopdf)                    size: 1845704 bytes
+(epstopdf)             Command: <repstopdf --outfile=figure/100_order2_last-eps
+-converted-to.pdf figure/100_order2_last.eps>
+(epstopdf)             \includegraphics on input line 1555.
+Package epstopdf Info: Output file is already uptodate.
+<figure/100_order2_last-eps-converted-to.pdf, id=249, 803.0pt x 803.0pt>
 File: figure/100_order2_last-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figure/100_order2_last-eps-converted-to.pdf>
 Package pdftex.def Info: figure/100_order2_last-eps-converted-to.pdf used on in
-put line 1540.
-(pdftex.def)             Requested size: 195.12877pt x 195.1316pt.
- (park_ram_iros17_0906.bbl
-Missing character: There is no â in font ptmr7t!
-Missing character: There is no € in font ptmr7t!
-Missing character: There is no “ in font ptmr7t!
+put line 1555.
+(pdftex.def)             Requested size: 158.99377pt x 158.99203pt.
 
-[8 <./figure/gtruth3d-eps-converted-to.pdf> <./figure/order1deploy2d-eps-conver
-ted-to.pdf> <./figure/order2deploy2d-eps-converted-to.pdf> <./figure/cost_comp1
--eps-converted-to.pdf>] [9 <./figure/k_2_result.pdf> <./figure/cost_comp0-eps-c
-onverted-to.pdf> <./figure/order1_conf-eps-converted-to.pdf> <./figure/order2_c
-onf-eps-converted-to.pdf> <./figure/final_config_ordern_fault-eps-converted-to.
-pdf> <./figure/cost_comp000-eps-converted-to.pdf> <./figure/stat_result-eps-con
-verted-to.pdf> <./figure/100_order2_last-eps-converted-to.pdf>]
+Overfull \hbox (7.22523pt too wide) in paragraph at lines 1555--1557
+ [][] 
+ []
+
+(./park_ram_iros17_0906.bbl
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
-)
+ [8 <./figure/gtruth3d-eps-converted-to.pdf> <./figure/new_path1-eps-converted-
+to.pdf> <./figure/new_path2-eps-converted-to.pdf> <./figure/cost_left-eps-conve
+rted-to.pdf> <./figure/kl_right-eps-converted-to.pdf>]
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no “ in font ptmr7t!
+ [9 <./figure/k_2_result.pdf> <./figure/new_fault1-eps-converted-to.pdf> <./fig
+ure/new_fault2-eps-converted-to.pdf> <./figure/new_faultn-eps-converted-to.pdf>
+ <./figure/cost_comp000-eps-converted-to.pdf> <./figure/stat_result-eps-convert
+ed-to.pdf> <./figure/100_order2_last_left-eps-converted-to.pdf> <./figure/100_o
+rder2_last-eps-converted-to.pdf>])
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -1017,66 +1050,70 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the US letter (8.5in X 11in) paper size.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1591.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1609.
 [10
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1591.
- (park_ram_iros17_0906.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1591.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1591.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1609.
+ (./park_ram_iros17_0906.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1609.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1609.
 
 Package rerunfilecheck Info: File `park_ram_iros17_0906.out' has not changed.
-(rerunfilecheck)             Checksum: 093DE1CAB228A61BEE2A20C5D9FE7088;1803.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1591.
+(rerunfilecheck)             Checksum: AEFA8F70A06BC83A55B613336999F082;1781.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1609.
  )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 11422 strings out of 493333
- 176145 string characters out of 3139189
- 405563 words of memory out of 3000000
- 14601 multiletter control sequences out of 15000+200000
- 58216 words of font info for 139 fonts, out of 3000000 for 9000
+ 11376 strings out of 493014
+ 176807 string characters out of 6133351
+ 403889 words of memory out of 5000000
+ 14566 multiletter control sequences out of 15000+600000
+ 58216 words of font info for 139 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 42i,21n,39p,1663b,3318s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Fi
-les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Program Files/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Program Files/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
-/public/amsfonts/cmextra/cmex7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cmextra/cmex9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
-amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
-/cm/cmmi5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6
-.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/
-Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program F
-iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Program Files/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Program Files/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cmextra/cmmib6.pfb><C:/Program Files/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/cmextra/cmmib7.pfb><C:/Program Files/MiKTeX 2.9/fonts/
-type1/public/amsfonts/cmextra/cmmib9.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
-/amsfonts/cm/cmr5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
-cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pf
-b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Prog
-ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Program Files/MiKTeX 2.9/fonts/
-type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
-sy9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10
-.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Progra
-m Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.
-9/fonts/type1/urw/times/utmbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/ur
-w/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.p
-fb>
-Output written on park_ram_iros17_0906.pdf (10 pages, 3338153 bytes).
+ 42i,21n,39p,1661b,3291s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc
+}</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
+</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></
+usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></us
+r/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr
+/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></
+usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb
+></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
+</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></
+usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></us
+r/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/
+local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/lo
+cal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/loca
+l/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/loca
+l/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib6.pfb></usr/
+local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb></
+usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib9.pf
+b></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
+</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></u
+sr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/
+local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/loc
+al/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/
+texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/tex
+live/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texl
+ive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texliv
+e/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/
+2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/20
+16/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2016
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2016/t
+exmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/20
+16/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2016/texmf
+-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2016/texmf-dist/font
+s/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/u
+rw/times/utmr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/u
+tmri8a.pfb>
+Output written on park_ram_iros17_0906.pdf (10 pages, 8675175 bytes).
 PDF statistics:
- 490 PDF objects out of 1000 (max. 8388607)
- 100 named destinations out of 1000 (max. 500000)
- 237 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 531 PDF objects out of 1000 (max. 8388607)
+ 392 compressed objects within 4 object streams
+ 99 named destinations out of 1000 (max. 500000)
+ 242 words of extra memory for PDF output out of 10000 (max. 10000000)
 
