@@ -1,0 +1,97 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: park_ram_iros17_0912.aux
+The style file: IEEEtran.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: reference_park_17.bib
+I was expecting a `,' or a `}'---line 927 of file reference_park_17.bib
+ :  author={Kolmogorov, Andre{\u\i}} 
+ :                                   Nikolaevich and Fomin, Serge{\u\i}} Vasilʹevich},
+I'm skipping whatever remains of this entry
+Repeated entry---line 1243 of file reference_park_17.bib
+ : @book{choset2005principles
+ :                           ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1525 of file reference_park_17.bib
+ : @inproceedings{kumar2004k
+ :                          ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4225 of file reference_park_17.bib
+ : @article{schwager2009decentralized
+ :                                   ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4775 of file reference_park_17.bib
+ : @article{cortes_coverage_2004
+ :                              ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 5153 of file reference_park_17.bib
+ : @inproceedings{hutchinson_robust_2012
+ :                                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 6093 of file reference_park_17.bib
+ : @article{schwager2009decentralized
+ :                                   ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 8811 of file reference_park_17.bib
+ : @article{cortes_coverage_2004
+ :                              ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 9183 of file reference_park_17.bib
+ : @inproceedings{hutchinson_robust_2012
+ :                                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 10123 of file reference_park_17.bib
+ : @article{schwager2009decentralized
+ :                                   ,
+I'm skipping whatever remains of this entry
+-- IEEEtran.bst version 1.13 (2008/09/30) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+
+Done.
+You've used 22 entries,
+            4039 wiz_defined-function locations,
+            947 strings with 11440 characters,
+and the built_in function-call counts, 19038 in all, are:
+= -- 1591
+> -- 412
+< -- 190
++ -- 234
+- -- 62
+* -- 913
+:= -- 2747
+add.period$ -- 51
+call.type$ -- 22
+change.case$ -- 20
+chr.to.int$ -- 432
+cite$ -- 22
+duplicate$ -- 1337
+empty$ -- 1500
+format.name$ -- 82
+if$ -- 4447
+int.to.chr$ -- 0
+int.to.str$ -- 22
+missing$ -- 211
+newline$ -- 89
+num.names$ -- 22
+pop$ -- 457
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 2
+skip$ -- 1513
+stack$ -- 0
+substring$ -- 1066
+swap$ -- 1161
+text.length$ -- 46
+text.prefix$ -- 0
+top$ -- 5
+type$ -- 22
+warning$ -- 0
+while$ -- 93
+width$ -- 24
+write$ -- 242
+(There were 10 error messages)
