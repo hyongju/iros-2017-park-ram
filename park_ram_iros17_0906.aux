@@ -25,6 +25,7 @@
 \citation{schwager2017multi,julian2012distributed}
 \citation{julian2012distributed}
 \citation{hoffmann2010mobile}
+\providecommand \oddpage@label [2]{}
 \@writefile{toc}{\contentsline {section}{\numberline {I}Introduction}{1}{section.1}}
 \newlabel{sec:sec1}{{I}{1}{Introduction}{section.1}{}}
 \citation{lynch2008decentralized}
@@ -64,7 +65,6 @@
 \@writefile{toc}{\contentsline {section}{\numberline {III}Probabilistic Range-limited Sensor Model}{4}{section.3}}
 \newlabel{sec:sec3}{{III}{4}{Probabilistic Range-limited Sensor Model}{section.3}{}}
 \newlabel{lhd}{{4}{4}{Probabilistic Range-limited Sensor Model}{equation.3.4}{}}
-\newlabel{eq10}{{5}{4}{Probabilistic Range-limited Sensor Model}{equation.3.5}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {IV}Deployment strategy}{4}{section.4}}
 \newlabel{sec:sec4}{{IV}{4}{Deployment strategy}{section.4}{}}
 \citation{kumar2004k}
@@ -74,10 +74,10 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {IV-A}The higher-order Voronoi Partition for Robust deployment}{5}{subsection.4.1}}
 \@writefile{loe}{\contentsline {definition}{\numberline {4.1}Definition\thmtformatoptarg {An Order$-k$ Voronoi Partition \cite  {shamos1975closest}}}{5}{definition.4.1}}
 \newlabel{orderk}{{4.1}{5}{An Order$-k$ Voronoi Partition \cite {shamos1975closest}}{definition.4.1}{}}
-\newlabel{cost2}{{7}{5}{The higher-order Voronoi Partition for Robust deployment}{equation.4.7}{}}
+\newlabel{cost2}{{6}{5}{The higher-order Voronoi Partition for Robust deployment}{equation.4.6}{}}
 \@writefile{loe}{\contentsline {theorem}{\numberline {4.1}Theorem\thmtformatoptarg {\cite  {park2014robust}}}{5}{theorem.4.1}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {IV-B}Gradient algorithm}{5}{subsection.4.2}}
-\newlabel{cost1}{{8}{5}{Gradient algorithm}{equation.4.8}{}}
+\newlabel{cost1}{{7}{5}{Gradient algorithm}{equation.4.7}{}}
 \citation{lavalle2006planning}
 \citation{arulampalam2002tutorial}
 \citation{crisan2002survey}
@@ -90,9 +90,9 @@
 \@writefile{toc}{\contentsline {section}{\numberline {V}Implementation: environmental mapping}{6}{section.5}}
 \newlabel{sec:sec6}{{V}{6}{Implementation: environmental mapping}{section.5}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {V-A}Recursive Bayesian Filter}{6}{subsection.5.1}}
-\newlabel{eqb}{{9}{6}{Recursive Bayesian Filter}{equation.5.9}{}}
-\newlabel{eq0}{{10}{6}{Recursive Bayesian Filter}{equation.5.10}{}}
-\newlabel{eq1}{{11}{6}{Recursive Bayesian Filter}{equation.5.11}{}}
+\newlabel{eqb}{{8}{6}{Recursive Bayesian Filter}{equation.5.8}{}}
+\newlabel{eq0}{{9}{6}{Recursive Bayesian Filter}{equation.5.9}{}}
+\newlabel{eq1}{{10}{6}{Recursive Bayesian Filter}{equation.5.10}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {V-B}Belief Approximation via SIR Particle Filter}{6}{subsection.5.2}}
 \@writefile{toc}{\contentsline {section}{\numberline {VI}Numerical Simulations}{6}{section.6}}
 \newlabel{sec:sec7}{{VI}{6}{Numerical Simulations}{section.6}{}}
@@ -106,21 +106,21 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces One-time deployment with non-robust (left) and robust ($k=2$) (right) overlaid with map at $t=1$ (lines: gradient descent flow, stars: positions of robots, polygons: partition).\relax }}{7}{figure.caption.5}}
 \newlabel{fig:fig2}{{2}{7}{One-time deployment with non-robust (left) and robust ($k=2$) (right) overlaid with map at $t=1$ (lines: gradient descent flow, stars: positions of robots, polygons: partition).\relax }{figure.caption.5}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {VI-B}Environmental mapping/filtering performance w/o failure}{7}{subsection.6.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {VI-C}Robustness to sensor failure}{7}{subsection.6.3}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Convergence test for one-time deployment with different methods.\relax }}{7}{figure.caption.6}}
 \newlabel{fig:fig0}{{3}{7}{Convergence test for one-time deployment with different methods.\relax }{figure.caption.6}{}}
 \citation{portugal2011survey}
 \citation{rekleitis2004limited}
 \citation{anguelov2004detecting}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Time evolution of expected belief with robust method ($k=2$), $r_{\textup  {eff}} = 2.89$, $\Sigma _B = 0.04\mathbf  {I}$.\relax }}{8}{figure.caption.7}}
-\newlabel{fig:fig3}{{4}{8}{Time evolution of expected belief with robust method ($k=2$), $r_{\textup {eff}} = 2.89$, $\Sigma _B = 0.04\mathbf {I}$.\relax }{figure.caption.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Time evolutions of root-mean-square error (RMSE) (in ft) between constructed map and the ground truth map for non-robust method (top) and robust method (bottom) when $\mathcal  {F}=\delimiter "4266308 1,2,3\delimiter "5267309 $.\relax }}{8}{figure.caption.7}}
+\newlabel{fig:fig3}{{4}{8}{Time evolutions of root-mean-square error (RMSE) (in ft) between constructed map and the ground truth map for non-robust method (top) and robust method (bottom) when $\mathcal {F}=\lbrace 1,2,3\rbrace $.\relax }{figure.caption.7}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces The belief at $t=10$ with non-robust method (left) and robust method (middle), and max. information method (right) Also showing robot configurations (stars, where red stars are robots whose sensors have failed), effective sensing range (dashed line), and partition (solid lines). \relax }}{8}{figure.caption.8}}
 \newlabel{fig:fig6}{{5}{8}{The belief at $t=10$ with non-robust method (left) and robust method (middle), and max. information method (right) Also showing robot configurations (stars, where red stars are robots whose sensors have failed), effective sensing range (dashed line), and partition (solid lines). \relax }{figure.caption.8}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Comparison of K-L divergence from the actual distribution between different methods during belief propagation when part of the sensor fail.\relax }}{8}{figure.caption.9}}
 \newlabel{fig:fig7}{{6}{8}{Comparison of K-L divergence from the actual distribution between different methods during belief propagation when part of the sensor fail.\relax }{figure.caption.9}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {VI-C}Robustness to sensor failure}{8}{subsection.6.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {VI-D}Statistical results with different initial conditions/faults compositions}{8}{subsection.6.4}}
 \@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Robustness test with 100 test dataset, distribution of $\left |\mathcal  {F}\right |$ (top), K-L divergence at $t=10$ (bottom).\relax }}{8}{figure.caption.10}}
 \newlabel{fig:fig8}{{7}{8}{Robustness test with 100 test dataset, distribution of $\left |\mathcal {F}\right |$ (top), K-L divergence at $t=10$ (bottom).\relax }{figure.caption.10}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {VI-D}Statistical results with different initial conditions/faults compositions}{8}{subsection.6.4}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {VI-E}Scalability of our method}{8}{subsection.6.5}}
 \@writefile{toc}{\contentsline {section}{\numberline {VII}Conclusions and Future Work}{8}{section.7}}
 \newlabel{sec:sec9}{{VII}{8}{Conclusions and Future Work}{section.7}{}}
@@ -152,6 +152,6 @@
 \bibcite{choset2005principles}{24}
 \bibcite{portugal2011survey}{25}
 \bibcite{rekleitis2004limited}{26}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Simulations with 100 robots estimating an elevation map of a mountain area (Oregon USA) using our robust method where 10 sensors have failed (left: ground truth, right: configuration and partition overlaid over the expected belief after $t=10$)\relax }}{9}{figure.caption.11}}
-\newlabel{fig:fig9}{{8}{9}{Simulations with 100 robots estimating an elevation map of a mountain area (Oregon USA) using our robust method where 10 sensors have failed (left: ground truth, right: configuration and partition overlaid over the expected belief after $t=10$)\relax }{figure.caption.11}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Simulations with 100 robots estimating an elevation map of a mountain area (Oregon USA) where 10 sensors have failed (a)-top: ground truth, configuration and partition overlaid over the expected belief after $t=10$ [(a)-bottom: non-robust method, (b) robust method].\relax }}{9}{figure.caption.11}}
+\newlabel{fig:fig9}{{8}{9}{Simulations with 100 robots estimating an elevation map of a mountain area (Oregon USA) where 10 sensors have failed (a)-top: ground truth, configuration and partition overlaid over the expected belief after $t=10$ [(a)-bottom: non-robust method, (b) robust method].\relax }{figure.caption.11}{}}
 \@writefile{toc}{\contentsline {section}{References}{9}{section*.12}}
