@@ -1,0 +1,16 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Problem description}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Notations and Our System Definition}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Deployment strategy for the worst-case optimal target detection under sensor failures}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{Combined sensor model}{section.2}% 5
+\BOOKMARK [2][-]{subsection.2.4}{Evaluation of mapping performance}{section.2}% 6
+\BOOKMARK [1][-]{section.3}{Probabilistic Range-limited Sensor Model}{}% 7
+\BOOKMARK [1][-]{section.4}{Deployment strategy}{}% 8
+\BOOKMARK [2][-]{subsection.4.1}{The higher-order Voronoi Partition for Robust deployment}{section.4}% 9
+\BOOKMARK [2][-]{subsection.4.2}{Gradient algorithm}{section.4}% 10
+\BOOKMARK [1][-]{section.5}{Implementation: environmental mapping}{}% 11
+\BOOKMARK [2][-]{subsection.5.1}{Recursive Bayesian Filter}{section.5}% 12
+\BOOKMARK [2][-]{subsection.5.2}{Belief Approximation via SIR Particle Filter}{section.5}% 13
+\BOOKMARK [1][-]{section.6}{Numerical Simulations}{}% 14
+\BOOKMARK [1][-]{section.7}{Conclusions and Future Work}{}% 15
+\BOOKMARK [1][-]{section*.11}{References}{}% 16

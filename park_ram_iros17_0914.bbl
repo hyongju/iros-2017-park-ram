@@ -37,20 +37,25 @@ R.~A. Cortez, H.~G. Tanner, R.~Lumia, and C.~T. Abdallah, ``Information surfing
   for radiation map building,'' \emph{International Journal of Robotics and
   Automation}, vol.~26, no.~1, p.~4, 2011.
 
+\bibitem{pahlajani2014networked}
+C.~D. Pahlajani, I.~Poulakakis, and H.~G. Tanner, ``Networked decision making
+  for poisson processes with applications to nuclear detection,'' \emph{IEEE
+  Transactions on Automatic Control}, vol.~59, no.~1, pp. 193--198, 2014.
+
 \bibitem{julian2012distributed}
 B.~J. Julian, M.~Angermann, M.~Schwager, and D.~Rus, ``Distributed robotic
   sensor networks: An information-theoretic approach,'' \emph{The International
   Journal of Robotics Research}, vol.~31, no.~10, pp. 1134--1154, 2012.
 
+\bibitem{julian2014mutual}
+B.~J. Julian, S.~Karaman, and D.~Rus, ``On mutual information-based control of
+  range sensing robots for mapping applications,'' \emph{The International
+  Journal of Robotics Research}, vol.~33, no.~10, pp. 1375--1392, 2014.
+
 \bibitem{lynch2008decentralized}
 K.~M. Lynch, I.~B. Schwartz, P.~Yang, and R.~A. Freeman, ``Decentralized
   environmental modeling by mobile sensor networks,'' \emph{IEEE Transactions
   on Robotics}, vol.~24, no.~3, pp. 710--724, 2008.
-
-\bibitem{pahlajani2014networked}
-C.~D. Pahlajani, I.~Poulakakis, and H.~G. Tanner, ``Networked decision making
-  for poisson processes with applications to nuclear detection,'' \emph{IEEE
-  Transactions on Automatic Control}, vol.~59, no.~1, pp. 193--198, 2014.
 
 \bibitem{hoffman2010mobile}
 J.~A. Hoffman, J.~R. Cunningham, A.~J. Suleh, A.~Sundsmo, D.~Dekker, F.~Vago,
@@ -59,10 +64,11 @@ J.~A. Hoffman, J.~R. Cunningham, A.~J. Suleh, A.~Sundsmo, D.~Dekker, F.~Vago,
   mobile phones in nairobi, kenya,'' \emph{American journal of preventive
   medicine}, vol.~39, no.~1, pp. 78--80, 2010.
 
-\bibitem{cortes_coverage_2004}
-J.~Cort{\'e}s, S.~Mart{\'\i}nez, T.~Karatas, and F.~Bullo, ``Coverage control
-  for mobile sensing networks,'' \emph{Robotics and Automation, {IEEE}
-  Transactions on}, vol.~20, no.~2, p. 243–255, 2004.
+\bibitem{yang2010decentralized}
+P.~Yang, R.~A. Freeman, G.~J. Gordon, K.~M. Lynch, S.~S. Srinivasa, and
+  R.~Sukthankar, ``Decentralized estimation and control of graph connectivity
+  for mobile sensor networks,'' \emph{Automatica}, vol.~46, no.~2, pp.
+  390--396, 2010.
 
 \bibitem{shamos1975closest}
 M.~I. Shamos and D.~Hoey, ``Closest-point problems,'' in \emph{Foundations of
@@ -95,6 +101,11 @@ A.~W. Stroupe, M.~C. Martin, and T.~Balch, ``Distributed sensor fusion for
   object position estimation by multi-robot systems,'' in \emph{Robotics and
   Automation, 2001. Proceedings 2001 ICRA. IEEE International Conference on},
   vol.~2.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2001, pp. 1092--1098.
+
+\bibitem{cortes_coverage_2004}
+J.~Cort{\'e}s, S.~Mart{\'\i}nez, T.~Karatas, and F.~Bullo, ``Coverage control
+  for mobile sensing networks,'' \emph{Robotics and Automation, {IEEE}
+  Transactions on}, vol.~20, no.~2, p. 243–255, 2004.
 
 \bibitem{schwager2009decentralized}
 M.~Schwager, D.~Rus, and J.-J. Slotine, ``Decentralized, adaptive coverage
@@ -137,5 +148,11 @@ D.~Portugal and R.~Rocha, ``A survey on multi-robot patrolling algorithms,'' in
   \emph{Doctoral Conference on Computing, Electrical and Industrial
   Systems}.\hskip 1em plus 0.5em minus 0.4em\relax Springer, 2011, pp.
   139--146.
+
+\bibitem{rekleitis2004limited}
+I.~Rekleitis, V.~Lee-Shue, A.~P. New, and H.~Choset, ``Limited communication,
+  multi-robot team based coverage,'' in \emph{Robotics and Automation, 2004.
+  Proceedings. ICRA'04. 2004 IEEE International Conference on}, vol.~4.\hskip
+  1em plus 0.5em minus 0.4em\relax IEEE, 2004, pp. 3462--3468.
 
 \end{thebibliography}
