@@ -1,22 +1,16 @@
 \BOOKMARK [1][-]{section.1}{Introduction}{}% 1
 \BOOKMARK [1][-]{section.2}{Problem description}{}% 2
 \BOOKMARK [2][-]{subsection.2.1}{Notations and Our System Definition}{section.2}% 3
-\BOOKMARK [2][-]{subsection.2.2}{An illustrative Example: Airborne LiDAR for DEM generation}{section.2}% 4
-\BOOKMARK [2][-]{subsection.2.3}{Deployment strategy for the worst-case optimal target detection under sensor failures}{section.2}% 5
-\BOOKMARK [2][-]{subsection.2.4}{Combined sensor model}{section.2}% 6
-\BOOKMARK [2][-]{subsection.2.5}{Evaluation of mapping performance}{section.2}% 7
-\BOOKMARK [1][-]{section.3}{Probabilistic Range-limited Sensor Model}{}% 8
-\BOOKMARK [1][-]{section.4}{Deployment strategy}{}% 9
-\BOOKMARK [2][-]{subsection.4.1}{The higher-order Voronoi Partition for Robust deployment}{section.4}% 10
-\BOOKMARK [2][-]{subsection.4.2}{Gradient algorithm}{section.4}% 11
-\BOOKMARK [1][-]{section.5}{Implementation: environmental mapping}{}% 12
-\BOOKMARK [2][-]{subsection.5.1}{Recursive Bayesian Filter}{section.5}% 13
-\BOOKMARK [2][-]{subsection.5.2}{Belief Approximation via SIR Particle Filter}{section.5}% 14
-\BOOKMARK [1][-]{section.6}{Numerical Simulations}{}% 15
-\BOOKMARK [2][-]{subsection.6.1}{Convergence of our deployment algorithm}{section.6}% 16
-\BOOKMARK [2][-]{subsection.6.2}{Environmental mapping/filtering performance w/o failure}{section.6}% 17
-\BOOKMARK [2][-]{subsection.6.3}{Robustness to sensor failure}{section.6}% 18
-\BOOKMARK [2][-]{subsection.6.4}{Statistical results with different initial conditions/faults compositions}{section.6}% 19
-\BOOKMARK [2][-]{subsection.6.5}{Scalability of our method}{section.6}% 20
-\BOOKMARK [1][-]{section.7}{Conclusions and Future Work}{}% 21
-\BOOKMARK [1][-]{section*.12}{References}{}% 22
+\BOOKMARK [2][-]{subsection.2.2}{Deployment strategy for the worst-case optimal target detection under sensor failures}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{Combined sensor model}{section.2}% 5
+\BOOKMARK [2][-]{subsection.2.4}{Evaluation of mapping performance}{section.2}% 6
+\BOOKMARK [1][-]{section.3}{Probabilistic Range-limited Sensor Model}{}% 7
+\BOOKMARK [1][-]{section.4}{Deployment strategy}{}% 8
+\BOOKMARK [2][-]{subsection.4.1}{The higher-order Voronoi Partition for Robust deployment}{section.4}% 9
+\BOOKMARK [2][-]{subsection.4.2}{Gradient algorithm}{section.4}% 10
+\BOOKMARK [1][-]{section.5}{Implementation: environmental mapping}{}% 11
+\BOOKMARK [2][-]{subsection.5.1}{Recursive Bayesian Filter}{section.5}% 12
+\BOOKMARK [2][-]{subsection.5.2}{Belief Approximation via SIR Particle Filter}{section.5}% 13
+\BOOKMARK [1][-]{section.6}{Numerical Simulations}{}% 14
+\BOOKMARK [1][-]{section.7}{Conclusions and Future Work}{}% 15
+\BOOKMARK [1][-]{section*.12}{References}{}% 16

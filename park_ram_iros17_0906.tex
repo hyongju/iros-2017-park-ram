@@ -500,11 +500,15 @@ Finally, we let $\mathcal{F} \subsetneq \lbrace 1,\dots,m \rbrace$ be the index 
 %Each belief, $b_t$, depends on initial belief, $b_0$, the robots' initial configuration $x_0$, the set of controls, $u_{0:t}$, and observations up to this point, $\bm{y}_{1:t-1}$.
 %\rood{In our context, we say that sensor measurement of a target by a robot is \emph{reliable}, if the target can be detected by the robot and one of its sensors correctly reports a normal reading, and \emph{unreliable} otherwise.}
 
-\subsection{An illustrative Example: Airborne LiDAR for DEM generation}
-\label{sec:sec22}
+\begin{example}[Airborne LiDARs for DEM generation]
 Consider a group of autonomous aerial vehicles trying to acquire an accurate Digital Elevation Model (DEM)\footnote{A digital elevation model (DEM) is a digital 3D model of a terrain's surface created from terrain elevation data.} of some bounded region using airborne LIDAR measurements.
 The first problem is: given a finite number of vehicles, how to deploy those vehicles such that the probability that robots will fail to targets dispersed over the region of interest stays minimum. Also, it may be possible that LIDAR measurements from a part of the fleet are corrupt or unreliable which can potentially degrade the quality of DEM. Taking such adversarial scenarios into account, it is crucial to design a deployment strategy along with an underlying sensor model, which can guarantee worst-case optimal target detection performance. 
 Finally, it is also important to process the measurement to update the belief on target state over time in efficient manner such that, within a reasonable time, the autonomous fleet can obtain an accurate DEM model.
+\end{example}
+
+%\subsection{An illustrative Example: Airborne LiDAR for DEM generation}
+%\label{sec:sec22}
+
 
 
 \subsection{Deployment strategy for the worst-case optimal target detection under sensor failures}
@@ -1300,7 +1304,7 @@ z^l,\,w_{t}^l
 
 \section{Numerical Simulations}
 \label{sec:sec7}
-This section presents a suite of numerical simulations to validate both our sensor model and deployment strategy. In particular, we will focus on comparing our approach to popular state-of-the art approaches under various sensor failure scenarios.
+This section presents a suite of numerical simulations to validate both our sensor model and deployment strategy. In particular, we will focus on comparing our approach to popular state-of-the-art approaches under various sensor failure scenarios.
 %\textit{Gaussian PDFs for the Observation Likelihood:}
 %For the simulation, we consider Gaussian kernels for the probability distributions of both the perception model, and the detection model.
 %First, consider the conditional probability distribution for detection likelihood, positive and negative functions respectively
@@ -1349,10 +1353,10 @@ This section presents a suite of numerical simulations to validate both our sens
 %\end{align*}
 
 \textit{Simulation settings:}
-We consider  $\mathcal{Q}$ be a rectangular space $[42.00,41.51]\times [-73.49,-72.83]$ in $\mathbb{R}^2$, some mountain area in Connecticut, U.S.A, where each coordinate corresponds to latitude, longitude. We let $\mathcal{I} = [-1000,\,4000]$ range of elevation in feet, and $r_{\text{eff}} =2.89$ miles (or $\infty$ if it is relaxed). Targets are uniformly distributed over $\mathcal{Q}$, and the initial expected value for initial target information over $\mathcal{Q}$ is given in Fig. \ref{fig:fig1} as a mixture of Gaussian kernels. The information vector ranges from $-1000$ to $4000$, i.e., $I_{\min} = -1000$, $I_{\max} = 4000$.
+We consider  $\mathcal{Q}$ be a rectangular space $[42.00,41.51]\times [-73.49,-72.83]$ in $\mathbb{R}^2$, some mountain area in Connecticut, U.S.A, where each coordinate corresponds to latitude and longitude, respectively. We let $\mathcal{I} = [-1000,\,4000]$ range of elevation in feet, and $r_{\text{eff}} =2.89$ miles. Targets are uniformly distributed over $\mathcal{Q}$, and the initial expected value for initial target information over $\mathcal{Q}$ is depicted in Fig. \ref{fig:fig1}. The information vector ranges from $-1000$ to $4000$, i.e., $\mathcal{I} = [-1000,\,4000]$.
 It is assume that the robots have no prior knowledge of the target information.
 A number of particles used for the SIR filter is $N= N_1\times N_2 = 5000 \times 100$. We consider Gaussian kernels for the probability distributions of both the perception model, and the detection model. The value of the equipped noisy sensor's covariance matrix is $\Sigma_I = 0.5\mathbf{I}$, and the binary sensor's covariance is $\Sigma_B = 0.04\mathbf{I}$ where $\mathbf{I} \in \mathbb{R}^{d\times d}$ is an identity matrix.
-In our simulation, we will compare the three methods summarized in Table \ref{table2}. Note that the three methods presented here are not exactly same as those found from the reference, nevertheless, we postulate that the results will be comparable due to the similarities of those idea.
+In our simulation, we will compare the three methods summarized in Table \ref{table2}. Note that the three methods presented here are not exactly same as those found from the reference therein, nevertheless, we postulate that the results will be comparable due to the similarities of the ideas.
 \begin{table}[]
 	\centering
 	\caption{Summary of deployment methods considered in current section:}
@@ -1430,41 +1434,20 @@ In our simulation, we will compare the three methods summarized in Table \ref{ta
 %	\caption{One-time deployment with $k=1$, (a) cost change during Algorithm 1 ($0^{\textup{th}}-1^{\textup{st}}$ step) , (b) optimal path respecting unicycle kinematic constraint (circles: initial positions, stars: target positions, polygons: partition)}
 %	\label{fig:fig2}
 %\end{figure}
-\begin{figure*}
-%	\centering
-%	 \begin{subfigure}[b]{0.165\textwidth}
-	 	\centering
-		\includegraphics[width=4.5in]{figure/rmse_comparison}
-%		\caption{$k=1$}
-%	\end{subfigure}
-%	\begin{subfigure}[b]{0.15\textwidth}
-%		\centering
-%		\includegraphics[width=1in]{figure/order2_step_0110_c}
-%		\caption{$k=2$}
-%	\end{subfigure}
-%	 \begin{subfigure}[b]{0.15\textwidth}
-%	\centering
-%	\includegraphics[width=1in]{figure/ordern_step_0110_c}
-%	\caption{$k=10$}
-%\end{subfigure}
-	\caption{Time evolutions of root-mean-square error (RMSE) (in ft) between constructed map and the ground truth map for non-robust method (top) and robust method (bottom) when $\mathcal{F}=\lbrace 1,2,3\rbrace$.} 
-%		
-%		 ($k=2$), $r_{\textup{eff}} = 2.89$, $\Sigma_B = 0.04\mathbf{I}$.}
-	\label{fig:fig3}
-\end{figure*}
 
-\subsection{Convergence of our deployment algorithm}
-First, the behavior of the deployment strategy is discussed. Given the initial uniform prior belief and the initial configuration at $x_0$, three algorithms, summarized in Table \ref{table2}, were tested.
-Fig. \ref{fig:fig2} shows the configurations after $t=1$ with non-robust method (a) and robust method (b) where $k=2$. 
-Fig. \ref{fig:fig0}(a) compares the convergence speed and the cost between three methods.
 
-\subsection{Environmental mapping/filtering performance w/o failure}
-Next, we present the evolution of the object map given the uniform, initial map (Fig. \ref{fig:fig1}) with successive positive observations, each followed by the gradient descent strategy and filtering process. 
+\textit{Convergence of our deployment algorithm:}
+First, the behavior of the deployment strategy is discussed. Given the initial uniform prior belief and an initial configuration at $t=0$ (upper-left corner), three algorithms, summarized in Table \ref{table2}, were tested.
+Fig. \ref{fig:fig2} shows the configurations after $t=1$ with (a) non-robust method  and (b) robust method ($k=2$). 
+Fig. \ref{fig:fig0}(a) compares the convergence speeds and the cost changes between three methods.
+
+\textit{Environmental mapping/filtering performance without sensor failure:}
+Next, we present the evolution of the object map given the uniform, initial map with successive positive observations, each followed by filtering process and the gradient descent strategy. 
 %Fig. \ref{fig:fig3} illustrates the map building process, given limited effective sensing range value ($r_{\textup{eff}}=0.3$, the value was chosen empirically relative to the workspace size) when using our robust method. Others show similar performance, and are omitted due to the lack of space.
 %
 %
 %The results in Fig. \ref{fig:fig3} clearly show that under \emph{limited} sensing range, the non-coordinated strategy ($k=1$) yields relatively better mapping results than coordinated strategies ($k=2,\,10$) compared to the ground truth map shown in Fig \ref{fig:fig1}.
-Fig. \ref{fig:fig0}(b) compares the K-L divergence values between different strategies during the evolution. While the maximum information gain approach shows the best result, other methods also shows competitive mapping performance compared to the ground truth.
+Fig. \ref{fig:fig0}(b) compares the K-L divergence values between different strategies during the filtering process. While the maximum information gain approach shows the best result, other methods also shows competitive mapping performance relative to the ground truth.
 %The occurrence of sudden jumps (between the time step 0 and 1) in the K-L divergence values observed in Fig \ref{fig:fig5}(a) demonstrates the cases when the initial uniform density happened to a better `\emph{guess}' than the crude belief obtained after a single propagation of the filtering process.
 %\begin{figure}
 %	\centering
@@ -1499,12 +1482,11 @@ Fig. \ref{fig:fig0}(b) compares the K-L divergence values between different stra
 %	\label{fig:fig7}
 %\end{figure}
 
-\subsection{Robustness to sensor failure}
-This section will present a number of examples when robust method become more appealing than non-robust method, which happens when the sensors are prone to fail. 
-We consider three different cases, when $\mathcal{F} = \lbrace 1 \rbrace,\,\lbrace 1,2\rbrace,\,\lbrace 1,2,3 \rbrace$.
-Results for robots configuration and target distributions after $10^{\textup{th}}$ step with non-robust and robust methods in the case when $\mathcal{F}= \lbrace 1\rbrace$ are shown in Fig. \ref{fig:fig6}. Fig. \ref{fig:fig3} shows the time evolutions of root-mean-square error (RMSE) between constructed map and the ground truth map for both non-robust method (top) and robust method (bottom) when $\mathcal{F}=\lbrace 1,2,3 \rbrace$.
-As can be seen from Fig \ref{fig:fig6}, Fig. \ref{fig:fig3}, and Fig. \ref{fig:fig7}, the map retrieved by the proposed method $k=2$ is more robust to the sensor failure compared to that obtained with the non-robust method. In Fig \ref{fig:fig6}, both middle and right, the unmapped area is owe to the limited sensing range.
-It is not surprising to see from this example that the maximum information gain method shows the best robustness to sensor failures among the three; however this is due to the role of central information fusion sever and relatively large communication load.
+\textit{Robustness to sensor failure:} We will present a number of examples with sensor failures where robust method become more appealing than non-robust method.
+The number of sensors that have failed was varied by $\mathcal{F} = \lbrace 1 \rbrace,\,\lbrace 1,2\rbrace,\,\lbrace 1,2,3 \rbrace$.
+Results for robots configuration and target distributions after $10^{\textup{th}}$ step with non-robust and robust methods in the case when $\mathcal{F}= \lbrace 1\rbrace$ are shown in Fig. \ref{fig:fig6}. Fig. \ref{fig:fig3} shows the time evolutions of root-mean-square error (RMSE) between constructed map and the ground truth map for both non-robust method (top) and robust method (bottom) when $\mathcal{F}=\lbrace 1,2,3 \rbrace$. Fig. \ref{fig:fig7} compares the K-L divergence between difference methods when $\left| \mathcal{F} \right|$ was varied between $1$ and $3$.
+As can be seen from Fig \ref{fig:fig6}--\ref{fig:fig7}, the map retrieved by the proposed method $k=2$ is more robust to the sensor failure compared to that obtained with the non-robust method. In Fig \ref{fig:fig6}, both middle and right, the unmapped area is owe to the limited sensing range.
+
 \begin{figure}
 	\centering
 	\includegraphics[width=1.1in]{figure/new_fault1}
@@ -1516,6 +1498,28 @@ It is not surprising to see from this example that the maximum information gain 
 	}
 	\label{fig:fig6}
 \end{figure}
+\begin{figure*}
+	%	\centering
+	%	 \begin{subfigure}[b]{0.165\textwidth}
+	\centering
+	\includegraphics[width=4.5in]{figure/rmse_comparison}
+	%		\caption{$k=1$}
+	%	\end{subfigure}
+	%	\begin{subfigure}[b]{0.15\textwidth}
+	%		\centering
+	%		\includegraphics[width=1in]{figure/order2_step_0110_c}
+	%		\caption{$k=2$}
+	%	\end{subfigure}
+	%	 \begin{subfigure}[b]{0.15\textwidth}
+	%	\centering
+	%	\includegraphics[width=1in]{figure/ordern_step_0110_c}
+	%	\caption{$k=10$}
+	%\end{subfigure}
+	\caption{Time evolutions of root-mean-square error (RMSE) (in ft) between constructed map and the ground truth map for non-robust method (top) and robust method (bottom) when $\mathcal{F}=\lbrace 1,2,3\rbrace$.} 
+	%		
+	%		 ($k=2$), $r_{\textup{eff}} = 2.89$, $\Sigma_B = 0.04\mathbf{I}$.}
+	\label{fig:fig3}
+\end{figure*}
 \begin{figure}
 	\centering
 	\includegraphics[width=2.6in]{figure/cost_comp000}
@@ -1524,9 +1528,9 @@ It is not surprising to see from this example that the maximum information gain 
 \end{figure}
 
 
-\subsection{Statistical results with different initial conditions/faults compositions}
+\textit{Statistical results with different initial conditions/faults compositions:}
 Statistical results shows that our method can be used to estimate arbitrary target distribution given randomly chosen initial configuration, with different fault compositions reasonably well. 
-Fig. \ref{fig:fig8} shows a distribution of K-L divergence values at the $t=10$ for a given $100$ random initial configurations with randomly sampled faults $1\leq \left|\mathcal{F}\right| \leq 5$.
+Fig. \ref{fig:fig8} shows a distribution of K-L divergence values at the $t=10$ for a given $100$ random initial configurations with randomly sampled faults whose numbers are between $1$ and $5$.
 \begin{figure}
 	\centering
 	\includegraphics[width=2.8in]{figure/stat_result}
@@ -1550,9 +1554,7 @@ Fig. \ref{fig:fig8} shows a distribution of K-L divergence values at the $t=10$ 
 
 
 
-\subsection{Scalability of our method}
-We also conducted a series of simulations and have validated that the results from previous sections generalize to larger number of robots
-Fig. \ref{fig:fig0} shows an example with $100$ robots (with $10$ sensors failures) where the robust method outperforms the non-robust method. The robots' footprints (dashed lines) and the partition (solid lines) are overlaid over the expected belief.
+\textit{Scalability of our method:} We also conducted a series of simulations and have validated that the previous results with $10$ robots can be generalize to larger number of robots Fig. \ref{fig:fig0} shows an example with $100$ robots (with $10$ sensors failures) where the robust method outperforms the non-robust method. 
 \begin{figure}
 	\centering
 %	\includegraphics[width=1.1in]{figure/100_order1}
@@ -1572,6 +1574,8 @@ Fig. \ref{fig:fig0} shows an example with $100$ robots (with $10$ sensors failur
 	\caption{Simulations with 100 robots estimating an elevation map of a mountain area (Oregon USA) where 10 sensors have failed (a)-top: ground truth, configuration and partition overlaid over the expected belief after $t=10$ [(a)-bottom: non-robust method, (b) robust method].}
 	\label{fig:fig9}
 \end{figure}
+
+\textit{Remark:} It is not surprising to see from the simulation results that the maximum information gain approach has better robustness performance against sensor failures than other methods; however this is due to the presence of central information fusion server, and relatively large communication load. Thus, it is unfair to compare robustness between centralized (max. information gain) and decentralized (non-robust, robust) methods.
 
 %\section{An example: Precipitation Mapping using Windshield Wiper Data}
 %\label{sec:sec8}
